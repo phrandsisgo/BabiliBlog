@@ -72,7 +72,7 @@ The Index page shows all the feeds(in chronological order)
 The New Account Page lets the Guest create a new User Account with the following User Details/settings:
 
 -   Username
--   MABY Profile Picture
+-   MAYBE Profile Picture
 -   eMail
 -   Password
 

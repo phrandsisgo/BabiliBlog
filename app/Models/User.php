@@ -17,6 +17,15 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+     public function comments(): HasMany
+     {
+         return $this->hasMany(Comment::class);
+     }
+     public function posts(): HasMany
+     {
+         return $this->hasMany(Post::class);
+     }
     protected $fillable = [
         'name',
         'email',

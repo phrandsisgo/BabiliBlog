@@ -1,6 +1,6 @@
-#########################################
+#########################
 TECHWIZZARDS
-#########################################
+#########################
 
 TECHWIZZARDS is a News/Blog Page about the newest Stuff in the Tech World
 
@@ -73,7 +73,7 @@ The Index page shows all the feeds(in chronological order)
 The New Account Page lets the Guest create a new User Account with the following User Details/settings:
 
 -   Username
--   Profile Picture
+-   MABY Profile Picture
 -   eMail
 -   Password
 
@@ -114,7 +114,7 @@ The View Post Page lets the User do the following:
 
 -   View the Post Title
 -   View the Post content
--   View the 3 newest Blogs/Posts on the Site
+-   MABY View the 3 newest Blogs/Posts on the Site
 -   View comments on the Post
 -   MAYBE Like or Dislike the Post
 -   Post a comment on the Post
@@ -128,9 +128,6 @@ The My Feeds Page lets the User do the following:
 -   View own Posts by category
 -   Go to (/edit_blog) by clicking on Post Title or Content
 -   MAYBE Delete Posts(by ID)
-
-##################################################
-
 
 
 

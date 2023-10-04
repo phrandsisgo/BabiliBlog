@@ -60,14 +60,14 @@ PAGE DESCRIPTIONS
 #########################
 
 
--   Index/Welcome Page (/index) index.blade.php
+##   Index/Welcome Page (/index) index.blade.php
 
 The Index page shows all the feeds(in chronological order)
 -It allows the user to choose which News/Feed category is shown
 -The User can click on any Post Title or Content and is redirected to (/post) post.blade.php
 
 
--   New Account Page (/register) register.blade.php
+##   New Account Page (/register) register.blade.php
 
 The New Account Page lets the Guest create a new User Account with the following User Details/settings:
 -Username
@@ -76,52 +76,59 @@ The New Account Page lets the Guest create a new User Account with the following
 -Password
 
 
--   Edit Account Page (/edit_acc) edit_acc.blade.php
+##   Edit Account Page (/edit_acc) edit_acc.blade.php
 
 The Edit Account Page lets the User edit following account settings:
--Username
--Profile Picture
--eMail
--Password
-eMail and Password must be entered twice and both inputs have to be the same
+
+-   Username
+-   Profile Picture
+-   eMail
+-   Password
+-   eMail and Password must be entered twice and both inputs have to be the same
 
 
--   New Blog Page (/new_blog) new_blog.blade.php
+##   New Blog Page (/new_blog) new_blog.blade.php
 
 The New Blog Page lets the User create a new Post containing the following:
--Title
--Content
--Category
+
+-   Title
+-   Content
+-   Category
 
 
--   Edit Blog Page (/edit_blog) edit_blog.blade.php
+##   Edit Blog Page (/edit_blog) edit_blog.blade.php
 
 The Edit Blog Page lets the User do the following to a Post:
-EDIT:
--Title
--Content
--Category
--DELETE POST
+
+-   Edit Title
+-   Edit Content
+-   Edit Category
+-   Edit DELETE POST
 
 
--   View Post Page (/post) post.blade.php
+##   View Post Page (/post) post.blade.php
 
 The View Post Page lets the User do the following:
--View the Post Title
--View the Post content
--View the 3 newest Blogs/Posts on the Site
--View comments on the Post
-**--Like or Dislike the Post--**
--Post a comment on the Post
+
+-   View the Post Title
+-   View the Post content
+-   View the 3 newest Blogs/Posts on the Site
+-   View comments on the Post
+-   MAYBE Like or Dislike the Post
+-   Post a comment on the Post
 
 
-- My Feeds Page (/my_feeds) my_feeds.blade.php
+## My Feeds Page (/my_feeds) my_feeds.blade.php
 
 The My Feeds Page lets the User do the following:
--View own Posts
--View own Posts by category
--Go to (/edit_blog) by clicking on Post Title or Content
-**--Delete Posts(by ID)--**
+
+-   View own Posts
+-   View own Posts by category
+-   Go to (/edit_blog) by clicking on Post Title or Content
+-   MAYBE Delete Posts(by ID)
+
+##################################################
+
 
 
 

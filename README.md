@@ -129,9 +129,14 @@ The My Feeds Page lets the User do the following:
 -   MAYBE Delete Posts(by ID)
 
 
+
+
+
 ## COMMANDS
 
 Useful commands to be taken seriously
+
+
 
 
 ### TO MIGRATE DATABASE:

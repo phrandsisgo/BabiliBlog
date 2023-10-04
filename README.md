@@ -63,17 +63,19 @@ PAGE DESCRIPTIONS
 ##   Index/Welcome Page (/index) index.blade.php
 
 The Index page shows all the feeds(in chronological order)
--It allows the user to choose which News/Feed category is shown
--The User can click on any Post Title or Content and is redirected to (/post) post.blade.php
+
+-   It allows the user to choose which News/Feed category is shown
+-   The User can click on any Post Title or Content and is redirected to (/post) post.blade.php
 
 
 ##   New Account Page (/register) register.blade.php
 
 The New Account Page lets the Guest create a new User Account with the following User Details/settings:
--Username
--Profile Picture
--eMail
--Password
+
+-   Username
+-   Profile Picture
+-   eMail
+-   Password
 
 
 ##   Edit Account Page (/edit_acc) edit_acc.blade.php

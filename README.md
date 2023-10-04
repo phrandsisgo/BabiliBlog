@@ -1,39 +1,39 @@
-#########################
-## TECHWIZZARDS
-#########################
 
-TECHWIZZARDS is a News/Blog Page about the newest Stuff in the Tech World
+# TECHWIZZARDS
 
 
-#########################
+###### TECHWIZZARDS is a News/Blog Page about the newest Stuff in the Tech World
+
+
+
 ## NEWS/FEED CATEGORIES
-#########################
+
 
 -	TECH NEWS
 -	TECH TRENDS
 -	A.I. NEWS
 
 
-#########################
+
 ## SITE FEATURES
-#########################
+
 
 -	Read newest Blogs/News Posts from different categories
 -	Create and Post own Blogs
 -	Rate and comment on Posts
 
 
-#########################
-## PAGES
-#########################
 
-## WIREFRAME:
+## PAGES
+
+
+### WIREFRAME:
 
 
 ![Wireframe Screenshot](./workspace_pictures/IMG_0412.jpg)
 
 
-## PAGES:
+### PAGES:
 
 -	Index/Welcome
 -	My Feeds
@@ -45,9 +45,9 @@ TECHWIZZARDS is a News/Blog Page about the newest Stuff in the Tech World
 
 
 
-#########################
+
 ## FURTHER SKETCHES/BRAINSTORM IDEAS
-#########################
+
 
 ![Brainstorm 1](./workspace_pictures/IMG_0411.jpg)
 
@@ -55,12 +55,11 @@ TECHWIZZARDS is a News/Blog Page about the newest Stuff in the Tech World
 ![Brainstorm 2](./workspace_pictures/IMG_0414.jpg)
 
 
-#########################
 ## PAGE DESCRIPTIONS
-#########################
 
 
-##   Index/Welcome Page (/index) index.blade.php
+
+###   Index/Welcome Page (/index) index.blade.php
 
 The Index page shows all the feeds(in chronological order)
 
@@ -68,7 +67,7 @@ The Index page shows all the feeds(in chronological order)
 -   The User can click on any Post Title or Content and is redirected to (/post) post.blade.php
 
 
-##   New Account Page (/register) register.blade.php
+###   New Account Page (/register) register.blade.php
 
 The New Account Page lets the Guest create a new User Account with the following User Details/settings:
 
@@ -78,7 +77,7 @@ The New Account Page lets the Guest create a new User Account with the following
 -   Password
 
 
-##   Edit Account Page (/edit_acc) edit_acc.blade.php
+###   Edit Account Page (/edit_acc) edit_acc.blade.php
 
 The Edit Account Page lets the User edit following account settings:
 
@@ -89,7 +88,7 @@ The Edit Account Page lets the User edit following account settings:
 -   eMail and Password must be entered twice and both inputs have to be the same
 
 
-##   New Blog Page (/new_blog) new_blog.blade.php
+###   New Blog Page (/new_blog) new_blog.blade.php
 
 The New Blog Page lets the User create a new Post containing the following:
 
@@ -98,7 +97,7 @@ The New Blog Page lets the User create a new Post containing the following:
 -   Category
 
 
-##   Edit Blog Page (/edit_blog) edit_blog.blade.php
+###   Edit Blog Page (/edit_blog) edit_blog.blade.php
 
 The Edit Blog Page lets the User do the following to a Post:
 
@@ -108,7 +107,7 @@ The Edit Blog Page lets the User do the following to a Post:
 -   Edit DELETE POST
 
 
-##   View Post Page (/post) post.blade.php
+###   View Post Page (/post) post.blade.php
 
 The View Post Page lets the User do the following:
 
@@ -120,7 +119,7 @@ The View Post Page lets the User do the following:
 -   Post a comment on the Post
 
 
-## My Feeds Page (/my_feeds) my_feeds.blade.php
+### My Feeds Page (/my_feeds) my_feeds.blade.php
 
 The My Feeds Page lets the User do the following:
 
@@ -131,11 +130,10 @@ The My Feeds Page lets the User do the following:
 
 
 
-#########################
 ## COMMANDS
-#########################
 
-## TO MIGRATE DATABASE:
+
+### TO MIGRATE DATABASE:
 
     sail artisan migrate
 

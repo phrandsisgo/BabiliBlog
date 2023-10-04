@@ -30,7 +30,7 @@ PAGES
 WIREFRAME:
 
 
-![Wireframe Screenshot](./workspace_screenshots/IMG_0412.jpg)
+![Wireframe Screenshot](./workspace_shots/IMG_0412.jpg)
 
 
 PAGES:
@@ -48,5 +48,10 @@ PAGES:
 #########################
 FURTHER SKETCHES/BRAINSTORM IDEAS
 #########################
+
+![Brainstorm 1](./workspace_shots/IMG_0411.jpg)
+
+
+![Brainstorm 2](./workspace_shots/IMG_0414.jpg)
 
 

@@ -1,12 +1,12 @@
 #########################
-TECHWIZZARDS
+## TECHWIZZARDS
 #########################
 
 TECHWIZZARDS is a News/Blog Page about the newest Stuff in the Tech World
 
 
 #########################
-NEWS/FEED CATEGORIES
+## NEWS/FEED CATEGORIES
 #########################
 
 -	TECH NEWS
@@ -15,7 +15,7 @@ NEWS/FEED CATEGORIES
 
 
 #########################
-SITE FEATURES
+## SITE FEATURES
 #########################
 
 -	Read newest Blogs/News Posts from different categories
@@ -24,16 +24,16 @@ SITE FEATURES
 
 
 #########################
-PAGES
+## PAGES
 #########################
 
-WIREFRAME:
+## WIREFRAME:
 
 
 ![Wireframe Screenshot](./workspace_pictures/IMG_0412.jpg)
 
 
-PAGES:
+## PAGES:
 
 -	Index/Welcome
 -	My Feeds
@@ -46,7 +46,7 @@ PAGES:
 
 
 #########################
-FURTHER SKETCHES/BRAINSTORM IDEAS
+## FURTHER SKETCHES/BRAINSTORM IDEAS
 #########################
 
 ![Brainstorm 1](./workspace_pictures/IMG_0411.jpg)
@@ -56,7 +56,7 @@ FURTHER SKETCHES/BRAINSTORM IDEAS
 
 
 #########################
-PAGE DESCRIPTIONS
+## PAGE DESCRIPTIONS
 #########################
 
 
@@ -132,10 +132,10 @@ The My Feeds Page lets the User do the following:
 
 
 #########################
-COMMANDS
+## COMMANDS
 #########################
 
-TO MIGRATE DATABASE:
+## TO MIGRATE DATABASE:
 
     sail artisan migrate
 

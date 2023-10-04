@@ -131,15 +131,7 @@ The My Feeds Page lets the User do the following:
 
 
 
-
-## COMMANDS
-
-Useful commands to be taken seriously
-
-
-
-
-### TO MIGRATE DATABASE:
+### MIGRATE THE DATABASE:
 
     sail artisan migrate
 

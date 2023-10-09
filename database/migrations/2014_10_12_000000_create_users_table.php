@@ -10,6 +10,8 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
+
+    // DB-Schema erstellt von Luis 
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();

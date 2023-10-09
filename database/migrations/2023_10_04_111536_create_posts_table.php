@@ -11,6 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
+        
+    // DB-Schema erstellt von Luis 
+
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();

@@ -29,15 +29,17 @@ body {
     width: 100%;
     margin-bottom: 25px;
     padding: 10px 0;
-    height: 80px;
+    height: 800px;
     color: #fff;
     padding: 10px 20px;
+    overflow: hidden; /* Add this line to hide overflow */
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0; /* Remove default margin on h1 */
 }
 
 .sidepanel {

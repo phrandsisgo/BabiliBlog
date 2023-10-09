@@ -136,7 +136,8 @@ The My Feeds Page lets the User do the following:
     sail artisan migrate
 
 ### ADD THE SEEDS TO DATABASE:
-    ```sail artisan db:seed --class=UserSeeder```
-
-    ```sail artisan db:seed --class=PostSeeder```
+first update the user table to the db
+    sail artisan db:seed --class=UserSeeder
+Then update the Post table to the DB
+    sail artisan db:seed --class=PostSeeder
 

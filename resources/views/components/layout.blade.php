@@ -24,8 +24,8 @@
     </div> --}}
 
     @yield('content')
-    <div>
-        <h2>This is the content:</h2>
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla dictum libero, eu convallis sapien. Fusce ut sollicitudin velit. Donec ac sagittis elit.</p>
     </div>
     @yield('footer')
         <h3>This is the footer:</h3>

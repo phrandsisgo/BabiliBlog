@@ -1,4 +1,10 @@
-@extends('layouts.app')
+@extends('/components/layout.app')
+
+@section('head')
+@endsection
+
+@section('header')
+@endsection
 
 @section('content')
 <div class="container">
@@ -70,3 +76,8 @@
     </div>
 </div>
 @endsection
+
+@section('footer')
+
+</body>
+</html>

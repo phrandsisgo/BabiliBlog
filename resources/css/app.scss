@@ -2,5 +2,42 @@
 // @tailwind components;
 // @tailwind utilities;
 
-@import "register.scss"
-@import "edit_acc.scss"
+@import "register.scss";
+@import "edit_acc.scss";
+
+$gradientBg: linear-gradient(180deg, #5A4F7780 50%, #3A374200 0%);
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 40px;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+
+.header {
+    background: $gradientBg;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-bottom: 25px;
+    padding: 10px 0;
+    height: 50px;
+}
+
+.container {
+    background: $gradientBg;
+    width: 200px; /* Adjust the width as per your preference */
+    height: 100%; /* This will make it fill the height of the viewport */
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px;
+}

@@ -137,5 +137,6 @@ The My Feeds Page lets the User do the following:
 
 ### ADD THE SEEDS TO DATABASE:
     sail artisan db:seed --class=UserSeeder
+
     sail artisan db:seed --class=PostSeeder
 

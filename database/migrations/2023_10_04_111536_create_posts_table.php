@@ -10,16 +10,17 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-
-    // DB-Schema erstellt von Luis 
     {
-        Schema::create('users', function (Blueprint $table) {
+        
+    // DB-Schema erstellt von Luis 
+
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->foreignId('user_id')->constrained();
+            $table->string('title');
+            $table->longText('content');
+            $table->string('featured_img');
+            // created_at and updated_at automatically created by Laravel
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('posts');
     }
 };

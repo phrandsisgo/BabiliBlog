@@ -86,6 +86,7 @@ The Edit Account Page lets the User edit following account settings:
 -   eMail
 -   Password
 -   eMail and Password must be entered twice and both inputs have to be the same
+-   if User is not logged in it redirects to the register page
 
 
 ###   New Blog Page (/new_blog) new_blog.blade.php

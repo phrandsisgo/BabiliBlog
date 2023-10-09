@@ -2,18 +2,20 @@
 // @tailwind components;
 // @tailwind utilities;
 
-@import "register.scss";
-@import "edit_acc.scss";
+// @import "register.scss";
+// @import "edit_acc.scss";
 
 $gradientBg: linear-gradient(180deg, #5A4F7780 50%, #3A374200 0%);
 
 body {
+    background: #151515ef;
     font-family: Arial, sans-serif;
     margin: 0;
     padding-top: 40px;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    color: white;
 }
 
 

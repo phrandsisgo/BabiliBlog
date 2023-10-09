@@ -8,9 +8,9 @@
 @endsection
 
 @section('content')
-
 <div>
-    <p>This is the blog</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla dictum libero, eu convallis sapien. Fusce ut sollicitudin velit. Donec ac sagittis elit.</p>
+</div>
 @endsection
 
 @section('footer')

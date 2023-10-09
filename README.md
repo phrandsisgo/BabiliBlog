@@ -12,6 +12,7 @@
 -	TECH NEWS
 -	TECH TRENDS
 -	A.I. NEWS
+-   MAIN/ALL
 
 
 

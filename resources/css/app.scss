@@ -11,17 +11,15 @@ body {
     background: #151515ef;
     font-family: Arial, sans-serif;
     margin: 0;
-    padding-top: 40px;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
     color: white;
+    padding-top: 60px; /* Add padding to account for the fixed header */
 }
-
 
 .header {
     background: $gradientBg;
-    padding: 20px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -31,10 +29,18 @@ body {
     width: 100%;
     margin-bottom: 25px;
     padding: 10px 0;
-    height: 50px;
+    height: 80px;
+    color: #fff;
+    padding: 10px 20px;
 }
 
-.container {
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidepanel {
     background: $gradientBg;
     width: 200px; /* Adjust the width as per your preference */
     height: 100%; /* This will make it fill the height of the viewport */
@@ -42,4 +48,9 @@ body {
     left: 0;
     top: 0;
     padding: 20px;
+}
+
+.content {
+    padding: 20px;
+    margin-top: 60px; /* Add margin to prevent content from being hidden by the fixed header */
 }

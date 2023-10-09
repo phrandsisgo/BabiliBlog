@@ -14,12 +14,14 @@
     @yield('header')
     
     <header class="header">
-        Header Content
+        <div class="header-content">
+            <h1>Sticky Header</h1>
+        </div>
     </header>
 
-    <div class="container">
+{{--     <div class="container">
         Container Content
-    </div>
+    </div> --}}
 
     @yield('content')
     <div>
@@ -27,7 +29,6 @@
     </div>
     @yield('footer')
         <h3>This is the footer:</h3>
-
 
 </body>
 </html>

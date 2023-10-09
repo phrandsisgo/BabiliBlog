@@ -17,6 +17,25 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/index', function () {
+    return view('index');
+});
+Route::get('/register', function () {
+    return view('register');
+});
+Route::get('/edit_acc', function () {
+    return view('edit_acc');
+});
+Route::get('/new_blog', function () {
+    return view('new_blog');
+});
+Route::get('/edit_blog', function () {
+    return view('edit_blog');
+});
+Route::get('/post', function () {
+    return view('post');
+});
+
 
 Route::get('/index', function () {
     return view('index');

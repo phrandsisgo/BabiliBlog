@@ -28,8 +28,8 @@ class UserSeeder extends Seeder
             'password' => 'password123',
         ],
         [
-            'name' => 'Cyrill G.',
-            'email' => 'cyrillg@example.ch',
+            'name' => 'Cyrill S.',
+            'email' => 'cyrills@example.ch',
             'password' => 'password123',
         ],
         [

@@ -25,7 +25,7 @@ Route::get('/register', function () {
 });
 Route::get('/edit_acc', function () {
     return view('edit_acc');
-});
+})->name('edit_acc');
 Route::get('/new_blog', function () {
     return view('new_blog');
 });

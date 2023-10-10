@@ -18,9 +18,9 @@ use App\Http\Controllers\BlogController;
 Route::get('/', function () {
     return view('welcome');
 });
-/* Route::get('/index', function () {
+Route::get('/index', function () {
     return view('index');
-}); */
+});
 Route::get('/register', function () {
     return view('register');
 });
@@ -32,6 +32,12 @@ Route::get('/new_blog', function () {
 });
 Route::get('/edit_blog', function () {
     return view('edit_blog')->name('edit_blog');
+})->name('edit_acc');
+Route::get('/new_blog', function () {
+    return view('new_blog');
+});
+Route::get('/edit_blog', function () {
+    return view('edit_blog');
 });
 Route::get('/post', function () {
     return view('post');

@@ -12,6 +12,7 @@
 -	TECH NEWS
 -	TECH TRENDS
 -	A.I. NEWS
+-   MAIN/ALL
 
 
 
@@ -86,6 +87,7 @@ The Edit Account Page lets the User edit following account settings:
 -   eMail
 -   Password
 -   eMail and Password must be entered twice and both inputs have to be the same
+-   if User is not logged in it redirects to the register page
 
 
 ###   New Blog Page (/new_blog) new_blog.blade.php
@@ -148,4 +150,26 @@ Then update the Post table to the DB
 Then update the Comments table to the DB
 
     sail artisan db:seed --class=CommentSeeder
+
+### Standard Login
+
+-   Login:  vorname n@example.ch
+    Login consists of: First Name, Last Name capital Letter, @example.ch
+
+-   Password:   password123
+
+
+### Ideas
+
+-   Posts Public/Private
+-   Notifications
+-   Chat
+-   Add Profile Picture
+-   Add Links
+
+-   Multi-Language
+-   Smash/Unsmash
+-   Hashtag
+-   Multidesign
+-   Profile Picture
 

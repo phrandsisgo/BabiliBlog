@@ -162,14 +162,10 @@ Then update the Comments table to the DB
 ### Ideas
 
 -   Posts Public/Private
--   Notifications
--   Chat
 -   Add Profile Picture
 -   Add Links
 
--   Multi-Language
 -   Smash/Unsmash
--   Hashtag
--   Multidesign
+-   Multidesign MAYBE/NOT
 -   Profile Picture
 

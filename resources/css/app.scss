@@ -3,7 +3,7 @@
 
 // WRITTEN BY SCARRUS
 
-$background: background-color #1515156B;
+$background: #1515156B;
 $content: padding(15px), color(red);
 
 
@@ -11,7 +11,7 @@ body, html {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: $background;
+    background-color: #1515156B;
 }
 
 body {
@@ -24,7 +24,7 @@ body {
     display: grid;
     grid-template-columns: 20% auto ;
     gap: 10px;
-    background-color: $background;
+    background-color: #1515156B;
     padding: 10px;
     height: 100vh;
 }
@@ -57,7 +57,7 @@ body {
 }
 
 .footer {
-    background-color: $background !important;
+    background-color: #1515156B !important;
     color: #fff;
     padding: 10px;
     text-align: right !important;

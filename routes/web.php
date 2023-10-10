@@ -37,13 +37,9 @@ Route::get('/post', function () {
     return view('post');
 });
 Route ::get('/show/{id}', [BlogController::class, 'show']);//route für EntwicklungsZwecke von Francisco
-/*
-Route::get('/display_posts', function () {
-    return view('displayPosts');
-});
-*/
 
-Route::get ('/display_posts', [BlogController::class, 'feed']);
+
+Route::get ('/display_posts', [BlogController::class, 'feed']);//route für entwicklung von Francisco
 
 
 Route::get('/welcome', function () {

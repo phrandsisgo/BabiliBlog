@@ -14,7 +14,7 @@ class BlogController extends Controller
 
     public function show($id){
        // dd($id); //dd = dump and die (laravel helper function
-        $post = Post::find($id);
+        $post = Post::with('comments')->findOrFail($id);
         return view('show', ['post' => $post]);
     }
 }

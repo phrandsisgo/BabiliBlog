@@ -9,6 +9,11 @@
     <p> {{$post ->title}}</p>
     <p>{{$post -> content}}</p>
     <p>the id is {{$post -> id}}</p>
-    
+    <h2>Comments</h2>
+    <ul>
+        @foreach($post->comments as $comment)
+            <li>{{ $comment->content }}</li>
+        @endforeach
+    </ul>
 </body>
 </html>

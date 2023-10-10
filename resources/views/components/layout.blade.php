@@ -1,3 +1,5 @@
+{{-- WRITTEN BY SCARRUS --}}
+
 @yield('head')
 
 <!DOCTYPE html>

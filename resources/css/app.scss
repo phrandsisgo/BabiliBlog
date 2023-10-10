@@ -1,18 +1,7 @@
-<<<<<<< HEAD
-// @tailwind base;
-// @tailwind components;
-// @tailwind utilities;
-
-// @import "register.scss";
-// @import "edit_acc.scss";
-// @import "register.scss";
-// @import "edit_acc.scss";
-=======
 @import "register.scss";
 @import "edit_acc.scss";
 
 // WRITTEN BY SCARRUS
->>>>>>> 6a67910d028c3166928c5df1a4cffa7af159c511
 
 $background: background-color #1515156B;
 $content: padding(15px), color(red);
@@ -85,15 +74,9 @@ body {
 .content 
 {
     padding: 20px;
-<<<<<<< HEAD
 }
 
 .content {
     padding: 20px;
     margin-top: 60px; /* Add margin to prevent content from being hidden by the fixed header */
 }
-=======
-    width: 80%;
-    float:right;
-}
->>>>>>> 6a67910d028c3166928c5df1a4cffa7af159c511

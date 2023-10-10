@@ -3,14 +3,15 @@
 
 // WRITTEN BY SCARRUS
 
-$gradientBg: linear-gradient(180deg, #5A4F7780 50%, #3A374200 0%);
+$background: background-color #1515156B;
+$content: padding(15px), color(red);
 
 
 body, html {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #1515156B;
+    background-color: $background;
 }
 
 body {
@@ -23,8 +24,9 @@ body {
     display: grid;
     grid-template-columns: 20% auto ;
     gap: 10px;
-    background-color: #2196F3;
+    background-color: $background;
     padding: 10px;
+    height: 100vh;
 }
 
 .grid-container > div {
@@ -32,12 +34,16 @@ body {
     text-align: center;
     padding: 20px 0;
     font-size: 20px;
+    border-radius: 25px;
 }
 
 .sidepanel 
 {
     grid-row-start: 1;
     grid-row-end: 4;
+    background: rgb(108, 73, 136) !important;
+    color: #fff !important;
+    border-radius: 10px !important;
     //position: fixed;
 }
 
@@ -51,13 +57,18 @@ body {
 }
 
 .footer {
-    background-color: #333;
+    background-color: $background !important;
     color: #fff;
     padding: 10px;
     text-align: right !important;
     height: 1vh;
     font-size: 12px !important;
     //position: fixed;
+}
+
+.footer p
+{
+    padding-right: 10px;
 }
 
 .content 

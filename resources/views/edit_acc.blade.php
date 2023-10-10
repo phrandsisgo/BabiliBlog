@@ -14,9 +14,9 @@
                 <div class="card-header">Edit Your Account</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route ('edit_acc') }}">
+                    <form method="POST" action="{{ route('edit_acc') }}">
                         @csrf
-                        
+                        @method(PUT)
 
                         <div class="form-group row">
                             <label for="profile_image" class="col-md-4 col-form-label text-md-right">Profile Image</label>

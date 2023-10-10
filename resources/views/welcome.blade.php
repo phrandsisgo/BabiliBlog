@@ -8,10 +8,6 @@
 @endsection
 
 @section('content')
-
-<div>
-    <p>This is the blog</p>
-
 @endsection
 
 @section('footer')

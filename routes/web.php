@@ -18,9 +18,9 @@ use App\Http\Controllers\BlogController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/index', function () {
+/* Route::get('/index', function () {
     return view('index');
-});
+}); */
 Route::get('/register', function () {
     return view('register');
 });
@@ -45,6 +45,10 @@ Route::get('/display_posts', function () {
 
 Route::get ('/display_posts', [BlogController::class, 'feed']);
 
+
+Route::get('/welcome', function () {
+    return view('welcome');
+})->middleware(['auth', 'verified'])->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

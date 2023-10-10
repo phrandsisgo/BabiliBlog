@@ -30,6 +30,7 @@
     
     <div class="content-container">
         <!-- Hier können Sie Ihren Inhalt platzieren -->
+        
     </div>
 
     @endsection

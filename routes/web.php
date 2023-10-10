@@ -16,25 +16,25 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name ('welcome');
 Route::get('/index', function () {
-    return view('index')->name('index');
-});
+    return view('index');
+})->name('index');
 Route::get('/register', function () {
     return view('register');
-});
+})->name ('register');
 Route::get('/edit_acc', function () {
-    return view('edit_acc')->name('edit_acc');
-});
+    return view('edit_acc');
+})->name('edit_acc');
 Route::get('/new_blog', function () {
     return view('new_blog');
-});
+})->name ('new_blog');
 Route::get('/edit_blog', function () {
     return view('edit_blog');
-});
+})->name ('edit_blog');
 Route::get('/post', function () {
     return view('post');
-});
+})->name ('post');
 
 
 Route::get('/dashboard', function () {

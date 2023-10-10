@@ -13,10 +13,14 @@
     
     @yield('header')
     
+    <h1>This should be inside</h1>
+
     <header class="header">
         <div class="header-content">
             <h1>Sticky Header</h1>
         </div>
+
+        <h1>This is outside</h1>
     </header>
 
 {{--     <div class="container">

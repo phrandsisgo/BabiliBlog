@@ -13,7 +13,8 @@ class BlogController extends Controller
     }
 
     public function show($id){
+       // dd($id); //dd = dump and die (laravel helper function
         $post = Post::find($id);
-        return view('post', ['post' => $post]);
+        return view('show', ['post' => $post]);
     }
 }

@@ -12,7 +12,7 @@
         <h3>{{ $post->title }}</h3>
         <p>{{ $post->content }}</p>
         <p>the id is {{$post -> id}}</p>
-        <a href="/posts/{{$post->id}}"></a>
+        <a href="/show/{{$post->id}}">View Show</a>
     </div>
     @endforeach
 </body>

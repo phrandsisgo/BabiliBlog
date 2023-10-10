@@ -36,7 +36,7 @@ Route::get('/edit_blog', function () {
 Route::get('/post', function () {
     return view('post');
 });
-Route ::get('/show', [BlogController::class, 'show']);
+Route ::get('/show/{id}', [BlogController::class, 'show']);//route für EntwicklungsZwecke von Francisco
 /*
 Route::get('/display_posts', function () {
     return view('displayPosts');

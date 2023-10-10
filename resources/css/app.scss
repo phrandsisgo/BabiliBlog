@@ -3,15 +3,66 @@
 
 // WRITTEN BY SCARRUS
 
-body {
-    font-family: Arial, sans-serif;
+$gradientBg: linear-gradient(180deg, #5A4F7780 50%, #3A374200 0%);
+
+
+body, html {
+    height: 100%;
     margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1515156B;
 }
 
-header {
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 20% auto ;
+    gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+}
+
+.sidepanel 
+{
+    grid-row-start: 1;
+    grid-row-end: 4;
+    //position: fixed;
+}
+
+.header {
+    //background-color: #333;
+    background: rgb(108, 73, 136);
+    color: #fff;
+    padding: 10px;
+    height: 10vh;
+    text-align: center;
+}
+
+.footer {
     background-color: #333;
     color: #fff;
     padding: 10px;
-    text-align: center;
+    text-align: right !important;
+    height: 1vh;
+    font-size: 12px !important;
+    //position: fixed;
+}
+
+.content 
+{
+    padding: 20px;
+    width: 80%;
+    float:right;
 }

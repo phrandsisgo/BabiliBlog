@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/index', function () {
-    return view('index');
+    return view('index')->name('index');
 });
 Route::get('/register', function () {
     return view('register');

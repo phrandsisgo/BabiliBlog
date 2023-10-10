@@ -1,4 +1,4 @@
-
+@extends('/components/layout.app')
 
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">

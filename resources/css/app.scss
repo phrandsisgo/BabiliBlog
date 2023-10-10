@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // @tailwind base;
 // @tailwind components;
 // @tailwind utilities;
@@ -6,55 +7,82 @@
 // @import "edit_acc.scss";
 // @import "register.scss";
 // @import "edit_acc.scss";
+=======
+@import "register.scss";
+@import "edit_acc.scss";
+
+// WRITTEN BY SCARRUS
+>>>>>>> 6a67910d028c3166928c5df1a4cffa7af159c511
 
 $gradientBg: linear-gradient(180deg, #5A4F7780 50%, #3A374200 0%);
 
-body {
-    background: #151515ef;
-    font-family: Arial, sans-serif;
+
+body, html {
+    height: 100%;
     margin: 0;
-    display: flex;
+    font-family: Arial, sans-serif;
+    background-color: #1515156B;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     min-height: 100vh;
-    flex-direction: column;
-    color: white;
-    padding-top: 60px; /* Add padding to account for the fixed header */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 20% auto ;
+    gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+}
+
+.sidepanel 
+{
+    grid-row-start: 1;
+    grid-row-end: 4;
+    //position: fixed;
 }
 
 .header {
-    background: $gradientBg;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    margin-bottom: 25px;
-    padding: 10px 0;
-    height: 800px;
+    //background-color: #333;
+    background: rgb(108, 73, 136);
     color: #fff;
-    padding: 10px 20px;
-    overflow: hidden; /* Add this line to hide overflow */
+    padding: 10px;
+    height: 10vh;
+    text-align: center;
 }
 
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0; /* Remove default margin on h1 */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: right !important;
+    height: 1vh;
+    font-size: 12px !important;
+    //position: fixed;
 }
 
-.sidepanel {
-    background: $gradientBg;
-    width: 200px; /* Adjust the width as per your preference */
-    height: 100%; /* This will make it fill the height of the viewport */
-    position: fixed;
-    left: 0;
-    top: 0;
+.content 
+{
     padding: 20px;
+<<<<<<< HEAD
 }
 
 .content {
     padding: 20px;
     margin-top: 60px; /* Add margin to prevent content from being hidden by the fixed header */
 }
+=======
+    width: 80%;
+    float:right;
+}
+>>>>>>> 6a67910d028c3166928c5df1a4cffa7af159c511

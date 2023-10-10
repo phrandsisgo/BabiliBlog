@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,14 +28,22 @@ Route::get('/edit_acc', function () {
     return view('edit_acc');
 });
 Route::get('/new_blog', function () {
-    return view('new_blog');
+    return view('new_blog')->name('new_blog');
 });
 Route::get('/edit_blog', function () {
-    return view('edit_blog');
+    return view('edit_blog')->name('edit_blog');
 });
 Route::get('/post', function () {
     return view('post');
 });
+Route ::get('/show', [BlogController::class, 'show']);
+/*
+Route::get('/display_posts', function () {
+    return view('displayPosts');
+});
+*/
+
+Route::get ('/display_posts', [BlogController::class, 'feed']);
 
 
 Route::get('/dashboard', function () {

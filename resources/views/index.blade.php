@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.scss">
-    <title>Techwizards</title>
-</head>
-<body>
+@extends('/components/layout')
+
+
+@section('head')
+@endsection
+
+@section('header')
+@endsection
+
+@section('content')
     <header>
 
     
@@ -30,9 +30,10 @@
     
     <div class="content-container">
         <!-- Hier können Sie Ihren Inhalt platzieren -->
+        
     </div>
-</body>
-</html>
 
-</body>
-</html>
+    @endsection
+
+    @section('footer')
+    @endsection

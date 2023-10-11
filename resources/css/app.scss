@@ -1,4 +1,3 @@
-
 @import "register.scss";
 
 @import "edit_acc.scss";
@@ -13,14 +12,20 @@ body, html {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: white;
+    //background-color: rgb(255, 255, 255);
+    //background: white;
+    //background: rgba(228, 190, 55, 0.513) !important;
+    background-color: black;
+    //z-index: 500;
+    background-image: url('/public/background_1.jpg');
+
 }
 
-body {
+/* body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
-}
+} */
 
 .grid-container {
     display: grid;
@@ -41,27 +46,51 @@ body {
 
 .sidepanel 
 {
-    grid-row-start: 1;
-    grid-row-end: 4;
-    background: rgb(108, 73, 136) !important;
-    color: #fff !important;
-    margin-bottom: 25px;
-    width: 350vh;
+    /* grid-row-start: 1;
+    grid-row-end: 4; */
+    background: rgb(161, 161, 161) !important;
+    //background: rgba(255, 0, 170, 0.461);
+    color: black !important;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    min-width: 200px;
+    border-radius: 15px;
     //position: fixed;
+    box-shadow: 2px 2px 4px #000000;
+    text-align: center;
+    align-items: center;
+    display: flex;
 }
 
 .header {
     //background-color: #333;
-    background: rgb(108, 73, 136);
+    //background: rgb(108, 73, 136);
+    //background: rgba(0, 0, 0, 0.188);
+    background: rgb(160, 160, 160) !important;
     color: #fff;
     padding: 10px;
-    height: 10vh;
+    height: 50px;
     text-align: center;
+/*     margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px; */
+    border-radius: 15px;
+    box-shadow: 2px 2px 4px #000000;
+    position: sticky;
+    top: 0; /* Stick to the top of the viewport */
+    width: 100%; /* Take up the full width */
+    z-index: 1000; /* Ensure it appears on top */
+}
+
+.header h1
+{
+    height: 40px;
 }
 
 .footer {
-    background-color: #1515156B !important;
-    color: #fff;
+    //background-color: white !important;
+    color: black;
     padding: 10px;
     text-align: right !important;
     height: 1vh;
@@ -71,13 +100,21 @@ body {
 
 .footer p
 {
-    padding-right: 10px;
+    //padding-right: 10px;
+    padding-bottom: 10px;
 }
 
-// .content 
-// {
-//     padding: 20px;
-// }
+.content 
+{
+    padding: 20px;
+    //background: white;
+    margin-top: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    //max-width: 1000px;
+    //box-shadow: 2px 2px 4px #000000;
+    //background-image: url('/public/background_1.jpg');
+}
 
 // .content {
 //     padding: 20px;
@@ -86,22 +123,33 @@ body {
 
 .content-1
 {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgb(204, 204, 204);
     text-align: center;
     padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
     font-size: 20px;
     border-radius: 25px;
-    margin: 20px;
+    margin: 35px;
+    color: black;
+    box-shadow: 2px 2px 4px #000000;
+    text-align: left;
+    
 }
 
 .content-2
 {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgb(204, 204, 204);
     text-align: center;
     padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
     font-size: 20px;
     border-radius: 25px;
-    margin: 20px;
+    margin: 35px;
+    color: black;
+    box-shadow: 2px 2px 4px #000000;
+    text-align: left;
 }
 
 
@@ -109,8 +157,16 @@ body {
 body {
     display: flex;
     flex-direction: row;
+    width: 100vw;
 }
 .main{
     overflow-y: scroll;
     height: 100vh;
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    align-items: center;
 }

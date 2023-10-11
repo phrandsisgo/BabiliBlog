@@ -9,11 +9,24 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
+use App\Models\User;
+
 class ProfileController extends Controller
 {
-    /**
-     * Display the user's profile form.
-     */
+    
+    // Display all Users
+    public function showUser(){
+    // dd('The user blade works');
+        $users = User::all();
+        return view('displayUsers', ['users' => $users]);
+    }
+
+    public function uploadImg(Request $request): View {
+
+    }
+
+    
+    // Display the user's profile form.
     public function edit(Request $request): View
     {
         return view('profile.edit', [

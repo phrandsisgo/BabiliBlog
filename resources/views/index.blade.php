@@ -5,6 +5,15 @@
 @endsection
 
 @section('header')
+<nav class="sidepanel">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Post</a></li>
+            <li><a href="#">Thema 1</a></li>
+            <li><a href="#">Thema 2</a></li>
+            <li><a href="#">Thema 3</a></li>
+        </ul>
+    </nav>
 @endsection
 
 @section('content')

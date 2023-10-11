@@ -4,15 +4,112 @@
 
 // WRITTEN BY SCARRUS
 
-body {
-    font-family: Arial, sans-serif;
+$background: #1515156B;
+$content: padding(15px), color(red);
+
+
+body, html {
+    height: 100%;
     margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
 }
 
-header {
-    background-color: #333;
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 20% auto ;
+    gap: 10px;
+    background-color: #1515156B;
+    padding: 10px;
+    height: 100vh;
+}
+
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    border-radius: 25px;
+}
+
+.sidepanel 
+{
+    grid-row-start: 1;
+    grid-row-end: 4;
+    background: rgb(108, 73, 136) !important;
+    color: #fff !important;
+    margin-bottom: 25px;
+    width: 350vh;
+    //position: fixed;
+}
+
+.header {
+    //background-color: #333;
+    background: rgb(108, 73, 136);
     color: #fff;
     padding: 10px;
+    height: 10vh;
     text-align: center;
+}
+
+.footer {
+    background-color: #1515156B !important;
+    color: #fff;
+    padding: 10px;
+    text-align: right !important;
+    height: 1vh;
+    font-size: 12px !important;
+    //position: fixed;
+}
+
+.footer p
+{
+    padding-right: 10px;
+}
+
+// .content 
+// {
+//     padding: 20px;
+// }
+
+// .content {
+//     padding: 20px;
+//     margin-top: 60px; /* Add margin to prevent content from being hidden by the fixed header */
+// }
+
+.content-1
+{
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 25px;
+    margin: 20px;
+}
+
+.content-2
+{
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 25px;
+    margin: 20px;
+}
+
+
+// ray added this
+body {
+    display: flex;
+    flex-direction: row;
+}
+.main{
+    overflow-y: scroll;
+    height: 100vh;
 }

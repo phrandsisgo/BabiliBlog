@@ -146,3 +146,22 @@ Then update the Post table to the DB
 
     sail artisan db:seed --class=PostSeeder
 
+
+### Standard Login
+
+-   Login:  vorname n@example.ch
+    Login consists of: First Name, Last Name capital Letter, @example.ch
+
+-   Password:   password123
+
+
+### Ideas
+
+-   Posts Public/Private
+-   Add Profile Picture
+-   Add Links
+
+-   Smash/Unsmash
+-   Multidesign MAYBE/NOT
+-   Profile Picture
+

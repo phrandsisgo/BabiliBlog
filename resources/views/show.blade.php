@@ -9,6 +9,7 @@
     <p> {{$post ->title}}</p>
     <p>{{$post -> content}}</p>
     <p>the id is {{$post -> id}}</p>
+    <a href="/post_bearbeiten/{{$post -> id}}"> Bearbeiten</a>
     <h2>Comments</h2>
     <ul>
         @foreach($post->comments as $comment)

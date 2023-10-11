@@ -11,9 +11,7 @@
         <li>menu 2</li>
     </ul>
 </div>
-@endsection
 
-@section('content')
 
 <div class="main">
     <div class="header">
@@ -21,6 +19,10 @@
             <h1>Header</h1>
         </div>
     </div>             
+@endsection
+
+@section('content')
+
     
     <div class="content">
 

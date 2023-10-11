@@ -21,11 +21,11 @@ body, html {
 
 }
 
-body {
+/* body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
-}
+} */
 
 .grid-container {
     display: grid;
@@ -46,19 +46,21 @@ body {
 
 .sidepanel 
 {
-    grid-row-start: 1;
-    grid-row-end: 4;
+    /* grid-row-start: 1;
+    grid-row-end: 4; */
     background: rgb(161, 161, 161) !important;
     //background: rgba(255, 0, 170, 0.461);
     color: black !important;
-    margin-bottom: 5px;
-    margin-top: 10px;
-    margin-left: 10px;
-    max-width: 25vh;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    min-width: 200px;
     border-radius: 15px;
     //position: fixed;
     box-shadow: 2px 2px 4px #000000;
-    z-index: 600;
+    text-align: center;
+    align-items: center;
+    display: flex;
 }
 
 .header {
@@ -68,18 +70,22 @@ body {
     background: rgb(160, 160, 160) !important;
     color: #fff;
     padding: 10px;
-    height: 10vh;
+    height: 50px;
     text-align: center;
-    margin-left: 10px;
+/*     margin-left: 10px;
     margin-right: 10px;
-    margin-top: 10px;
+    margin-top: 10px; */
     border-radius: 15px;
     box-shadow: 2px 2px 4px #000000;
-    position: fixed;
+    position: sticky;
     top: 0; /* Stick to the top of the viewport */
-    width: 85%; /* Take up the full width */
+    width: 100%; /* Take up the full width */
     z-index: 1000; /* Ensure it appears on top */
-    
+}
+
+.header h1
+{
+    height: 40px;
 }
 
 .footer {
@@ -102,8 +108,10 @@ body {
 {
     padding: 20px;
     //background: white;
-    margin: 20px;
-    margin-top: 80px;
+    margin-top: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    //max-width: 1000px;
     //box-shadow: 2px 2px 4px #000000;
     //background-image: url('/public/background_1.jpg');
 }
@@ -118,25 +126,30 @@ body {
     background-color: rgb(204, 204, 204);
     text-align: center;
     padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
     font-size: 20px;
     border-radius: 25px;
     margin: 35px;
     color: black;
     box-shadow: 2px 2px 4px #000000;
-
+    text-align: left;
+    
 }
 
 .content-2
 {
-    background-color: rgba(128, 128, 128, 0.215);
+    background-color: rgb(204, 204, 204);
     text-align: center;
     padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
     font-size: 20px;
     border-radius: 25px;
     margin: 35px;
     color: black;
     box-shadow: 2px 2px 4px #000000;
-
+    text-align: left;
 }
 
 
@@ -144,8 +157,16 @@ body {
 body {
     display: flex;
     flex-direction: row;
+    width: 100vw;
 }
 .main{
     overflow-y: scroll;
     height: 100vh;
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    align-items: center;
 }

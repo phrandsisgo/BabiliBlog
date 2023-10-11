@@ -1,3 +1,5 @@
+{{-- WRITTEN BY SCARRUS --}}
+
 @extends('/components/layout')
 
 
@@ -5,21 +7,17 @@
 @endsection
 
 @section('header')
-<div class="sidepanel">
-    <ul>
+    <div class="sidepanel">
         <li>menu 1</li>
         <li>menu 2</li>
-    </ul>
-</div>
+    </div>
 @endsection
 
 @section('content')
 
 <div class="main">
     <div class="header">
-        <div>
-            <h1>Header</h1>
-        </div>
+        <p>Header</p>
     </div>             
     
     <div class="content">

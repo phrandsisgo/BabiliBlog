@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,12 @@ Route::get('/register', function () {
 })->name ('register');
 Route::get('/edit_acc', function () {
     return view('edit_acc');
+});
+Route::get('/new_blog', function () {
+    return view('new_blog')->name('new_blog');
+});
+Route::get('/edit_blog', function () {
+    return view('edit_blog')->name('edit_blog');
 })->name('edit_acc');
 Route::get('/new_blog', function () {
     return view('new_blog');
@@ -36,6 +43,13 @@ Route::get('/post', function () {
     return view('post');
 })->name ('post');
 
+
+Route::get ('/display_posts', [BlogController::class, 'feed']);//route für entwicklung von Francisco
+
+
+Route::get('/welcome', function () {
+    return view('welcome');
+})->middleware(['auth', 'verified'])->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

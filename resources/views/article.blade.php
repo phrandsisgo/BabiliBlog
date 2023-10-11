@@ -20,7 +20,7 @@
 <div class="main">
     <div class="header">
         <div>
-            <h1>Header</h1>
+            <h1>Article</h1>
         </div>
     </div>             
     

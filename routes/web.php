@@ -15,6 +15,11 @@ use App\Http\Controllers\BlogController;
 |
 */
 
+// Route::get('/', 'BlogController')->name('home');
+// Route::get('/posts', 'PostsController')->name('posts');
+
+
+
 Route::get('/', function () {
     return view('welcome');
 })->name ('welcome');
@@ -38,11 +43,15 @@ Route::get('/new_blog', function () {
 })->name ('new_blog');
 Route::get('/edit_blog', function () {
     return view('edit_blog');
-})->name ('edit_blog');
+})->name('edit_blog');
 Route::get('/post', function () {
     return view('post');
-})->name ('post');
+})->name('post');
 
+
+Route::get('/article', function () {
+    return view('article');
+})->name ('article');
 
 Route::get ('/display_posts', [BlogController::class, 'feed']);//route für entwicklung von Francisco
 

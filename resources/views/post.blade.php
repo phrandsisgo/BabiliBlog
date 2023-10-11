@@ -1,5 +1,3 @@
-{{-- WRITTEN BY SCARRUS --}}
-
 @extends('/components/layout')
 
 
@@ -20,7 +18,9 @@
 
 <div class="main">
     <div class="header">
-        <p>Header</p>
+        <div>
+            <h1>Header</h1>
+        </div>
     </div>             
     
     <div class="content">

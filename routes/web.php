@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,48 +16,48 @@ use App\Http\Controllers\BlogController;
 
 Route::get('/', function () {
     return view('welcome');
-})->name ('welcome');
-Route::get('/index', function () {
-    return view('index');
-})->name('index');
-Route::get('/register', function () {
-    return view('register');
-})->name ('register');
-Route::get('/edit_acc', function () {
-    return view('edit_acc');
 });
-Route::get('/new_blog', function () {
-    return view('new_blog')->name('new_blog');
-});
-Route::get('/edit_blog', function () {
-    return view('edit_blog')->name('edit_blog');
-})->name('edit_acc');
-Route::get('/new_blog', function () {
-    return view('new_blog');
-})->name ('new_blog');
-Route::get('/edit_blog', function () {
-    return view('edit_blog');
-})->name ('edit_blog');
-Route::get('/post', function () {
-    return view('post');
-})->name ('post');
-
-
-Route::get ('/display_posts', [BlogController::class, 'feed']);//route für entwicklung von Francisco
-
-
-Route::get('/welcome', function () {
-    return view('welcome');
-})->middleware(['auth', 'verified'])->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+   
+    // My Blogs:
+    Route::get('/my_blogs', [BlogController::class, 'myBlogs'])->name('my_blogs');
+    Route::get('/my_blogs/{category}', [BlogController::class, 'myBlogsByCategory'])->name('my_blogs.category');
+    Route::get('/edit_blog/{id}', [BlogController::class, 'editBlogPost'])->name('edit_blog');
+    Route::post('/update_blog/{id}', [BlogController::class, 'updateBlogPost'])->name('update_blog');
+    Route::post('/delete_blog/{id}', [BlogController::class, 'deleteBlogPost'])->name('delete_blog');
+    
+    // New Blog:
+    Route::get('/new_blog', [BlogController::class, 'createBlogPage'])->name('new_blog');
+    Route::post('/new_blog', [BlogController::class, 'storeBlogPost'])->name('new_blog.store');
+    
+    // My Account:
+    Route::get('/my_acc', [BlogController::class, 'myAcc'])->name('my_acc');
+    Route::get('/edit_acc/{id}', [BlogController::class, 'editAccPost'])->name('edit_acc');
+    Route::post('/update_acc/{id}', [BlogController::class, 'updateAccPost'])->name('update_acc');
+    Route::post('/delete_acc/{id}', [BlogController::class, 'deleteAccPost'])->name('delete_acc');
+    
+    // New Account:
+    Route::get('/register', [AccountController::class, 'registerPage'])->name('register');
+    Route::post('/register', [AccountController::class, 'storeAcc'])->name('register.store');
+    
+    // Blogs/Feed
+    Route::get('/post/{id}', [BlogController::class, 'viewPost'])->name('view_post');
+    Route::get('/post', [BlogController::class, 'viewPosts'])->name('posts');
+        //  Comments
+    Route::get('/post/{id}/comments', [CommentController::class, 'viewComments'])->name('view_comments');
+    Route::post('/post/{id}/comment', [CommentController::class, 'postComment'])->name('comment_post');
+        // Likes
+    Route::get('/post/{id}/likes', [LikeController::class, 'viewlikes'])->name('view_likes');
+    Route::post('/post/{id}/like', [LikeController::class, 'postLike'])->name('like_post');
+        // Dislikes
+    Route::get('/post/{id}/dislikes', [LikeController::class, 'viewDislikes'])->name('view_dislikes');
+    Route::post('/post/{id}/dislike', [LikeController::class, 'dislikePost'])->name('dislike_post');
+
 });
 
 require __DIR__.'/auth.php';

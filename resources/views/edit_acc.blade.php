@@ -21,14 +21,11 @@
         @csrf
         @method('PUT')
 
-        <label for="profile_picture">Profile Picture:</label>
-        <input type="file" name="profile_picture" id="profile_picture"><br>
+        <label for="profile_image">Profile Image:</label>
+        <input type="file" name="profile_image" id="profile_image"><br>
 
-        <label for="first_name">First Name:</label>
-        <input type="text" name="first_name" id="first_name" value="{{ old('first_name', $user->first_name) }}"><br>
-
-        <label for="last_name">Last Name:</label>
-        <input type="text" name="last_name" id="last_name" value="{{ old('last_name', $user->last_name) }}"><br>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="{{ old('name', $user->name) }}"><br>
 
         <label for="email">Email:</label>
         <input type="email" name="email" id="email" value="{{ old('email', $user->email) }}"><br>

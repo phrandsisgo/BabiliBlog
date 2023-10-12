@@ -17,4 +17,18 @@ class BlogController extends Controller
         $post = Post::with('comments')->findOrFail($id);
         return view('show', ['post' => $post]);
     }
+
+    // edit the post 
+    public function update(Request $request, Post $post)
+    {
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'content' => 'required',
+        ]);
+
+        $post->update($validatedData);
+
+        return redirect()->route('posts.show', $post);
+    }
 }
+

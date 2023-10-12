@@ -54,7 +54,7 @@ Route::get('/article', function () {
 })->name ('article');
 
 Route::get ('/display_posts', [BlogController::class, 'feed']);//route für entwicklung von Francisco
-
+Route::get('/show/{id}', [BlogController::class, 'show']);//route für EntwicklungsZwecke von Francisco
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -68,6 +68,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+//Route::put('/posts/{post}')->name('posts.update');
+Route::get('/posts',function(){
+    return view('edit_blog');
 });
 
 require __DIR__.'/auth.php';

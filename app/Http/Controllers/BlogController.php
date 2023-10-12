@@ -27,12 +27,12 @@ class BlogController extends Controller
             'title' => 'required|max:30|min:3',
             'content' => 'required|max:300|min:3',
         ]);
-        dd('something');
+        //dd('something');
         Post::where('id', $id)->update([
             'title' => $request->title,
             'content' => $request->content,
             'updated_at' => now()
         ]);
-        return redirect('/display_posts'.$id);
+        return redirect('/display_posts');
     }
 }

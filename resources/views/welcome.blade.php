@@ -42,10 +42,6 @@
             <br><br>
             <p>Dies hier sollte verständlich sein!</p>
         </div>
-
-        <div class="footer">
-            <p>&copy; 2023 TechWizzards</p>
-        </div>
     </div>
 
 

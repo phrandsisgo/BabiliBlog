@@ -26,6 +26,9 @@
 
          
 @yield('content')
+<div class="footer">
+    <p>&copy; 2023 TechWizzards</p>
+</div>
 </div>
 @yield('footer')
         {{-- <p>&copy; 2023 TechWizzards</p> --}}

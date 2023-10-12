@@ -44,6 +44,14 @@ $content: padding(15px), color(red);
 $content-title: $neon-text, text-shadow;
 $content: $neon-text;
 
+a 
+{
+    text-decoration: none;
+    color: white;
+    text-align: left;
+    align-items: left;
+}
+
 body, html {
     height: 100%;
     margin: 0;
@@ -96,11 +104,10 @@ body, html {
     border-radius: 10px;
     //position: fixed;
     box-shadow: $shadow;
-    text-align: left;
-    align-items: center;
     display: flex;
     flex-direction: column; /* Display items vertically */
     align-items: center; /* Center items horizontally */
+    text-align: left;
     justify-content: center;
     font-family: blanka;
     text-shadow: $text-shadow;

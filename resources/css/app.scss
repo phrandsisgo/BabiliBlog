@@ -48,49 +48,63 @@ body, html {
 {
     /* grid-row-start: 1;
     grid-row-end: 4; */
-    background: rgb(161, 161, 161) !important;
+    background: rgb(108, 69, 69) !important;
     //background: rgba(255, 0, 170, 0.461);
+    //background: white;
     color: black !important;
     margin-bottom: 20px;
     margin-top: 20px;
     margin-left: 20px;
-    min-width: 200px;
-    border-radius: 15px;
+    min-width: 175px;
+    border-radius: 10px;
     //position: fixed;
     box-shadow: 2px 2px 4px #000000;
-    text-align: center;
+    text-align: left;
     align-items: center;
     display: flex;
+    flex-direction: column; /* Display items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center;
+}
+
+ul 
+{
+    list-style: none;
 }
 
 .header {
     //background-color: #333;
-    //background: rgb(108, 73, 136);
+    background: rgb(108, 69, 69) !important;
     //background: rgba(0, 0, 0, 0.188);
-    background: rgb(160, 160, 160) !important;
-    color: #fff;
-    padding: 10px;
+    //background: rgb(160, 160, 160) !important;
+    //background: white;
+    color: black;
+    //padding: 10px;
     height: 50px;
     text-align: center;
 /*     margin-left: 10px;
     margin-right: 10px;
     margin-top: 10px; */
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: 2px 2px 4px #000000;
     position: sticky;
     top: 0; /* Stick to the top of the viewport */
     width: 100%; /* Take up the full width */
     z-index: 1000; /* Ensure it appears on top */
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
-.header h1
+.header p
 {
-    height: 40px;
+    padding: 16px;
 }
 
 .footer {
     //background-color: white !important;
-    color: black;
+    color: white;
     padding: 10px;
     text-align: right !important;
     height: 1vh;
@@ -108,9 +122,10 @@ body, html {
 {
     padding: 20px;
     //background: white;
-    margin-top: 50px;
+    //margin-top: 10px;
     width: 100%;
     box-sizing: border-box;
+    align-items: center;
     //max-width: 1000px;
     //box-shadow: 2px 2px 4px #000000;
     //background-image: url('/public/background_1.jpg');
@@ -123,29 +138,30 @@ body, html {
 
 .content-1
 {
-    background-color: rgb(204, 204, 204);
+    //background-color: rgb(204, 204, 204);
+    background: white;
     text-align: center;
     padding: 20px;
     padding-left: 30px;
     padding-right: 30px;
-    font-size: 20px;
-    border-radius: 25px;
+    font-size: 16.5px;
+    border-radius: 10px;
     margin: 35px;
     color: black;
     box-shadow: 2px 2px 4px #000000;
     text-align: left;
-    
 }
 
 .content-2
 {
-    background-color: rgb(204, 204, 204);
+    //background-color: rgb(204, 204, 204);
+    background: white;
     text-align: center;
-    padding: 20px;
+    padding: 18px;
     padding-left: 30px;
     padding-right: 30px;
-    font-size: 20px;
-    border-radius: 25px;
+    font-size: 16.5px;
+    border-radius: 10px;
     margin: 35px;
     color: black;
     box-shadow: 2px 2px 4px #000000;

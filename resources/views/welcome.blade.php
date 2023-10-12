@@ -8,11 +8,9 @@
 
 @section('header')
 <div class="sidepanel">
-    <ul>
-        <li><a href="{{ route('welcome') }}">Welcome</a></li>
-        <li><a href="{{ route('post') }}">Post</a></li>
-        <li><a href="{{ route('article') }}">Article</a></li>
-    </ul>
+    <a href="{{ route('welcome') }}">Welcome</a>
+    <a href="{{ route('post') }}">Post</a>
+    <a href="{{ route('article') }}">Article</a>
 </div>
 @endsection
 
@@ -20,7 +18,7 @@
 
 <div class="main">
     <div class="header">
-        <p>Header</p>
+        Header
     </div>             
     
     <div class="content">

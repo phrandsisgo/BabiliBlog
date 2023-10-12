@@ -19,9 +19,14 @@
     <a href="{{ route('post') }}">Post</a>
     <a href="{{ route('article') }}">Article</a>
 </div>
+<div class="main">
+<div class="header">
+    <h1>TechWizzards</h1>
+</div>             
+
          
 @yield('content')
-
+</div>
 @yield('footer')
         {{-- <p>&copy; 2023 TechWizzards</p> --}}
 

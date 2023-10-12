@@ -11,11 +11,6 @@
 
 @section('content')
 
-<div class="main">
-    <div class="header">
-        <h1>TechWizzards</h1>
-    </div>             
-    
     <div class="content">
 
         <div class="content-1">
@@ -52,7 +47,7 @@
             <p>&copy; 2023 TechWizzards</p>
         </div>
     </div>
-</div>
+
 
 @endsection
 

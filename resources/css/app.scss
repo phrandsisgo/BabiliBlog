@@ -34,12 +34,15 @@
     src: url('/fonts/raptor_sans_font.ttf');  
 } 
 
-$background: rgba(124, 128, 194, 0.832);
+$background: rgba(124, 128, 194,);
 $shadow: 4px 4px 8px #fc34ff;
 $neon-text: #ffffff;
-$text-shadow: 1px 1px 2px rgba(200, 0, 255, 0.605);
+$text-shadow: 2px 2px 4px rgba(200, 0, 255, 0.605);
 $content-background: rgba(0, 0, 0, 0.752);
 $content: padding(15px), color(red);
+
+$content-title: $neon-text, text-shadow;
+$content: $neon-text;
 
 body, html {
     height: 100%;
@@ -85,11 +88,11 @@ body, html {
     background: $background;
     //background: rgba(255, 0, 170, 0.461);
     //background: white;
-    color: black !important;
+    color: white !important;
     margin-bottom: 20px;
-    margin-top: 20px;
-    margin-left: 20px;
-    min-width: 175px;
+    margin-top: 7px;
+    margin-left: 7px;
+    min-width: 135px;
     border-radius: 10px;
     //position: fixed;
     box-shadow: $shadow;
@@ -100,11 +103,12 @@ body, html {
     align-items: center; /* Center items horizontally */
     justify-content: center;
     font-family: blanka;
+    text-shadow: $text-shadow;
 }
 
 .logo
 {
-     max-width: 155px;
+     max-width: 125px;
      height: auto;
 }
 
@@ -138,6 +142,12 @@ ul
     display: flex;
     justify-content: center;
     font-family: blanka;
+}
+
+.header h1
+{
+    color: white;
+    text-shadow: $text-shadow;
 }
 
 .header p
@@ -194,10 +204,14 @@ ul
     border-radius: 10px;
     margin: 35px;
     color: $neon-text;
-    text-shadow: $text-shadow;
     box-shadow: $shadow;
     text-align: left;
     font-family: outage-cut !important;
+}
+
+.content-1 h1
+{
+    text-shadow: $text-shadow;
 }
 
 .content-2
@@ -220,9 +234,9 @@ ul
 
 .content-2 h2
 {
-    font-family: raptor !important;
-    font-size: 32px;
-
+    //Alternative Title Font!!
+    //font-family: raptor !important;
+    text-shadow: $text-shadow;
 }
 
 
@@ -237,7 +251,7 @@ body {
     height: 100vh;
     box-sizing: border-box;
     width: 100%;
-    padding-top: 20px;
+    //padding-top: 20px;
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 50px;

@@ -14,10 +14,13 @@
 <body>
     
     @yield('header')
-    <div class="sidepanel">
-        <a href="{{ route('welcome') }}">Welcome</a>
-        <a href="{{ route('post') }}">Post</a>
-        <a href="{{ route('article') }}">Article</a>
+    <div class="side">
+        <div class="sidepanel">
+            <a href="{{ route('welcome') }}">Welcome</a>
+            <a href="{{ route('post') }}">Post</a>
+            <a href="{{ route('article') }}">Article</a>
+
+        </div>
     </div>
 
     <div class="main">

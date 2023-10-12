@@ -4,9 +4,42 @@
 
 // WRITTEN BY SCARRUS
 
-$background: #1515156B;
-$content: padding(15px), color(red);
+@font-face 
+{ 
+    font-family: blanka; 
+    src: url('/fonts/blanka/Blanka.otf');  
+} 
 
+@font-face 
+{ 
+    font-family: outage; 
+    src: url('/fonts/Outage/Outage.ttf');  
+} 
+
+@font-face 
+{ 
+    font-family: outage-cut; 
+    src: url('/fonts/Outage/Outage_Cut.ttf');  
+} 
+
+@font-face 
+{ 
+    font-family: borg; 
+    src: url('/fonts/Borg.ttf');  
+} 
+
+@font-face 
+{ 
+    font-family: raptor; 
+    src: url('/fonts/raptor_sans_font.ttf');  
+} 
+
+$background: rgba(124, 128, 194, 0.832);
+$shadow: 4px 4px 8px #fc34ff;
+$neon-text: #ffffff;
+$text-shadow: 1px 1px 2px rgba(200, 0, 255, 0.605);
+$content-background: rgba(0, 0, 0, 0.752);
+$content: padding(15px), color(red);
 
 body, html {
     height: 100%;
@@ -48,7 +81,8 @@ body, html {
 {
     /* grid-row-start: 1;
     grid-row-end: 4; */
-    background: rgb(108, 69, 69) !important;
+    //background: rgba(194, 124, 124, 0.767) !important;
+    background: $background;
     //background: rgba(255, 0, 170, 0.461);
     //background: white;
     color: black !important;
@@ -58,13 +92,20 @@ body, html {
     min-width: 175px;
     border-radius: 10px;
     //position: fixed;
-    box-shadow: 2px 2px 4px #000000;
+    box-shadow: $shadow;
     text-align: left;
     align-items: center;
     display: flex;
     flex-direction: column; /* Display items vertically */
     align-items: center; /* Center items horizontally */
     justify-content: center;
+    font-family: blanka;
+}
+
+.logo
+{
+     max-width: 155px;
+     height: auto;
 }
 
 ul 
@@ -72,12 +113,13 @@ ul
     list-style: none;
 }
 
-.header {
+.header 
+{
     //background-color: #333;
-    background: rgb(108, 69, 69) !important;
+    //background: rgb(108, 69, 69) !important;
     //background: rgba(0, 0, 0, 0.188);
     //background: rgb(160, 160, 160) !important;
-    //background: white;
+    background: $background;
     color: black;
     //padding: 10px;
     height: 50px;
@@ -86,7 +128,7 @@ ul
     margin-right: 10px;
     margin-top: 10px; */
     border-radius: 10px;
-    box-shadow: 2px 2px 4px #000000;
+    box-shadow: $shadow;
     position: sticky;
     top: 0; /* Stick to the top of the viewport */
     width: 100%; /* Take up the full width */
@@ -95,6 +137,7 @@ ul
     text-align: center;
     display: flex;
     justify-content: center;
+    font-family: blanka;
 }
 
 .header p
@@ -116,6 +159,9 @@ ul
 {
     //padding-right: 10px;
     padding-bottom: 10px;
+    //font-family: outage !important;
+    font-family: blanka;
+    font-size: 16px;
 }
 
 .content 
@@ -138,34 +184,45 @@ ul
 
 .content-1
 {
-    //background-color: rgb(204, 204, 204);
-    background: white;
+    background-color: $content-background;
+    //background: white;
     text-align: center;
     padding: 20px;
     padding-left: 30px;
     padding-right: 30px;
-    font-size: 16.5px;
+    font-size: 14px;
     border-radius: 10px;
     margin: 35px;
-    color: black;
-    box-shadow: 2px 2px 4px #000000;
+    color: $neon-text;
+    text-shadow: $text-shadow;
+    box-shadow: $shadow;
     text-align: left;
+    font-family: outage-cut !important;
 }
 
 .content-2
 {
-    //background-color: rgb(204, 204, 204);
-    background: white;
+    background-color: $content-background;
+    //background: white;
     text-align: center;
     padding: 18px;
     padding-left: 30px;
     padding-right: 30px;
-    font-size: 16.5px;
+    font-family: outage-cut !important;
+    //font-family: raptor !important;
+    font-size: 14px;
     border-radius: 10px;
     margin: 35px;
-    color: black;
-    box-shadow: 2px 2px 4px #000000;
+    color: $neon-text;
+    box-shadow: $shadow;
     text-align: left;
+}
+
+.content-2 h2
+{
+    font-family: raptor !important;
+    font-size: 32px;
+
 }
 
 

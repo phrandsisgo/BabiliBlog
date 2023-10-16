@@ -13,7 +13,7 @@
 
     <div class="content">
 
-    @foreach ($posts as $post) 
+    {{-- @foreach ($posts as $post)  --}}
         <div class="content-1">
             <h1>A new class of Smartphone</h1>
             <br><br>
@@ -47,7 +47,7 @@
     </div>
 
 
-    @endforeach
+    {{-- @endforeach --}}
 @endsection
 
 @section('footer')

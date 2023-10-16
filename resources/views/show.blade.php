@@ -16,12 +16,16 @@
             <p>{{$post -> content}}</p>
             <p>the id is {{$post -> id}}</p>
             <br>
-   
+            
+            @auth
+                
+                
             @if(auth()->user()->id == $post->user_id)
                 
             <a href="/post_bearbeiten/{{$post -> id}}"> Bearbeiten</a>
             @endif 
             
+            @endauth
             <h2>Comments</h2>
             <ul>
                 @foreach($post->comments as $comment)

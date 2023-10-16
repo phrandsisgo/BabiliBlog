@@ -70,10 +70,15 @@ Route::get('/article', function () {
 Route::get ('/display_posts2', [BlogController::class, 'feed2']);//route für entwicklung von Alex
 
 Route::get('/post_bearbeiten/{id}', [BlogController::class, 'edit_post']);//route für entwicklung von Francisco
+Route::get('/kommentar_bearbeiten/{id}', [BlogController::class, 'edit_comment']);//route für entwicklung von Francisco
 
 Route::post('/post_update/{id}', [BlogController::class, 'post_update'])
     ->middleware(['check_post_author'])
     ->name('post_update');//endgültige Route von Francisco
+
+Route::post('/update-comment/{id}', [BlogController::class, 'update_comment'])
+    //->middleware(['check_comment_author'])
+    ->name('kommentar_bearbeiten');//endgültige Route von Francisco
 
 Route::get('/welcome', function () {
     return view('welcome');

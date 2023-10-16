@@ -17,8 +17,7 @@
             <p>the id is {{$post -> id}}</p>
             <br>
             
-    {{--    THIS SECTION IS NOT WORKING
-        
+   
             @if(auth()->user()->id == $post->user_id)
                 
             <a href="/post_bearbeiten/{{$post -> id}}"> Bearbeiten</a>
@@ -36,4 +35,5 @@
 
 @section('footer')
 @endsection
+
 

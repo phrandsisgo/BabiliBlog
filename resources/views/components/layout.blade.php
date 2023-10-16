@@ -31,8 +31,8 @@
             <a href="{{ route('index') }}">Main</a>
             <a href="{{ route('welcome') }}">Category 1</a>
             <a href="{{ route('welcome') }}">Category 2</a>
-            <a href="{{ route('article') }}">Register</a>
             <a href="{{ route('article') }}">Login</a>            
+            <a href="{{ route('article') }}">Register</a>
         </div>
         
         @endif

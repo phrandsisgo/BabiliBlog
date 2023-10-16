@@ -15,6 +15,11 @@
     
     @yield('header')
     <div class="side">
+
+{{--         THIS NEEDS FURTHER TESTING
+    
+        @if(auth()->user()->id == $post->user_id)
+                
         <div class="sidepanel">
             <a href="{{ route('index') }}">Index</a>
             <a href="{{ route('welcome') }}">Category 1</a>
@@ -25,8 +30,35 @@
             <a href="{{ route('article') }}">Register</a>
             <a href="{{ route('article') }}">Login</a>            
         </div>
-    </div>
 
+        @else
+
+        <div class="sidepanel">
+            <a href="{{ route('index') }}">Index</a>
+            <a href="{{ route('welcome') }}">Category 1</a>
+            <a href="{{ route('welcome') }}">Category 2</a>
+            <a href="{{ route('welcome') }}">My Feeds</a>
+            <a href="{{ route('post') }}">New Blog</a>
+            <a href="{{ route('article') }}">Account</a>
+            <a href="{{ route('article') }}">Register</a>
+            <a href="{{ route('article') }}">Login</a>            
+        </div>
+        
+        @endif --}}
+
+
+    <div class="sidepanel">
+        <a href="{{ route('index') }}">Index</a>
+        <a href="{{ route('welcome') }}">Category 1</a>
+        <a href="{{ route('welcome') }}">Category 2</a>
+        <a href="{{ route('welcome') }}">My Feeds</a>
+        <a href="{{ route('post') }}">New Blog</a>
+        <a href="{{ route('article') }}">Account</a>
+        <a href="{{ route('article') }}">Register</a>
+        <a href="{{ route('article') }}">Login</a>            
+    </div>
+    </div>
+    
     <div class="main">
         <div class="header">
             <h1>TechWizzards</h1>

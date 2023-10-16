@@ -1,26 +1,82 @@
-
 @import "register.scss";
 
 @import "edit_acc.scss";
 
 // WRITTEN BY SCARRUS
 
-$background: #1515156B;
+@font-face 
+{ 
+    font-family: blanka; 
+    src: url('/fonts/blanka/Blanka.otf');  
+} 
+
+@font-face 
+{ 
+    font-family: outage; 
+    src: url('/fonts/Outage/Outage.ttf');  
+} 
+
+@font-face 
+{ 
+    font-family: outage-cut; 
+    src: url('/fonts/Outage/Outage_Cut.ttf');  
+} 
+
+@font-face 
+{ 
+    font-family: borg; 
+    src: url('/fonts/Borg.ttf');  
+} 
+
+@font-face 
+{ 
+    font-family: raptor; 
+    src: url('/fonts/raptor_sans_font.ttf');  
+} 
+
+$background: rgba(124, 128, 194,);
+//$shadow:  6px 6px 12px #fc34ff;
+//$shadow:  3.5px 2px 4px 6px #fc34ff;
+$shadow: 3px 4px 12px 4px #fc34ff;
+$neon-text: #ffffff;
+$text-shadow: 2px 2px 4px rgba(200, 0, 255, 0.605);
+$title-shadow: 4px 4px 8px rgba(200, 0, 255, 0.605);
+$content-background: rgba(0, 0, 0, 0.752);
 $content: padding(15px), color(red);
 
+$content-title: $neon-text, text-shadow;
+$content: $neon-text;
+
+a 
+{
+    text-decoration: none;
+    color: white;
+    text-align: left;
+    align-items: left;
+}
 
 body, html {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: white;
+    //background-color: rgb(255, 255, 255);
+    //background: white;
+    //background: rgba(228, 190, 55, 0.513) !important;
+    background-color: black;
+    //z-index: 500;
+    background-image: url('/public/background_1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-body {
+/* body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
-}
+} */
 
 .grid-container {
     display: grid;
@@ -39,29 +95,100 @@ body {
     border-radius: 25px;
 }
 
-.sidepanel 
+.side
 {
-    grid-row-start: 1;
-    grid-row-end: 4;
-    background: rgb(108, 73, 136) !important;
-    color: #fff !important;
-    margin-bottom: 25px;
-    width: 350vh;
-    //position: fixed;
+    display: flex;
+    flex-direction: column; /* Display items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center;
 }
 
-.header {
+.side a:hover
+{
+    color: rgba(0, 0, 255, 0.541);
+}
+
+.sidepanel 
+{
+    /* grid-row-start: 1;
+    grid-row-end: 4; */
+    //background: rgba(194, 124, 124, 0.767) !important;
+    background: $background;
+    //background: rgba(255, 0, 170, 0.461);
+    //background: white;
+    color: white !important;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    min-width: 115px;
+    border-radius: 10px;
+    //position: fixed;
+    box-shadow: $shadow;
+    display: flex;
+    flex-direction: column; /* Display items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: left;
+    justify-content: center;
+    font-family: blanka;
+    text-shadow: $text-shadow;
+    //max-height: 300px;
+    min-height: 80px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.logo
+{
+     max-width: 125px;
+     height: auto;
+}
+
+ul 
+{
+    list-style: none;
+}
+
+.header 
+{
     //background-color: #333;
-    background: rgb(108, 73, 136);
-    color: #fff;
-    padding: 10px;
-    height: 10vh;
+    //background: rgb(108, 69, 69) !important;
+    //background: rgba(0, 0, 0, 0.188);
+    //background: rgb(160, 160, 160) !important;
+    background: $background;
+    color: black;
+    //padding: 10px;
+    height: 50px;
     text-align: center;
+/*     margin-left: 10px;
+    margin-right: 10px;  */
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: $shadow;
+    position: sticky;
+    top: 0; /* Stick to the top of the viewport */
+    width: 100%; /* Take up the full width */
+    z-index: 1000; /* Ensure it appears on top */
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-family: blanka;
+}
+
+.header h1
+{
+    color: white;
+    text-shadow: $text-shadow;
+}
+
+.header p
+{
+    padding: 16px;
 }
 
 .footer {
-    background-color: #1515156B !important;
-    color: #fff;
+    //background-color: white !important;
+    color: white;
     padding: 10px;
     text-align: right !important;
     height: 1vh;
@@ -71,13 +198,28 @@ body {
 
 .footer p
 {
-    padding-right: 10px;
+    //padding-right: 10px;
+    padding-bottom: 10px;
+    //font-family: outage !important;
+    font-family: blanka;
+    font-size: 16px;
+    text-shadow: $text-shadow;
 }
 
-// .content 
-// {
-//     padding: 20px;
-// }
+.content 
+{
+    padding: 20px;
+    //background: white;
+    //margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    //max-height: 55%;
+    //max-width: 1000px;
+    //box-shadow: 2px 2px 4px #000000;
+    //background-image: url('/public/background_1.jpg');
+    min-height: 80vh;
+}
 
 // .content {
 //     padding: 20px;
@@ -86,31 +228,87 @@ body {
 
 .content-1
 {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: $content-background;
+    //background: white;
     text-align: center;
-    padding: 20px;
-    font-size: 20px;
-    border-radius: 25px;
-    margin: 20px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 14px;
+    border-radius: 10px;
+    margin: 35px;
+    color: $neon-text;
+    box-shadow: $shadow;
+    text-align: left;
+    font-family: outage-cut !important;
+
+    h1, h2, h3, h4, h5, h6 
+    {
+        text-shadow: $title-shadow;
+        font-family: outage-cut !important;
+    }
 }
+
+.content-1 a:hover
+{
+    color: rgba(255, 94, 0, 0.541);
+}
+
+// By Gerber-Mister
+.view-button {
+    background-color: #1D9BF0;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-button:hover {
+    background-color: #0A6AB5;
+}
+//
 
 .content-2
 {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: $content-background;
+    //background: white;
     text-align: center;
-    padding: 20px;
-    font-size: 20px;
-    border-radius: 25px;
-    margin: 20px;
-}
+    padding: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: outage-cut !important;
+    //font-family: raptor !important;
+    font-size: 14px;
+    border-radius: 10px;
+    margin: 35px;
+    color: $neon-text;
+    box-shadow: $shadow;
+    text-align: left;
 
+    h1, h2, h3, h4, h5, h6 
+    {
+        font-family: raptor !important;
+        font-size: 34px;
+        text-shadow: $title-shadow;
+    }
+}
 
 // ray added this
 body {
     display: flex;
     flex-direction: row;
+    width: 100vw;
 }
 .main{
     overflow-y: scroll;
     height: 100vh;
+    box-sizing: border-box;
+    width: 100%;
+    //padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    align-items: center;
 }

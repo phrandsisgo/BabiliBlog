@@ -9,6 +9,10 @@
     <p> {{$post ->title}}</p>
     <p>{{$post -> content}}</p>
     <p>the id is {{$post -> id}}</p>
+    @if(auth()->user()->id == $post->user_id)
+        
+    <a href="/post_bearbeiten/{{$post -> id}}"> Bearbeiten</a>
+    @endif
     <h2>Comments</h2>
     <ul>
         @foreach($post->comments as $comment)
@@ -17,3 +21,4 @@
     </ul>
 </body>
 </html>
+

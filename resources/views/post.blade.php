@@ -5,24 +5,9 @@
 @endsection
 
 @section('header')
-<div class="sidepanel">
-    <ul>
-        <li><a href="{{ route('welcome') }}">Welcome</a></li>
-        <li><a href="{{ route('post') }}">Post</a></li>
-        <li><a href="{{ route('article') }}">Article</a></li>
-    </ul>
-</div>
 @endsection
 
 @section('content')
-
-<div class="main">
-    <div class="header">
-        <div>
-            <h1>Header</h1>
-        </div>
-    </div>             
-    
     <div class="content">
 
         <div class="content-1">
@@ -40,19 +25,6 @@
                 At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
             </p>
         </div>
-
-        <div class="content-2">
-            <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-            </p>
-        </div>
-
-        <div class="footer">
-            <p>&copy; 2023 TechWizzards</p>
-        </div>
-    </div>
-</div>
-
 @endsection
 
 @section('footer')

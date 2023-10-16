@@ -51,6 +51,14 @@ Route::get('/post', function () {
 Route ::get('/show/{id}', [BlogController::class, 'show']);//route für EntwicklungsZwecke von Francisco
 
 
+Route::get ('/display_posts', [BlogController::class, 'feed']); // route für entwicklung von Francisco
+
+Route::get ('/show/{id}', [BlogController::class, 'show']); // route für entwicklung von Francisco
+
+Route::get ('/display_users/{id}', [ProfileController::class, 'showProfile'])->name('user_profile'); // route für entwicklung von Luis
+
+Route::post ('/upload_img', [ProfileController::class, 'uploadImg'])->name('upload_img'); // route für entwicklung von Luis
+
 Route::get('/alex_g', function () {
     return view('welcome');
 })->name ('willkommen');
@@ -60,8 +68,7 @@ Route::get('/article', function () {
 })->name ('article');
 
 Route::get ('/display_posts2', [BlogController::class, 'feed2']);//route für entwicklung von Alex
-Route::get('/show/{id}', [BlogController::class, 'show']);//route für EntwicklungsZwecke von Francisco
-Route::get ('/display_posts', [BlogController::class, 'feed']);//route für entwicklung von Francisco
+
 Route::get('/post_bearbeiten/{id}', [BlogController::class, 'edit_post']);//route für entwicklung von Francisco
 
 Route::post('/post_update/{id}', [BlogController::class, 'post_update'])

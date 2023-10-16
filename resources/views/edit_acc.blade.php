@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +17,7 @@
             </ul>
         </div>
     @endif
+
 
     <form method="POST" action="{{ route('acc.update') }}">
         @csrf

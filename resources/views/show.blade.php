@@ -1,19 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>show post</title>
-</head>
-<body>
-    <p> {{$post ->title}}</p>
-    <p>{{$post -> content}}</p>
-    <p>the id is {{$post -> id}}</p>
-    <h2>Comments</h2>
-    <ul>
-        @foreach($post->comments as $comment)
-            <li>{{ $comment->content }}</li>
-        @endforeach
-    </ul>
-</body>
-</html>
+@extends('/components/layout')
+
+
+@section('head')
+@endsection
+
+@section('header')
+@endsection
+
+@section('content')
+    <div class="content">
+        <div class="content-1">
+                
+            <H1> {{$post ->title}}</h1>
+            <br>
+            <p>{{$post -> content}}</p>
+            <p>the id is {{$post -> id}}</p>
+            <br>
+            
+            @auth
+                
+                
+            @if(auth()->user()->id == $post->user_id)
+                
+            <a href="/post_bearbeiten/{{$post -> id}}"> Bearbeiten</a>
+            @endif 
+            
+            @endauth
+            <h2>Comments</h2>
+            <ul>
+                @foreach($post->comments as $comment)
+                    <li>{{ $comment->content }}</li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
+@endsection
+
+@section('footer')
+@endsection
+
+

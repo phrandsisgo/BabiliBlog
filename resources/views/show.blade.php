@@ -23,6 +23,7 @@
             <ul>
                 @foreach($post->comments as $comment)
                 <br>
+                    <h4>User</h4>
                     <li>{{ $comment->content }}</li>
                 @endforeach
             </ul>

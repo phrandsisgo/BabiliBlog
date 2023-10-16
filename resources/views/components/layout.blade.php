@@ -22,6 +22,7 @@
 {{--            TO DO IF TIME LEFT 
             <a href="{{ route('welcome') }}">Category 1</a>
             <a href="{{ route('welcome') }}">Category 2</a> --}}
+            <a href="{{ route('newest') }}">Newest</a>
             <a href="{{ route('welcome') }}">My Feeds</a>
             <a href="{{ route('post') }}">New Blog</a>
             <a href="{{ route('article') }}">Account</a>        

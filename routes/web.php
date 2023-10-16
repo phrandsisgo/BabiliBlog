@@ -51,7 +51,7 @@ Route::get('/post', function () {
 Route ::get('/show/{id}', [BlogController::class, 'show']);//route für EntwicklungsZwecke von Francisco
 
 
-Route::get ('/display_posts', [BlogController::class, 'feed']); // route für entwicklung von Francisco
+Route::get ('/display_posts', [BlogController::class, 'feed'])->name ('newest'); // route für entwicklung von Francisco
 
 Route::get ('/show/{id}', [BlogController::class, 'show']); // route für entwicklung von Francisco
 

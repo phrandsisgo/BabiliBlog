@@ -10,6 +10,8 @@ class Comment extends Model
 {
     use HasFactory;
 
+    protected $with = ['user'];
+
     public function post(){
         return $this->belongsTo(Post::class);
     }

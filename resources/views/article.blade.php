@@ -5,24 +5,9 @@
 @endsection
 
 @section('header')
-<nav class="sidepanel">
-        <ul>
-            <li><a href="{{ route('welcome') }}">Welcome</a></li>
-            <li><a href="{{ route('post') }}">Post</a></li>
-            <li><a href="{{ route('article') }}">Article</a></li>
-        </ul>
-    </nav>
 @endsection
 
-@section('content')
- 
-
-<div class="main">
-    <div class="header">
-        <div>
-            <h1>Article</h1>
-        </div>
-    </div>             
+@section('content')            
     
     <div class="content">
 
@@ -38,16 +23,9 @@
             </p>
         </div>
 
-        <div class="footer">
-            <p>&copy; 2023 TechWizzards</p>
-        </div>
     </div>
-</div>
-        
-    
 
+@endsection
 
-    @endsection
-
-    @section('footer')
-    @endsection
+@section('footer')
+@endsection

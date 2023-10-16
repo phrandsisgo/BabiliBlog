@@ -1,5 +1,3 @@
-{{-- WRITTEN BY SCARRUS --}}
-
 @extends('/components/layout')
 
 
@@ -10,29 +8,35 @@
 @endsection
 
 @section('content')
-
     <div class="content">
-
-    {{-- @foreach ($posts as $post)  --}}
         <div class="content-1">
-            <h1> {{$post ->title}}</h1>
+                
+            <H1> {{$post ->title}}</h1>
+            <br>
             <p>{{$post -> content}}</p>
             <p>the id is {{$post -> id}}</p>
-            <br><br>
+            <br>
+            
+            @auth
+                
+                
+            @if(auth()->user()->id == $post->user_id)
+                
+            <a href="/post_bearbeiten/{{$post -> id}}"> Bearbeiten</a>
+            @endif 
+            
+            @endauth
             <h2>Comments</h2>
             <ul>
                 @foreach($post->comments as $comment)
-                <br>
-                    <h4>The User</h4>
                     <li>{{ $comment->content }}</li>
                 @endforeach
             </ul>
         </div>
     </div>
-
-
-    {{-- @endforeach --}}
 @endsection
 
 @section('footer')
 @endsection
+
+

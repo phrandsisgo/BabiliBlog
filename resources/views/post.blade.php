@@ -25,6 +25,7 @@
                 At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
             </p>
         </div>
+    </div>
 @endsection
 
 @section('footer')

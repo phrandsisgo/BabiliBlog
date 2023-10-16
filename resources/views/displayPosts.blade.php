@@ -18,19 +18,9 @@
         <h3>{{ $post->title }}</h3>
         <p>{{ $post->content }}</p>
         <p>the id is {{$post -> id}}</p>
-
-<!-- Folgendes muss ein Button -->
-        <button class="view-button">
-            <a href="/show/{{$post->id}}">View Show</a>
-        </button>
-
         
-            <h4><a href="/show/{{$post->id}}">View Show</a></h4>
+        <h4><a href="/show/{{$post->id}}">View Show</a></h4>
         
-
-
-
-
     </div>
     @endforeach
     </div>

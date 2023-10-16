@@ -17,4 +17,21 @@ class BlogController extends Controller
         $post = Post::with('comments')->findOrFail($id);
         return view('show', ['post' => $post]);
     }
+
+    public function create() {
+        return view('posts.create');       
+    }
+
+    public function store(Request $request)
+    {
+        $post = Post::create([
+            'user' => $request->user,
+            'title' => $request->title,
+            'text'  => $request->text
+        ]);
+
+
+        return redirect('/posts');
+    }
+
 }

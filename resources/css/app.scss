@@ -35,14 +35,25 @@
 } 
 
 $background: rgba(124, 128, 194,);
-$shadow: 4px 4px 8px #fc34ff;
+//$shadow:  6px 6px 12px #fc34ff;
+//$shadow:  3.5px 2px 4px 6px #fc34ff;
+$shadow: 3px 4px 12px 4px #fc34ff;
 $neon-text: #ffffff;
 $text-shadow: 2px 2px 4px rgba(200, 0, 255, 0.605);
+$title-shadow: 4px 4px 8px rgba(200, 0, 255, 0.605);
 $content-background: rgba(0, 0, 0, 0.752);
 $content: padding(15px), color(red);
 
 $content-title: $neon-text, text-shadow;
 $content: $neon-text;
+
+a 
+{
+    text-decoration: none;
+    color: white;
+    text-align: left;
+    align-items: left;
+}
 
 body, html {
     height: 100%;
@@ -54,7 +65,11 @@ body, html {
     background-color: black;
     //z-index: 500;
     background-image: url('/public/background_1.jpg');
-
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /* body {
@@ -80,6 +95,19 @@ body, html {
     border-radius: 25px;
 }
 
+.side
+{
+    display: flex;
+    flex-direction: column; /* Display items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center;
+}
+
+.side a:hover
+{
+    color: rgba(0, 0, 255, 0.541);
+}
+
 .sidepanel 
 {
     /* grid-row-start: 1;
@@ -90,20 +118,23 @@ body, html {
     //background: white;
     color: white !important;
     margin-bottom: 20px;
-    margin-top: 7px;
-    margin-left: 7px;
-    min-width: 135px;
+    margin-top: 20px;
+    margin-left: 20px;
+    min-width: 115px;
     border-radius: 10px;
     //position: fixed;
     box-shadow: $shadow;
-    text-align: left;
-    align-items: center;
     display: flex;
     flex-direction: column; /* Display items vertically */
     align-items: center; /* Center items horizontally */
+    text-align: left;
     justify-content: center;
     font-family: blanka;
     text-shadow: $text-shadow;
+    //max-height: 300px;
+    min-height: 80px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .logo
@@ -129,8 +160,8 @@ ul
     height: 50px;
     text-align: center;
 /*     margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px; */
+    margin-right: 10px;  */
+    margin-top: 20px;
     border-radius: 10px;
     box-shadow: $shadow;
     position: sticky;
@@ -172,6 +203,7 @@ ul
     //font-family: outage !important;
     font-family: blanka;
     font-size: 16px;
+    text-shadow: $text-shadow;
 }
 
 .content 
@@ -182,6 +214,7 @@ ul
     width: 100%;
     box-sizing: border-box;
     align-items: center;
+    //max-height: 55%;
     //max-width: 1000px;
     //box-shadow: 2px 2px 4px #000000;
     //background-image: url('/public/background_1.jpg');
@@ -197,7 +230,8 @@ ul
     background-color: $content-background;
     //background: white;
     text-align: center;
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 40px;
     padding-left: 30px;
     padding-right: 30px;
     font-size: 14px;
@@ -211,7 +245,7 @@ ul
 
 .content-1 h1, h2, h3, h4, h5, h6
 {
-    text-shadow: $text-shadow;
+    text-shadow: $title-shadow;
 }
 
 .content-2
@@ -237,7 +271,7 @@ ul
     //Alternative Title Font!!
     font-family: raptor !important;
     font-size: 34px;
-    text-shadow: $text-shadow;
+    text-shadow: $title-shadow;
 }
 
 

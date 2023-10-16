@@ -13,25 +13,29 @@
 </head>
 <body>
     
-@yield('header')
-<div class="sidepanel">
-    <a href="{{ route('welcome') }}">Welcome</a>
-    <a href="{{ route('post') }}">Post</a>
-    <a href="{{ route('article') }}">Article</a>
-</div>
-<div class="main">
-<div class="header">
-    <h1>TechWizzards</h1>
-</div>             
+    @yield('header')
+    <div class="side">
+        <div class="sidepanel">
+            <a href="{{ route('welcome') }}">Welcome</a>
+            <a href="{{ route('post') }}">Post</a>
+            <a href="{{ route('article') }}">Article</a>
 
-         
-@yield('content')
-<div class="footer">
-    <p>&copy; 2023 TechWizzards</p>
-</div>
-</div>
-@yield('footer')
-        {{-- <p>&copy; 2023 TechWizzards</p> --}}
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="header">
+            <h1>TechWizzards</h1>
+        </div>             
+
+            
+    @yield('content')
+        <div class="footer">
+            <p>&copy; 2023 TechWizzards</p>
+        </div>
+    </div>
+    @yield('footer')
+            {{-- <p>&copy; 2023 TechWizzards</p> --}}
 
 </body>
 </html>

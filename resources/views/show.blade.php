@@ -30,6 +30,9 @@
             <ul>
                 @foreach($post->comments as $comment)
                     <li>{{ $comment->content }}</li>
+                    @if(auth()->user()->id == $comment->user_id)
+                    <a href="/update-comment/{{$comment -> id}}"> Bearbeiten</a>
+                    @endif
                 @endforeach
             </ul>
         </div>

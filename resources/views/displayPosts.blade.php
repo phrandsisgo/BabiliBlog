@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,5 +22,8 @@
         <a href="/show/{{$post->id}}">View Show</a>
     </div>
     @endforeach
-</body>
-</html>
+    </div>
+@endsection
+
+@section('footer')
+@endsection

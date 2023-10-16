@@ -19,8 +19,9 @@
         @auth       
         <div class="sidepanel">
             <a href="{{ route('welcome') }}">Main</a>
+{{--            TO DO IF TIME LEFT 
             <a href="{{ route('welcome') }}">Category 1</a>
-            <a href="{{ route('welcome') }}">Category 2</a>
+            <a href="{{ route('welcome') }}">Category 2</a> --}}
             <a href="{{ route('welcome') }}">My Feeds</a>
             <a href="{{ route('post') }}">New Blog</a>
             <a href="{{ route('article') }}">Account</a>        
@@ -29,8 +30,9 @@
         @else
         <div class="sidepanel">
             <a href="{{ route('index') }}">Main</a>
+{{--            TO DO IF TIME LEFT 
             <a href="{{ route('welcome') }}">Category 1</a>
-            <a href="{{ route('welcome') }}">Category 2</a>
+            <a href="{{ route('welcome') }}">Category 2</a> --}}
             <a href="{{ route('article') }}">Login</a>            
             <a href="{{ route('article') }}">Register</a>
         </div>

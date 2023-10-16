@@ -1,0 +1,46 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\User;
+
+class EditAccController extends Controller
+{
+    public function edit()
+    {
+        $user = auth()->user();
+
+        return view('edit_acc', compact('user'));
+    }
+
+    public function update(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . auth()->user()->id,
+            'password' => 'nullable|confirmed',
+            'profile_image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        // Benutzerdaten aktualisieren
+        $user = auth()->user();
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+
+        if ($request->has('password')) {
+            $user->password = bcrypt($request->input('password'));
+        }
+
+        if ($request->hasFile('profile_image')) {
+            $image = $request->file('profile_image');
+            $fileName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('profile_images'), $fileName);
+            $user->profile_image = $fileName;
+        }
+
+        $user->save();
+
+        return redirect()->route('edit_acc')->with('success', 'Account updated successfully');
+    }
+}

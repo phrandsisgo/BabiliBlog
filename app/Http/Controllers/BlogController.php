@@ -11,12 +11,17 @@ class BlogController extends Controller
         $posts = Post::all();
         return view('displayPosts', ['posts' => $posts]);
     }
+    public function feed2(){
+        $posts = Post::all();
+        return view('welcome', ['posts' => $posts]);
+    }
+
 
     public function show($id){
-       // dd($id); //dd = dump and die (laravel helper function
-        $post = Post::with('comments')->findOrFail($id);
-        return view('show', ['post' => $post]);
-    }
+        // dd($id); //dd = dump and die (laravel helper function
+         $post = Post::with('comments')->findOrFail($id);
+         return view('show', ['post' => $post]);
+     }
 
     // edit the post 
     public function update(Request $request, Post $post)

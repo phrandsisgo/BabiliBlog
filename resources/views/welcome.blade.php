@@ -13,6 +13,7 @@
 
     <div class="content">
 
+    @foreach ($posts as $post) 
         <div class="content-1">
             <h1>A new class of Smartphone</h1>
             <br><br>
@@ -46,6 +47,7 @@
     </div>
 
 
+    @endforeach
 @endsection
 
 @section('footer')

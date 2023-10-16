@@ -7,6 +7,7 @@
 <div class="content">
         <form method="POST" action="#">
     <div class="content-1">
+        <h1>Edit the Post</h1>
             @csrf
             @method('PUT')
         
@@ -23,6 +24,7 @@
     </div>
             <button type="submit" class="btn btn-primary">Update Post</button>
         </form>
-</div>
+
+    </div>
 
 @endsection

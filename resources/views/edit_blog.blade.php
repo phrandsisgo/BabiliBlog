@@ -3,6 +3,9 @@
 @section('head')
 @endsection
 
+@section('header')
+@endsection
+
 @section('content')
 <div class="content">
         <form method="POST" action="#">

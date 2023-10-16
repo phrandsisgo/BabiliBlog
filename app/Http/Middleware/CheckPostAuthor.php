@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use App\Models\Post;
 
 class CheckPostAuthor
 {
@@ -15,10 +16,10 @@ class CheckPostAuthor
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $postId = $request->route('id');
-        $post = Post::find($postId);
+       
+        $post = Post::find($request->id);
 
-        if ($post->user_id !== $request->user()->id) {
+        if ($post->user_id !== auth()->user()->id) {// herausfinden Welche userId gerade angemeldet ist.
             abort(403,"unautorisiert Zugriff");
         }
 

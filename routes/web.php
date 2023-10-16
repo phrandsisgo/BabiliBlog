@@ -48,6 +48,7 @@ Route::get('/post', function () {
     return view('post');
 })->name('post');
 
+Route ::get('/show/{id}', [BlogController::class, 'show']);//route für EntwicklungsZwecke von Francisco
 
 
 Route::get('/alex_g', function () {
@@ -58,9 +59,14 @@ Route::get('/article', function () {
     return view('article');
 })->name ('article');
 
-Route::get ('/display_posts', [BlogController::class, 'feed']);//route für entwicklung von Francisco
 Route::get ('/display_posts2', [BlogController::class, 'feed2']);//route für entwicklung von Alex
 Route::get('/show/{id}', [BlogController::class, 'show']);//route für EntwicklungsZwecke von Francisco
+Route::get ('/display_posts', [BlogController::class, 'feed']);//route für entwicklung von Francisco
+Route::get('/post_bearbeiten/{id}', [BlogController::class, 'edit_post']);//route für entwicklung von Francisco
+
+Route::post('/post_update/{id}', [BlogController::class, 'post_update'])
+    ->middleware(['check_post_author'])
+    ->name('post_update');//endgültige Route von Francisco
 
 Route::get('/welcome', function () {
     return view('welcome');

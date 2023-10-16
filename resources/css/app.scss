@@ -218,6 +218,7 @@ ul
     //max-width: 1000px;
     //box-shadow: 2px 2px 4px #000000;
     //background-image: url('/public/background_1.jpg');
+    min-height: 80vh;
 }
 
 // .content {
@@ -241,12 +242,14 @@ ul
     box-shadow: $shadow;
     text-align: left;
     font-family: outage-cut !important;
+
+    h1, h2, h3, h4, h5, h6 
+    {
+        text-shadow: $title-shadow;
+        font-family: outage-cut !important;
+    }
 }
 
-.content-1 h1, h2, h3, h4, h5, h6
-{
-    text-shadow: $title-shadow;
-}
 
 .view-button {
     background-color: #1D9BF0;
@@ -278,16 +281,14 @@ ul
     color: $neon-text;
     box-shadow: $shadow;
     text-align: left;
-}
 
-.content-2 h1, h2, h3, h4, h5, h6
-{
-    //Alternative Title Font!!
-    font-family: raptor !important;
-    font-size: 34px;
-    text-shadow: $title-shadow;
+    h1, h2, h3, h4, h5, h6 
+    {
+        font-family: raptor !important;
+        font-size: 34px;
+        text-shadow: $title-shadow;
+    }
 }
-
 
 // ray added this
 body {

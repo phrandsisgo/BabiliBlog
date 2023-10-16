@@ -33,6 +33,16 @@
             <br><br>
             <p>Dies hier sollte verständlich sein!</p>
         </div>
+
+        <div class="content-1">
+            <h2>Title:</h2>
+            Test
+        </div>
+
+        <div class="content-2">
+            <h3>Det Titel</h3>
+        <p>This is not in a box</p>
+        </div>
     </div>
 
 

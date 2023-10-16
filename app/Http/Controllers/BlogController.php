@@ -6,14 +6,21 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Comment;
 
+
 class BlogController extends Controller
 {
     public function feed(){
         $posts = Post::all();
         return view('displayPosts', ['posts' => $posts]);
     }
+    public function feed2(){
+        $posts = Post::all();
+        return view('welcome', ['posts' => $posts]);
+    }
+
 
     public function show($id){
+
         $post = Post::with('comments')->findOrFail($id);
         return view('show', ['post' => $post]);
     }
@@ -53,3 +60,4 @@ class BlogController extends Controller
         return redirect('/display_posts');
     }
 }
+

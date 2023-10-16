@@ -9,11 +9,42 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
+use App\Models\User;
+
 class ProfileController extends Controller
 {
-    /**
-     * Display the user's profile form.
-     */
+    
+    // Display all Users
+    public function showProfile($id){
+     // dd('The user blade works');
+        $user = User::find($id);
+            return view('displayUsers', ['user' => $user]);
+    }
+
+
+    public function uploadImg(Request $request) {
+
+        // validate request
+        $request->validate([
+            'profile_picture' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Example validation rules
+            
+        // Other validation rules for profile information
+        ]);
+
+        // Handle the profile picture upload
+        if ($request->hasFile('profile_picture')) {
+        
+        // Check what happens when uploading two images with the same name. ***Create a UUID to rename the IMG with Laravel helper. 
+        $profilePicturePath = $request->file('profile_picture')->store('profile_pictures', 'public');
+        $user = auth()->user(); // Get the currently authenticated user
+        $user->profile_picture = $profilePicturePath;
+        $user->save();
+
+    }
+}
+
+    
+    // Display the user's profile form.
     public function edit(Request $request): View
     {
         return view('profile.edit', [

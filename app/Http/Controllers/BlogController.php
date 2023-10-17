@@ -18,6 +18,11 @@ class BlogController extends Controller
         return view('welcome', ['posts' => $posts]);
     }
 
+    public function showPostsByUser($userId)
+    {
+        $posts = Post::where('user_id', $userId)->get();
+        return view('your-view', ['posts' => $posts]);
+    }
 
     public function show($id){
 

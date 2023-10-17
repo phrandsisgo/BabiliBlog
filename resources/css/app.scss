@@ -137,6 +137,21 @@ body, html {
     padding-bottom: 15px;
 }
 
+.sidepanel form button[type="submit"] {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    color: #007bff; /* Set the desired color */
+    text-decoration: underline; /* Add underline to make it look like a link */
+}
+
+.sidepanel form button[type="submit"]:hover {
+    text-decoration: none; /* Remove underline on hover */
+}
+
+
 .logo
 {
      max-width: 125px;

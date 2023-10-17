@@ -24,8 +24,11 @@
             <a href="{{ route('welcome') }}">Category 2</a> --}}
             <a href="{{ route('welcome') }}">My Feeds</a>
             <a href="{{ route('post') }}">New Blog</a>
-            <a href="{{ route('article') }}">Account</a>        
-            <a href="{{ route('article') }}">Logout</a>        
+            <a href="{{ route('article') }}">Account</a>  
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+            <button type="submit">Logout</button>
+            </form>                  
         </div>
 
         @else

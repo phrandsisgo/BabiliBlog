@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +54,24 @@ Route::get('/post', function () {
 
 Route ::get('/show/{id}', [BlogController::class, 'show']);//route für EntwicklungsZwecke von Francisco
 
+// BY SCARRUS
+Route::get('/myfeeds/{userId}', [YourController::class, 'showPostsByUser']);
+
+Route::post('/welcome', [AuthenticatedSessionController::class, 'store'])->name('login');
+
+Route::post('/welcome', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+
+/* Route::get('/welcome', function () {
+    return view('welcome');
+})->middleware(['auth', 'verified'])->name('welcome'); */
+
+//Route::get ('/welcome', [BlogController::class, 'feed'])->middleware(['auth', 'verified'])->name ('welcome');
+
+/* Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+    ->middleware('auth')
+    ->name('logout'); */
+
+//
 
 Route::get ('/', [BlogController::class, 'feed'])->name ('newest'); // route für entwicklung von Francisco
 Route::get ('/welcome', [BlogController::class, 'feed'])->name ('welcome'); // route für entwicklung von Francisco
@@ -86,7 +106,7 @@ Route::get('/welcome', function () {
 })->middleware(['auth', 'verified'])->name('welcome');
 */
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('welcome');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

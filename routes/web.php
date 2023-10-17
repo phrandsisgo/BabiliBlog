@@ -75,7 +75,7 @@ Route::post('/post_update/{id}', [BlogController::class, 'post_update'])
     ->name('post_update');//endgültige Route von Francisco
 
 Route::post('/update-comment/{id}', [BlogController::class, 'update_comment'])
-    //->middleware(['check_comment_author'])
+    ->middleware(['check_comment_author'])
     ->name('kommentar_bearbeiten');//endgültige Route von Francisco
 
 Route::get('/welcome', function () {

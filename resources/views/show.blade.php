@@ -36,7 +36,7 @@
                     <li>{{ $comment->content }}</li>
                     @if(auth()->check())
                         @if(auth()->user()->id == $comment->user_id)
-                        <a href="/update-comment/{{$comment -> id}}"> Bearbeiten</a>
+                        <a href="/kommentar_bearbeiten/{{$comment -> id}}"> Bearbeiten</a>
                         @endif
                     @endif
                 @endforeach

@@ -26,6 +26,7 @@
             <a href="{{ route('welcome') }}">My Feeds</a>
             <a href="{{ route('post') }}">New Blog</a>
             <a href="{{ route('article') }}">Account</a>        
+            <a href="{{ route('article') }}">Logout</a>        
         </div>
 
         @else

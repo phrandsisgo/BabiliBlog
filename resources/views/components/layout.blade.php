@@ -35,7 +35,7 @@
 {{--            TO DO IF TIME LEFT 
             <a href="{{ route('welcome') }}">Category 1</a>
             <a href="{{ route('welcome') }}">Category 2</a> --}}
-            <a href="{{ route('article') }}">Login</a>            
+            <a href="{{ route('login') }}">Login</a>            
             <a href="{{ route('article') }}">Register</a>
         </div>
         

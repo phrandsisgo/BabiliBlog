@@ -20,6 +20,8 @@ use App\Http\Controllers\BlogController;
 
 
 
+Route::get('/einloggen', function () {return view('einloggen');})->name('einloggen');
+
 Route::get('/', function () {
     return view('welcome');
 })->name ('welcome');

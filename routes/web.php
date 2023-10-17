@@ -54,6 +54,7 @@ Route ::get('/show/{id}', [BlogController::class, 'show']);//route für Entwickl
 
 
 Route::get ('/', [BlogController::class, 'feed'])->name ('newest'); // route für entwicklung von Francisco
+Route::get ('/welcome', [BlogController::class, 'feed'])->name ('welcome'); // route für entwicklung von Francisco
 
 Route::get ('/display_users/{id}', [ProfileController::class, 'showProfile'])->name('user_profile'); // route für entwicklung von Luis
 
@@ -79,11 +80,11 @@ Route::post('/post_update/{id}', [BlogController::class, 'post_update'])
 Route::post('/update-comment/{id}', [BlogController::class, 'update_comment'])
     ->middleware(['check_comment_author'])
     ->name('kommentar_bearbeiten');//endgültige Route von Francisco
-
+/*
 Route::get('/welcome', function () {
     return view('welcome');
 })->middleware(['auth', 'verified'])->name('welcome');
-
+*/
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

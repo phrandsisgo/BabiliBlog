@@ -21,10 +21,10 @@ use App\Http\Controllers\BlogController;
 
 
 Route::get('/einloggen', function () {return view('einloggen');})->name('einloggen');
-
+/*
 Route::get('/', function () {
-    return view('welcome');
-})->name ('welcome');
+    return view('feed');
+})->name ('welcome');*/
 Route::get('/index', function () {
     return view('index');
 })->name('index');
@@ -53,7 +53,7 @@ Route::get('/post', function () {
 Route ::get('/show/{id}', [BlogController::class, 'show']);//route für EntwicklungsZwecke von Francisco
 
 
-Route::get ('/display_posts', [BlogController::class, 'feed'])->name ('newest'); // route für entwicklung von Francisco
+Route::get ('/', [BlogController::class, 'feed'])->name ('newest'); // route für entwicklung von Francisco
 
 Route::get ('/display_users/{id}', [ProfileController::class, 'showProfile'])->name('user_profile'); // route für entwicklung von Luis
 

@@ -53,8 +53,6 @@ Route ::get('/show/{id}', [BlogController::class, 'show']);//route für Entwickl
 
 Route::get ('/display_posts', [BlogController::class, 'feed']); // route für entwicklung von Francisco
 
-Route::get ('/show/{id}', [BlogController::class, 'show']); // route für entwicklung von Francisco
-
 Route::get ('/display_users/{id}', [ProfileController::class, 'showProfile'])->name('user_profile'); // route für entwicklung von Luis
 
 Route::post ('/upload_img', [ProfileController::class, 'uploadImg'])->name('upload_img'); // route für entwicklung von Luis

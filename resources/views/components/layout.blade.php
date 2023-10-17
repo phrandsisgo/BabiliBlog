@@ -31,7 +31,7 @@
 
         @else
         <div class="sidepanel">
-            <a href="{{ route('index') }}">Main</a>
+            <a href="{{ route('welcome') }}">Main</a>
 {{--            TO DO IF TIME LEFT 
             <a href="{{ route('welcome') }}">Category 1</a>
             <a href="{{ route('welcome') }}">Category 2</a> --}}

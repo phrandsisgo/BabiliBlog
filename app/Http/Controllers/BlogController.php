@@ -22,6 +22,7 @@ class BlogController extends Controller
     public function show($id){
 
         $post = Post::with('comments')->findOrFail($id);
+        //dd('show');
         return view('show', ['post' => $post]);
     }
     public function edit_post($id){

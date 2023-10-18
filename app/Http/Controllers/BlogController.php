@@ -81,7 +81,17 @@ class BlogController extends Controller
             'content' => $request->content,
             'updated_at' => now()
         ]);
-        return redirect('/display_posts');
+        return redirect('/');
     }
+    public function delete_comment($id){
+        Comment::where('id', $id)->delete();
+        return back();
+    }
+    //beim delete_post muss darauf geachtet werden, dass nicht nur der Post sondern auch die Kommentare auch gelöscht werden.
+    public function delete_post($id){
+        Post::where('id', $id)->delete();
+        return redirect('/');
+    }
+
 }
 

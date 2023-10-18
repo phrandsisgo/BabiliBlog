@@ -51,7 +51,11 @@
                             <div class="form-group">
                                 <label for="content">Comment</label>
                                 <textarea id="content" name="content" class="form-control" required></textarea>
+                            @error('content')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                             </div>
+
 
                             <button type="submit" class="btn btn-primary">Create a Comment</button>
                         </form>

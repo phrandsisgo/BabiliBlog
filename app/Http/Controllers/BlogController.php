@@ -66,8 +66,8 @@ class BlogController extends Controller
     {
         //dd($id);
         $request->validate([
-            'content' => 'required',
             'post_id' => 'required',
+            'content' => 'required|min:5|max:300',
         ]);
 
         Comment::create([
@@ -81,4 +81,3 @@ class BlogController extends Controller
 
 
 }
-

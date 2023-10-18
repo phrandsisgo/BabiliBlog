@@ -61,6 +61,11 @@ Route::post('/welcome', [AuthenticatedSessionController::class, 'store'])->name(
 
 Route::post('/welcome', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
+Route::get('/impressum', function () {
+    return view('impressum');
+})->name('impressum');
+
+
 /* Route::get('/welcome', function () {
     return view('welcome');
 })->middleware(['auth', 'verified'])->name('welcome'); */

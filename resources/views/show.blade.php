@@ -25,6 +25,10 @@
                 @if(auth()->user()->id == $post->user_id)
                     
                 <a href="/post_bearbeiten/{{$post -> id}}"> Bearbeiten</a>
+                <form action="/deletePost/{{$post ->id}}" method="post">
+                    @csrf
+                    <input type="submit" value="Post Löschen">
+                </form>
                 @endif 
             @endif  
             

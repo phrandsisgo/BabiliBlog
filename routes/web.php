@@ -75,8 +75,11 @@ Route::get('/kommentar_bearbeiten/{id}', [BlogController::class, 'edit_comment']
 //Route::get('/delete_comment/{id}', [BlogController::class, 'delete_comment']);//route für entwicklung von Francisco
 Route::post('/deleteComment/{id}', [BlogController::class, 'delete_comment'])
     ->middleware(['check_comment_author'])
-    ->name('delete_comment');//endgültige Route von Francisco
+    ->name('delete_comment');
 
+Route::post('/deletePost/{id}', [BlogController::class, 'delete_post'])
+    ->middleware(['check_post_author'])
+    ->name('delete_post');
 
 Route::post('/post_update/{id}', [BlogController::class, 'post_update'])
     ->middleware(['check_post_author'])

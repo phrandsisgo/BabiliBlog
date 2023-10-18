@@ -39,7 +39,7 @@ class BlogController extends Controller
     public function myFeeds($userId)
     {
         $posts = Post::where('user_id', $userId)->get();
-        return view('your-view', ['posts' => $posts]);
+        return view('myfeeds', ['posts' => $posts]);
     }
 
     public function show($id){

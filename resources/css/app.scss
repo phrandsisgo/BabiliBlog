@@ -273,9 +273,18 @@ ul
     }
 }
 
+.content-1 a 
+{
+    text-decoration: none;
+    text-shadow: $title-shadow;
+    color: white;
+    text-align: left;
+    align-items: left;
+}
+
 .content-1 a:hover
 {
-    color: rgba(255, 94, 0, 0.541);
+    color: #0A6AB5;
 }
 
 content-1 form
@@ -284,7 +293,7 @@ content-1 form
 }
 
 
-.content-1 form button[type="submit"] {
+.content-1 form button {
     background: none;
     border: none;
     padding: 0;
@@ -296,7 +305,7 @@ content-1 form
     text-shadow: $title-shadow;
 }
 
-.content-1 form button[type="submit"]:hover {
+.content-1 form button:hover {
     text-decoration: none; /* Remove underline on hover */
     color: #0A6AB5;
     text-shadow: $title-shadow;
@@ -359,6 +368,21 @@ input
     width: 100%;
 }
 
+.remember-me-label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    //margin-left: 0.5rem; /* Adjust as needed for spacing */
+    width: 100%;
+}
+
+.remember-me-checkbox {
+    /* Add your checkbox styles here */
+    //margin-right: 0.5rem; /* Adjust as needed for spacing */
+    width: unset;
+    margin-right: 5px;
+}
+
 textarea
 {
 /*     background-image: url('/public/background_1.jpg');
@@ -392,4 +416,16 @@ body {
     padding-right: 50px;
     padding-bottom: 50px;
     align-items: center;
+}
+
+// Written by Alex G
+.hashtag
+{
+    text-align: right;
+    color: red;
+}
+
+.ag
+{
+    color: red;
 }

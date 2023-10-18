@@ -143,12 +143,14 @@ body, html {
     padding: 0;
     font: inherit;
     cursor: pointer;
-    color: #007bff; /* Set the desired color */
-    text-decoration: underline; /* Add underline to make it look like a link */
+    text-shadow: inherit;
+    color: white; 
+    text-decoration: none; 
 }
 
 .sidepanel form button[type="submit"]:hover {
     text-decoration: none; /* Remove underline on hover */
+    color: rgba(0, 0, 255, 0.541);
 }
 
 

@@ -1,5 +1,6 @@
 {{-- WRITTEN BY SCARRUS --}}
 
+
 @extends('/components/layout')
 
 

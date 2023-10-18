@@ -1,20 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tPost bearbeiten</title>
-</head>
-<body>
-    <form action="/post_update/{{$post->id}}" method = "POST">
-        @csrf
-        <label for="title">Titel</label>
-        <input type="text" value="{{$post-> title}}" name="title"class="form-control formStyle @error('title') is-invalid @enderror">
-        <br>
-        <label for="content">Inhalt</label>
-        <input type="text" value="{{$post-> content}}" name="content" class="form-control formStyle @error('content') is-invalid @enderror">
-        <br>
-        <button type="submit">Speichern</button>
-    </form>    
-</body>
-</html>
+
+
+@extends('/components/layout')
+
+
+@section('head')
+@endsection
+
+@section('header')
+@endsection
+
+@section('content')
+
+<div class="content">
+    <div class="content-1">
+        <form action="/post_update/{{$post->id}}" method="POST">
+            @csrf
+            <br>
+            <label for="title">Titel</label>
+            <br><br>
+            <input type="text" value="{{$post->title}}" name="title" class="form-control formStyle @error('title') is-invalid @enderror title-input">
+            <br><br><br>
+            <label for="content">Inhalt</label>
+            <br><br>
+            <textarea name="content" class="form-control formStyle @error('content') is-invalid @enderror content-input" rows="4">{{ $post->content }}</textarea>
+            <br><br>
+            <button type="submit">Speichern</button>
+        </form>
+    </div>
+</div>
+
+
+@endsection
+
+@section('footer')
+@endsection

@@ -26,7 +26,7 @@
         </div>
         
         <div class="content-2">
-            <h2>This is the Title</h2>
+            <h2>Alli mini Aentli</h2>
             <br><br>
             <p>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
@@ -36,12 +36,12 @@
         </div>
 
         <div class="content-1">
-            <h2>Title:</h2>
+            <h2>Globi wird Soldat:</h2>
             Test
         </div>
 
         <div class="content-2">
-            <h3>Det Titel</h3>
+            <h3>Papa Moll im Verkehrshaus</h3>
         <p>This is not in a box</p>
         </div>
     </div>

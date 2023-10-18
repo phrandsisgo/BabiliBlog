@@ -12,7 +12,7 @@
         <div class="content-1">
 
                 
-            <H1> {{$post ->title}}</h1>
+            <H2> {{$post ->title}}</h2>
             <br>
             <p>{{$post -> content}}</p>
             <p>the id is {{$post -> id}}</p>
@@ -24,7 +24,7 @@
                 
                 @if(auth()->user()->id == $post->user_id)
                     
-                <a href="/post_bearbeiten/{{$post -> id}}"> Bearbeiten</a>
+                <a href="/post_bearbeiten/{{$post -> id}}"><h4>Bearbeiten</h4></a>
                 <form action="/deletePost/{{$post ->id}}" method="post">
                     @csrf
                     <input type="submit" value="Post Löschen">

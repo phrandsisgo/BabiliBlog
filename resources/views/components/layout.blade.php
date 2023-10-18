@@ -49,7 +49,7 @@
     
     <div class="main">
         <div class="header">
-            <h1>TechWizzards</h1>
+            <a hreaf="{{ route('welcome') }}"><h1>TechWizzards</h1></a>
         </div>             
 
             

@@ -63,6 +63,9 @@
     {{-- @foreach ($posts as $post)  --}}
         <div class="content-1">
 
+            <h1>Login</h1>
+            <br><br>
+
             <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <form method="POST" action="{{ route('login') }}">
@@ -89,11 +92,11 @@
             <br>
 
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
-            <br>
+            <br><br>
         </div>
 
         <!-- Remember Me -->
-        <div class="block mt-4">
+        <div class="block mt-4 flex items-center">
             <x-primary-button class="ml-3">
                 {{ __('Log in') }}
             </x-primary-button>
@@ -103,7 +106,7 @@
             </label>
         </div>
         
-        
+    
         <br><br><br>
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))

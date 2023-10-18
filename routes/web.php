@@ -55,7 +55,7 @@ Route::get('/post', function () {
 Route ::get('/show/{id}', [BlogController::class, 'show']);//route für EntwicklungsZwecke von Francisco
 
 // BY SCARRUS
-Route::get('/myfeeds/{userId}', [YourController::class, 'showPostsByUser']);
+Route::get('/myfeeds/{userId}', [BlogController::class, 'myFeeds'])->name('myfeeds');
 
 Route::post('/welcome', [AuthenticatedSessionController::class, 'store'])->name('login');
 

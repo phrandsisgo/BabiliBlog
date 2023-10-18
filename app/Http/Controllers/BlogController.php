@@ -62,19 +62,28 @@ class BlogController extends Controller
     }
 
     public function create_post() {
+        //if authorized then return "create_post" view else return "login" view
         return view('create_post');
     }
 
     public function store_post(Request $request)
     {
-        $post = Post::create([
-            'user' => $request->user,
+        $request->title;
+        $request->content;
+        $validated = $request->validate([
+            'title' => 'required|max:30|min:3',
+            'content' => 'required|max:300|min:3',
+        
+        ]);
+        //dd('message');
+        Post::create([
             'title' => $request->title,
-            'text'  => $request->text
+            'content' => $request->content,
+            'user_id' => auth()->user()->id
         ]);
 
 
-        return redirect('/posts');
+        return redirect('/');
     }
 
   

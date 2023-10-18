@@ -8,12 +8,12 @@
 <body>
             <form action="/new_blog" method="POST">
                 @csrf
-                <label for="user">User:</label>
-                <input type="text" id="user" name="user"><br><br>
+                <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+
                 <label for="title">Title:</label>
                 <input type="text" id="title" name="title"><br><br>
                 <label for="text">Post:</label>
-                <textarea name="post" id="post" cols="30" rows="10"></textarea>
+                <textarea name="content" id="post" cols="30" rows="10"></textarea>
                 <button type="submit">Send</button> 
             </form>
         </div>

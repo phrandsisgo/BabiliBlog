@@ -50,8 +50,16 @@ Route::get('/post', function () {
 
 Route ::get('/show/{id}', [BlogController::class, 'show']);//route für EntwicklungsZwecke von Francisco
 
+Route::get('/create_comment', function () {
+    return view('create_comment');
+})->name('create_comment');
 
-Route::get ('/display_posts', [BlogController::class, 'feed']); // route für entwicklung von Francisco
+Route::post('/new_comment/{id}', [BlogController::class, 'new_comment'])
+    ->name('new_comment'); //Methode zum Speichern von Kommentaren von Cyrill
+
+
+
+Route::get ('/display_posts', [BlogController::class, 'feed'])->name ('newest'); // route für entwicklung von Francisco
 
 Route::get ('/display_users/{id}', [ProfileController::class, 'showProfile'])->name('user_profile'); // route für entwicklung von Luis
 

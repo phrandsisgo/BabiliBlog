@@ -24,6 +24,7 @@ class BlogController extends Controller
     public function show($id){
 
         $post = Post::with('comments')->findOrFail($id);
+        //dd('show');
         return view('show', ['post' => $post]);
     }
     public function edit_post($id){
@@ -63,11 +64,13 @@ class BlogController extends Controller
     }
 
     public function create_post() {
+        //if authorized then return "create_post" view else return "login" view
         return view('create_post');
     }
 
     public function store_post(Request $request)
     {
+<<<<<<< HEAD
 
         $post = new Post();
         $post->title = $request->input('title');
@@ -78,10 +81,50 @@ class BlogController extends Controller
         //     'title' => $request->title,
         //     'text'  => $request->text
         // ]);
+=======
+        $request->title;
+        $request->content;
+        $validated = $request->validate([
+            'title' => 'required|max:30|min:3',
+            'content' => 'required|max:300|min:3',
+        
+        ]);
+        //dd('message');
+        Post::create([
+            'title' => $request->title,
+            'content' => $request->content,
+            'user_id' => auth()->user()->id
+        ]);
+>>>>>>> 573a6bf28c18af6adeaa49354b93b13bbe256ed3
 
 
-        return redirect('/posts');
+        return redirect('/');
     }
 
+<<<<<<< HEAD
+=======
+  
+
+    //Methode zum Erstellen von Kommentaren von Cyrill
+           
+    public function new_comment(Request $request, $id)
+    {
+        //dd($id);
+        $request->validate([
+            'content' => 'required',
+            'post_id' => 'required',
+        ]);
+
+        Comment::create([
+            'user_id' => $request->user_id,
+            'content' => $request->content,
+            'post_id' => $id,
+        ]);
+
+        return redirect()->back()->with('success', 'Comment Edited.');
+    }
+
+
+>>>>>>> 573a6bf28c18af6adeaa49354b93b13bbe256ed3
 }
 

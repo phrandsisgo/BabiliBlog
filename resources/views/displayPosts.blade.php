@@ -10,11 +10,11 @@
 @section('content')
 
 <div class="content">
-    <div class="content-1">
+    <div class="content-2">
         @if (auth()->check())
-            <h1>Willkommen, {{auth()->user()->name}}</h1>
+            <h2>Willkommen, {{auth()->user()->name}}</h6>
         @else
-            <h1>Willkommen, Gast</h1>
+            <h2>Willkommen, Gast</h6>
         @endif
     </div>
 

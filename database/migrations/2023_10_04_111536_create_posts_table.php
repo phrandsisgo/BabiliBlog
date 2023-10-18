@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->string('title');
             $table->longText('content');
-            $table->string('featured_img');
+            $table->string('featured_img')->nullable();
             // created_at and updated_at automatically created by Laravel
             $table->timestamps();
         });

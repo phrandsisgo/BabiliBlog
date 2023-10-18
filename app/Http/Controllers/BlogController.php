@@ -58,7 +58,11 @@ class BlogController extends Controller
             'content' => $request->content,
             'updated_at' => now()
         ]);
-        return redirect('/display_posts');
+        return redirect('/');
+    }
+    public function delete_comment($id){
+        Comment::where('id', $id)->delete();
+        return back();
     }
 }
 

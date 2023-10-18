@@ -16,15 +16,15 @@
         <form action="/post_update/{{$post->id}}" method="POST">
             @csrf
             <br>
-            <label for="title">Titel</label>
+            <label for="title"><h2>Titel</h2></label>
             <br><br>
             <input type="text" value="{{$post->title}}" name="title" class="form-control formStyle @error('title') is-invalid @enderror title-input">
             <br><br><br>
-            <label for="content">Inhalt</label>
+            <label for="content"><h3>Inhalt</h3></label>
             <br><br>
             <textarea name="content" class="form-control formStyle @error('content') is-invalid @enderror content-input" rows="4">{{ $post->content }}</textarea>
             <br><br>
-            <button type="submit">Speichern</button>
+            <button type="submit"><h3>Speichern</h3></button>
         </form>
     </div>
 </div>

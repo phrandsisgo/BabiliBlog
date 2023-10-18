@@ -21,4 +21,11 @@ class Post extends Model
     public function categories(): BelongsToMany{
         return $this->belongsToMany(Category::class);
     }
+    public function create_post($title, $content) {
+        return $this->create([
+            'title' => $title,
+            'content' => $content,
+            // Weitere Felder hier
+        ]);
+    }
 }

@@ -42,8 +42,8 @@ Route::get('/post', function () {
 })->name('post');
 
 
-Route::get('/new_blog', [BlogController::class, 'create_post'])->name('new_blog');
-Route::post('/new_blog', [BlogController::class, 'store_post'])->name('new_blog.store');
+Route::get('/create_post', [BlogController::class, 'create_post'])->name('create_post');
+Route::post('/create_post', [BlogController::class, 'store_post'])->name('create_post.store');
 
 
 

@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +22,11 @@ use App\Http\Controllers\BlogController;
 
 
 
+Route::get('/einloggen', function () {return view('einloggen');})->name('einloggen');
+/*
 Route::get('/', function () {
-    return view('welcome');
-})->name ('welcome');
+    return view('feed');
+})->name ('welcome');*/
 Route::get('/index', function () {
     return view('index');
 })->name('index');
@@ -49,6 +53,24 @@ Route::get('/post', function () {
 })->name('post');
 
 Route ::get('/show/{id}', [BlogController::class, 'show']);//route für EntwicklungsZwecke von Francisco
+
+
+// BY SCARRUS
+Route::get('/myfeeds/{userId}', [BlogController::class, 'myFeeds'])->name('myfeeds');
+
+Route::post('/welcome', [AuthenticatedSessionController::class, 'store'])->name('login');
+
+Route::post('/welcome', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+
+Route::get('/impressum', function () {
+    return view('impressum');
+})->name('impressum');
+
+
+
+
+Route::get ('/', [BlogController::class, 'feed'])->name ('newest'); // route für entwicklung von Francisco
+Route::get ('/welcome', [BlogController::class, 'feed'])->name ('welcome'); // route für entwicklung von Francisco
 
 Route::get('/create_comment', function () {
     return view('create_comment');
@@ -77,6 +99,14 @@ Route::get ('/display_posts2', [BlogController::class, 'feed2']);//route für en
 
 Route::get('/post_bearbeiten/{id}', [BlogController::class, 'edit_post']);//route für entwicklung von Francisco
 Route::get('/kommentar_bearbeiten/{id}', [BlogController::class, 'edit_comment']);//route für entwicklung von Francisco
+//Route::get('/delete_comment/{id}', [BlogController::class, 'delete_comment']);//route für entwicklung von Francisco
+Route::post('/deleteComment/{id}', [BlogController::class, 'delete_comment'])
+    ->middleware(['check_comment_author'])
+    ->name('delete_comment');
+
+Route::post('/deletePost/{id}', [BlogController::class, 'delete_post'])
+    ->middleware(['check_post_author'])
+    ->name('delete_post');
 
 Route::post('/post_update/{id}', [BlogController::class, 'post_update'])
     ->middleware(['check_post_author'])
@@ -85,13 +115,13 @@ Route::post('/post_update/{id}', [BlogController::class, 'post_update'])
 Route::post('/update-comment/{id}', [BlogController::class, 'update_comment'])
     ->middleware(['check_comment_author'])
     ->name('kommentar_bearbeiten');//endgültige Route von Francisco
-
+/*
 Route::get('/welcome', function () {
     return view('welcome');
 })->middleware(['auth', 'verified'])->name('welcome');
-
+*/
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('welcome');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

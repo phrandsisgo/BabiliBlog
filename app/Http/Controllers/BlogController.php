@@ -18,6 +18,29 @@ class BlogController extends Controller
         return view('welcome', ['posts' => $posts]);
     }
 
+    public function feedUserId(){
+        // Check if the user is logged in
+        if (auth()->check()) {
+            // Get the authenticated user's ID
+            $userId = auth()->user()->id;
+    
+            // Get the posts associated with the user ID
+            $posts = Post::where('user_id', $userId)->get();
+    
+            return view('displayPosts', ['posts' => $posts]);
+        }
+    
+        // If user is not logged in, you may want to handle this case accordingly
+        // For example, you can redirect them to a login page
+        return redirect('/login');
+    }
+    
+
+    public function myFeeds($userId)
+    {
+        $posts = Post::where('user_id', $userId)->get();
+        return view('myfeeds', ['posts' => $posts]);
+    }
 
     public function show($id){
 
@@ -58,7 +81,16 @@ class BlogController extends Controller
             'content' => $request->content,
             'updated_at' => now()
         ]);
-        return redirect('/display_posts');
+        return redirect('/');
+    }
+    public function delete_comment($id){
+        Comment::where('id', $id)->delete();
+        return back();
+    }
+    //beim delete_post muss darauf geachtet werden, dass nicht nur der Post sondern auch die Kommentare auch gelöscht werden.
+    public function delete_post($id){
+        Post::where('id', $id)->delete();
+        return redirect('/');
     }
 
     //Methode zum Erstellen von Kommentaren von Cyrill

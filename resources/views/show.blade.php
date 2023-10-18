@@ -25,6 +25,10 @@
                 @if(auth()->user()->id == $post->user_id)
                     
                 <a href="/post_bearbeiten/{{$post -> id}}"> Bearbeiten</a>
+                <form action="/deletePost/{{$post ->id}}" method="post">
+                    @csrf
+                    <input type="submit" value="Post Löschen">
+                </form>
                 @endif 
             @endif  
             
@@ -37,6 +41,11 @@
                     @if(auth()->check())
                         @if(auth()->user()->id == $comment->user_id)
                         <a href="/kommentar_bearbeiten/{{$comment -> id}}"> Bearbeiten</a>
+<!---                        <a href="/delete_comment/{{$comment -> id}}"> Löschen</a>-->
+                        <form action="/deleteComment/{{$comment ->id}}" method="post">
+                            @csrf
+                            <input type="submit" value="Löschen">
+                        </form>
                         @endif
                     @endif
                 @endforeach

@@ -11,11 +11,12 @@ use App\Models\User;
 class BlogController extends Controller
 {
     public function feed(){
-        $posts = Post::all();
+        $posts = Post::orderBy('created_at', 'desc')->get();
         return view('displayPosts', ['posts' => $posts]);
     }
+
     public function feed2(){
-        $posts = Post::all();
+        $posts = Post::orderBy('created_at', 'desc')->get();
         return view('welcome', ['posts' => $posts]);
     }
 
@@ -67,18 +68,20 @@ class BlogController extends Controller
 
     public function store_post(Request $request)
     {
-        $post = Post::create([
-            'user' => $request->user,
-            'title' => $request->title,
-            'text'  => $request->text
-        ]);
+
+        $post = new Post();
+        $post->title = $request->input('title');
+        $post->text = $request->input('text');
+        $post->save();
+
+        // $post = Post::create_post([
+        //     'title' => $request->title,
+        //     'text'  => $request->text
+        // ]);
 
 
         return redirect('/posts');
     }
-
-  
-
 
 }
 

@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class AuthCheck
+class AuthCheck extends Middleware
 {
     /**
      * Handle an incoming request.
@@ -19,7 +19,8 @@ class AuthCheck
             return $next($request);
         }
     
-        return redirect()->route('index');
-}
+        return redirect()->route('welcome');
+    }
 
+    
 }

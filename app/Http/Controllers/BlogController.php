@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Comment;
+use App\Models\User;
 
 
 class BlogController extends Controller
@@ -60,11 +61,11 @@ class BlogController extends Controller
         return redirect('/display_posts');
     }
 
-    public function create() {
-        return view('posts.create');       
+    public function create_post() {
+        return view('create_post');
     }
 
-    public function store(Request $request)
+    public function store_post(Request $request)
     {
         $post = Post::create([
             'user' => $request->user,
@@ -75,6 +76,9 @@ class BlogController extends Controller
 
         return redirect('/posts');
     }
+
+  
+
 
 }
 

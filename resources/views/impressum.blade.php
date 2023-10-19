@@ -1,4 +1,4 @@
-// Written by Alex g
+<!--Written by Alex G.-->
 
 @extends('/components/layout')
 

@@ -9,12 +9,14 @@ use App\Models\Comment;
 
 class BlogController extends Controller
 {
+
     public function feed(){
-        $posts = Post::all();
+        $posts = Post::orderBy('created_at', 'desc')->get();// Orderd the newest post on the top
         return view('displayPosts', ['posts' => $posts]);
     }
     public function feed2(){
-        $posts = Post::all();
+        
+        $posts = Post::orderBy('created_at', 'desc')->get();// Orderd the newest post on the top
         return view('welcome', ['posts' => $posts]);
     }
 

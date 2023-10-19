@@ -12,6 +12,10 @@
     <div class="content">
 
         <div class="content-1">
+
+            <h1>Registrieren</h1>
+            <br><br>
+
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
             

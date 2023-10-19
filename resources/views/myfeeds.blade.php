@@ -13,6 +13,8 @@
     <div class="content-2">
         @if (auth()->check())
             <h2>Willkommen, {{auth()->user()->name}}</h6>
+            <img src="{{auth()->user()->profile_picture}}" alt="Profilbild">
+
         @else
             <h2>Willkommen, Gast, hier ist ein Grosser Fehler passiert.</h6>
         @endif

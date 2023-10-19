@@ -15,6 +15,7 @@
             <H1>{{$post ->title}}</h1>
             <br>
             <p>{{$post -> content}}</p>
+            <h4>{{ date('d.m.y', strtotime($post->created_at)) }}</h4>
             {{-- DEV ONLY
                 <p>the id is {{$post -> id}}</p> 
             --}}
@@ -25,12 +26,16 @@
             @if (auth()->check())
                 
                 @if(auth()->user()->id == $post->user_id)
-                    
-                <a href="/post_bearbeiten/{{$post -> id}}"><h4>Bearbeiten</h4></a>
-                <form action="/deletePost/{{$post ->id}}" method="post">
-                    @csrf
-                    <input type="submit" value="Post Löschen">
-                </form>
+                <div class="buttons-container">    
+                    <a href="/post_bearbeiten/{{$post -> id}}">
+                        <button class="submit-btn">Bearbeiten</button>
+                    </a>
+                    <form action="/deletePost/{{$post ->id}}" method="post">
+                        @csrf
+                        <input type="submit" value="Post Löschen" class="submit-btn">
+                    </form>
+                </div>
+                <br><br>
                 @endif 
             @endif  
             
@@ -43,7 +48,7 @@
                     {{-- <li><h4>{{ $users->name}}</h4></li> --}}   
                     @if(auth()->check())
                         <br><br>
-                        <li><h4>{{ $comment->user->name }} {{ $comment->updated_at }}</h4>
+                        <li><h4>{{ $comment->user->name }} {{ $comment->updated_at }}</h4></li>
                         <li>{{ $comment->content }}</li>
 
                         @if(auth()->user()->id == $comment->user_id)
@@ -57,7 +62,7 @@
                                     <input type="submit" value="Löschen" class="submit-btn">
                                 </form>
                             </div>
-                            <br><br>
+                            
                         @endif
 
                     @else

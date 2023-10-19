@@ -47,14 +47,17 @@
                         <li>{{ $comment->content }}</li>
 
                         @if(auth()->user()->id == $comment->user_id)
-
-                        <a href="/kommentar_bearbeiten/{{$comment -> id}}"> Bearbeiten</a>
-                        <form action="/deleteComment/{{$comment ->id}}" method="post">
-                            @csrf
+                            <br>
+                            <div class="buttons-container">
+                                <a href="/kommentar_bearbeiten/{{$comment -> id}}" >
+                                    <button class="submit-btn">Bearbeiten</button>
+                                </a>
+                                <form action="/deleteComment/{{$comment ->id}}" method="post">
+                                    @csrf
+                                    <input type="submit" value="Löschen" class="submit-btn">
+                                </form>
+                            </div>
                             <br><br>
-                            <input type="submit" value="Löschen" class="submit-btn">
-                            <br><br>
-                        </form>
                         @endif
 
                     @else

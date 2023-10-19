@@ -49,7 +49,9 @@
 
             <h3>Datenschutz:</h3>
             <p>Datenschutz und Sicherheit sind uns wichtig.</p> 
-
+                
+            <br>
+            
             <h3>Kontakt:</h3>
             <p>Bei Fragen oder Anliegen koennen Sie uns unter (name des jeweiligen Autors)@example.ch kontaktieren.</p>
 

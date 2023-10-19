@@ -22,15 +22,16 @@
 {{--            TO DO IF TIME LEFT 
             <a href="{{ route('welcome') }}">Category 1</a>
             <a href="{{ route('welcome') }}">Category 2</a> --}}
+
             <a href="{{ route('myfeeds', ['userId' => auth()->user()->id]) }}">My Feeds</a>
 
-            <a href="{{ route('post') }}">New Blog</a>
+            <a href="{{ route('new_blog') }}">New Blog</a>
             <a href="{{ route('article') }}">Account</a>  
             <a href="{{ route('impressum') }}">Impressum</a>  
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
             <button type="submit">Logout</button>
-            </form>                  
+            </form>  
         </div>
 
         @else
@@ -40,7 +41,7 @@
             <a href="{{ route('welcome') }}">Category 1</a>
             <a href="{{ route('welcome') }}">Category 2</a> --}}
             <a href="{{ route('login') }}">Login</a>            
-            <a href="{{ route('article') }}">Register</a>
+            <a href="{{ route('register') }}">Register</a>
             <a href="{{ route('impressum') }}">Impressum</a>  
         </div>
         
@@ -49,7 +50,7 @@
     
     <div class="main">
         <div class="header">
-            <h1>TechWizzards</h1>
+            <a hreaf="{{ route('welcome') }}"><h1>TechWizzards</h1></a>
         </div>             
 
             

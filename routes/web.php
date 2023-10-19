@@ -54,6 +54,7 @@ Route::get('/post', function () {
 
 Route ::get('/show/{id}', [BlogController::class, 'show']);//route für EntwicklungsZwecke von Francisco
 
+
 // BY SCARRUS
 Route::get('/myfeeds/{userId}', [BlogController::class, 'myFeeds'])->name('myfeeds');
 
@@ -66,20 +67,21 @@ Route::get('/impressum', function () {
 })->name('impressum');
 
 
-/* Route::get('/welcome', function () {
-    return view('welcome');
-})->middleware(['auth', 'verified'])->name('welcome'); */
 
-//Route::get ('/welcome', [BlogController::class, 'feed'])->middleware(['auth', 'verified'])->name ('welcome');
-
-/* Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
-    ->middleware('auth')
-    ->name('logout'); */
-
-//
 
 Route::get ('/', [BlogController::class, 'feed'])->name ('newest'); // route für entwicklung von Francisco
 Route::get ('/welcome', [BlogController::class, 'feed'])->name ('welcome'); // route für entwicklung von Francisco
+
+Route::get('/create_comment', function () {
+    return view('create_comment');
+})->name('create_comment');
+
+Route::post('/new_comment/{id}', [BlogController::class, 'new_comment'])
+    ->name('new_comment'); //Methode zum Speichern von Kommentaren von Cyrill
+
+
+
+Route::get ('/display_posts', [BlogController::class, 'feed'])->name ('newest'); // route für entwicklung von Francisco
 
 Route::get ('/display_users/{id}', [ProfileController::class, 'showProfile'])->name('user_profile'); // route für entwicklung von Luis
 
@@ -97,6 +99,14 @@ Route::get ('/display_posts2', [BlogController::class, 'feed2']);//route für en
 
 Route::get('/post_bearbeiten/{id}', [BlogController::class, 'edit_post']);//route für entwicklung von Francisco
 Route::get('/kommentar_bearbeiten/{id}', [BlogController::class, 'edit_comment']);//route für entwicklung von Francisco
+//Route::get('/delete_comment/{id}', [BlogController::class, 'delete_comment']);//route für entwicklung von Francisco
+Route::post('/deleteComment/{id}', [BlogController::class, 'delete_comment'])
+    ->middleware(['check_comment_author'])
+    ->name('delete_comment');
+
+Route::post('/deletePost/{id}', [BlogController::class, 'delete_post'])
+    ->middleware(['check_post_author'])
+    ->name('delete_post');
 
 Route::post('/post_update/{id}', [BlogController::class, 'post_update'])
     ->middleware(['check_post_author'])

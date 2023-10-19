@@ -151,6 +151,8 @@ Then update the Comments table to the DB
 
     sail artisan db:seed --class=CommentSeeder
 
+    
+
 
 ### Datenbank update(cascade)
 # das posts gelöscht werden können müssen ein par sachen passieren:
@@ -181,4 +183,10 @@ oder man findet heraus wie man die neue Migration im Griff bekommt.
 -   Smash/Unsmash
 -   Multidesign MAYBE/NOT
 -   Profile Picture
+
+
+### Konfiguration mit Symlink
+
+    sail artisan storage:link
+  
 

@@ -16,6 +16,7 @@
 
             <br>
             <h1>Impressum</h1>
+
             <br><br>
 
             <h3>Verantwortlich fuer den Inhalt</h3>
@@ -44,6 +45,7 @@
             - Diese Website und ihre Inh<span class="ag">a</span>l<span class="ag">t</span>e sind urheberrechtlich geschuetzt. Jegliche Verwendung, Vervielfaeltigung oder Verbreitung ohne schriftliche Genehmigung ist untersagt.</p>
 
             <br>
+
 
             <h3>Datenschutz:</h3>
             <p>Datenschutz und Sicherheit sind uns wichtig.</p> 

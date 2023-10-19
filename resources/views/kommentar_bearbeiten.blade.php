@@ -1,3 +1,4 @@
+
 @extends('/components/layout')
 
 
@@ -17,7 +18,9 @@
             <br>
             <form action="/update-comment/{{$comment->id}}" method="POST">
                 @csrf
+
                 <label for="comment"></label><br>
+
                 <textarea id="comment" name="content" rows="4" cols="50">{{ $comment->content }}</textarea><br>
                 <br>
                 <button type="submit" class="submit-btn">Post</button>

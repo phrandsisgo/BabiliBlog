@@ -1,4 +1,3 @@
-
 @extends('/components/layout')
 
 

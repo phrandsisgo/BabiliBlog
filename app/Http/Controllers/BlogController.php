@@ -104,16 +104,6 @@ class BlogController extends Controller
 
     public function store_post(Request $request)
     {
-
-        $post = new Post();
-        $post->title = $request->input('title');
-        $post->text = $request->input('text');
-        $post->save();
-
-        // $post = Post::create_post([
-        //     'title' => $request->title,
-        //     'text'  => $request->text
-        // ]);
         $request->title;
         $request->content;
         $validated = $request->validate([

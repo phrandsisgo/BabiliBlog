@@ -12,10 +12,12 @@
         <div class="content-1">
 
                 
-            <H2> {{$post ->title}}</h2>
+            <H2>{{$post ->title}}</h2>
             <br>
             <p>{{$post -> content}}</p>
-            <p>the id is {{$post -> id}}</p>
+            {{-- DEV ONLY
+                <p>the id is {{$post -> id}}</p> 
+            --}}
             <br>
             
             @auth
@@ -33,7 +35,8 @@
             @endif  
             
             @endauth
-            <h2>Comments</h2>
+            <br>
+            <h3>Comments</h3>
             <br>
             <ul>
 

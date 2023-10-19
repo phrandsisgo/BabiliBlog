@@ -69,8 +69,8 @@ Route::get('/impressum', function () {
 
 
 
-Route::get ('/', [BlogController::class, 'feed'])->name ('newest'); // route für entwicklung von Francisco
-Route::get ('/welcome', [BlogController::class, 'feed'])->name ('welcome'); // route für entwicklung von Francisco
+Route::get ('/', [BlogController::class, 'feed'])->name ('newest'); 
+Route::get ('/welcome', [BlogController::class, 'feed'])->name ('welcome'); 
 
 Route::get('/create_comment', function () {
     return view('create_comment');
@@ -114,15 +114,13 @@ Route::post('/post_update/{id}', [BlogController::class, 'post_update'])
 
 Route::post('/update-comment/{id}', [BlogController::class, 'update_comment'])
     ->middleware(['check_comment_author'])
-    ->name('kommentar_bearbeiten');//endgültige Route von Francisco
+    ->name('kommentar_bearbeiten');
 /*
 Route::get('/welcome', function () {
     return view('welcome');
 })->middleware(['auth', 'verified'])->name('welcome');
 */
-Route::get('/dashboard', function () {
-    return view('welcome');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard',[BlogController::class, 'feed'])->name ('newest');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

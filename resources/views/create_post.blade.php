@@ -29,7 +29,7 @@
             <textarea name="content" id="post" cols="30" rows="10"></textarea>
             <br><br><br>
 
-            <button type="submit" class="submit-btn">Send</button> 
+            <button type="submit" class="submit-btn">Post</button> 
         </form>
     </div>
 </div>
@@ -39,7 +39,8 @@
 @section('footer')
 @endsection
 
-{{-- <!DOCTYPE html>
+{{-- OLD CODE
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

@@ -67,7 +67,6 @@
                             <form method="POST" action="/new_comment/{{$post ->id}}">
                                 @csrf
 
-<!-- neu von Cyrill
                             <div class="form-group">
                                 <label for="content">Comment</label>
                                 <textarea id="content" name="content" class="form-control" required></textarea>
@@ -79,7 +78,7 @@
 
                             <button type="submit" class="btn btn-primary">Create a Comment</button>
                         </form>
--->
+
                                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                 <input type="hidden" name="post_id" value="{{$post ->id}}">
 

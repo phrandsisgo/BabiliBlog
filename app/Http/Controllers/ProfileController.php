@@ -26,7 +26,7 @@ class ProfileController extends Controller
 
         // validate request
         $request->validate([
-            'profile_picture' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Example validation rules
+            'profile_picture' => 'image|mimes:jpeg,png,jpg,gif|max:2048|dimensions:max_width=300,max_height=300', // Example validation rules
             
         // Other validation rules for profile information
         ]);

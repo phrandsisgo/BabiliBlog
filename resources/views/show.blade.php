@@ -17,7 +17,7 @@
                         <H2> {{$post ->title}}</h2>
                         <br>
                         <p>{{$post -> content}}</p>
-                        <p>the id is {{$post -> id}}</p>
+                        <h4>{{ date('d.m.y', strtotime($post->created_at)) }}</h4>
                         <br>
                         <p>dieser Post wurde verfasst von {{$post -> user->name}}</p>
                 </div>
@@ -31,32 +31,49 @@
             @if (auth()->check())
                 
                 @if(auth()->user()->id == $post->user_id)
-                    
-                <a href="/post_bearbeiten/{{$post -> id}}"><h4>Bearbeiten</h4></a>
-                <form action="/deletePost/{{$post ->id}}" method="post">
-                    @csrf
-                    <input type="submit" value="Post Löschen">
-                </form>
+                <div class="buttons-container">    
+                    <a href="/post_bearbeiten/{{$post -> id}}">
+                        <button class="submit-btn">Bearbeiten</button>
+                    </a>
+                    <form action="/deletePost/{{$post ->id}}" method="post">
+                        @csrf
+                        <input type="submit" value="Post Löschen" class="submit-btn">
+                    </form>
+                </div>
+                <br><br>
                 @endif 
             @endif  
             
             @endauth
-            <h2>Comments</h2>
             <br>
+            <h2>Comments</h2>
             <ul>
 
-                @foreach($post->comments as $comment)
-                    <li>{{ $comment->content }}</li>
-                    <br><br>
+                @foreach($post->comments->sortByDesc('created_at') as $comment)
+                    {{-- <li><h4>{{ $users->name}}</h4></li> --}}   
                     @if(auth()->check())
+                        <br><br>
+                        <li><h4>{{ $comment->user->name }} {{ $comment->updated_at }}</h4></li>
+                        <li>{{ $comment->content }}</li>
+
                         @if(auth()->user()->id == $comment->user_id)
-                        <a href="/kommentar_bearbeiten/{{$comment -> id}}"> Bearbeiten</a>
-<!---                        <a href="/delete_comment/{{$comment -> id}}"> Löschen</a>-->
-                        <form action="/deleteComment/{{$comment ->id}}" method="post">
-                            @csrf
-                            <input type="submit" value="Löschen">
-                        </form>
+                            <br>
+                            <div class="buttons-container">
+                                <a href="/kommentar_bearbeiten/{{$comment -> id}}" >
+                                    <button class="submit-btn">Bearbeiten</button>
+                                </a>
+                                <form action="/deleteComment/{{$comment ->id}}" method="post">
+                                    @csrf
+                                    <input type="submit" value="Löschen" class="submit-btn">
+                                </form>
+                            </div>
+                            
                         @endif
+
+                    @else
+                        <br><br>
+                        <li><h4>{{ $comment->user->name }} {{ $comment->updated_at }}</h4>
+                        <li>{{ $comment->content }}</li>
                     @endif
                 @endforeach
             </ul>
@@ -76,7 +93,7 @@
                                 @csrf
 
                             <div class="form-group">
-                                <label for="content">Comment</label>
+                                <label for="content"></label>
                                 <textarea id="content" name="content" class="form-control" required></textarea>
                             @error('content')
                                 <div class="alert alert-danger">{{ $message }}</div>
@@ -89,13 +106,8 @@
 
                                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                 <input type="hidden" name="post_id" value="{{$post ->id}}">
-
-                                <div class="form-group">
-                                    <label for="content"></label>
-                                    <textarea id="content" name="content" class="form-control" required></textarea>
-                                </div>
                                 <br>
-                                <button type="submit" class="btn btn-primary"><h4>Post Comment</h4></button>
+                                <input type="submit" class="submit-btn" value="Post">
                             </form>
                         </div>
 

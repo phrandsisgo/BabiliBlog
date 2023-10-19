@@ -11,6 +11,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Post extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'title',
+        'content',
+        'user_id',
+    ];
     public function user(): BelongsTo{
         return $this->belongsTo(User::class);
     }
@@ -20,5 +25,12 @@ class Post extends Model
     }
     public function categories(): BelongsToMany{
         return $this->belongsToMany(Category::class);
+    }
+    public function create_post($title, $content) {
+        return $this->create([
+            'title' => $title,
+            'content' => $content,
+            // Weitere Felder hier
+        ]);
     }
 }

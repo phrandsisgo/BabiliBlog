@@ -70,6 +70,7 @@ body, html {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    word-break: break-word;
 }
 
 /* body {
@@ -292,10 +293,9 @@ content-1 form
     max-width: 100%;
 }
 
-
 .content-1 form button {
-    background: none;
-    border: none;
+   //background: none;
+    //border: none;
     padding: 0;
     font: inherit;
     cursor: pointer;
@@ -303,11 +303,12 @@ content-1 form
     color: inherit; 
     text-decoration: none; 
     text-shadow: $title-shadow;
+    height: 25px;
 }
 
 .content-1 form button:hover {
     text-decoration: none; /* Remove underline on hover */
-    color: #0A6AB5;
+    //color: #0A6AB5;
     text-shadow: $title-shadow;
 }
 
@@ -365,7 +366,7 @@ input
     color: inherit;
     padding: 10px;
     //margin-right: 15px;
-    width: 100%;
+    width: 500px;
 }
 
 .remember-me-label {
@@ -398,6 +399,50 @@ textarea
     color: inherit;
     padding: 10px;
     width: 100%;
+}
+
+.right
+{
+    align-self: flex-end;
+}
+
+.buttons-container {
+    display: flex;
+    align-items: center;
+}
+
+.buttons-container form,
+.buttons-container a 
+{
+    margin-right: 10px; /* Adjust this value to control the spacing between buttons */
+}
+
+.buttons-container input[type="submit"],
+.buttons-container button {
+    width: 150px; /* Adjust this value to your preference */
+}
+
+
+.submit-btn
+{
+    border-radius: 5px;
+    background:#0a6bb597;
+    background: rgba(124, 128, 194, 0.714);
+    font: inherit;
+    color: inherit;
+    text-shadow: $text-shadow;
+    padding: 3px;
+    //margin-right: 15px;
+    width: 15%;
+    max-width: 200px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.submit-btn:hover
+{
+    color: rgb(157, 120, 120);
+    //text-shadow: $title-shadow;
 }
 
 // ray added this

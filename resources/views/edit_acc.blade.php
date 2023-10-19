@@ -1,4 +1,22 @@
-@extends('/components/layout.app')
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Account</title>
+</head>
+<body>
+    <h1>Edit My Account</h1>
+
+    @if ($errors->any())
+        <div>
+            <strong>Whoops! Something went wrong!</strong>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
 @section('head')
 @endsection
@@ -33,20 +51,15 @@
                                     <input id="email" type="email" class="form-control" name="email" value="{{ Auth::user()->email }}" required>
                                 </div>
                             </div>
+    <form method="POST" action="{{ route('acc.update') }}">
+        @csrf
+        @method('PUT')
 
-                            <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">New Password</label>
-                                <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control" name="password">
-                                </div>
-                            </div>
+        <label for="profile_image">Profile Image:</label>
+        <input type="file" name="profile_image" id="profile_image"><br>
 
-                            <div class="form-group row">
-                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
-                                <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
-                                </div>
-                            </div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="{{ old('name', $user->name) }}"><br>
 
                             <div class="form-group row">
                                 <label for="profile_image" class="col-md-4 col-form-label text-md-right">Profile Image</label>
@@ -55,25 +68,17 @@
                                 </div>
                             </div>
 
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" value="{{ old('email', $user->email) }}"><br>
 
-                            <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Update Profile
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password"><br>
 
-@endsection
+        <label for="password_confirmation">Confirm Password:</label>
+        <input type="password" name="password_confirmation" id="password_confirmation"><br>
 
-@section('footer')
-@endsection
+        <button type="submit">Update Account</button>
+    </form>
 
 </body>
 </html>

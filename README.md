@@ -90,7 +90,7 @@ The Edit Account Page lets the User edit following account settings:
 -   if User is not logged in it redirects to the register page
 
 
-###   New Blog Page (/new_blog) new_blog.blade.php
+###   New Blog Page (/create_post) create_post.blade.php
 
 The New Blog Page lets the User create a new Post containing the following:
 
@@ -150,7 +150,9 @@ Then update the Post table to the DB
 Then update the Comments table to the DB
 
     sail artisan db:seed --class=CommentSeeder
+### Update the function to be able to store and show profile pictures
 
+    sail artisan storage:link
 
 ### Datenbank update(cascade)
 # das posts gelöscht werden können müssen ein par sachen passieren:
@@ -163,6 +165,14 @@ danach speichern und es sollte funktionieren
 
 oder man findet heraus wie man die neue Migration im Griff bekommt.
 
+
+### PostUpdate
+# sodass neue Posts erstellt werden können.
+Auch hier get man ins phpMyAdmin(mysql)
+dann navigiert man zur Tabelle "posts", Sparte "Structure"
+Und dort geht man auf der Zeile von "featured_img" auf den Knopf rechts "Change"
+Unter der Sparte "Default" sollte man auf "NULL" stellen.
+danach alles speichern und es sollte funktionieren
 
 ### Standard Login
 
@@ -181,4 +191,10 @@ oder man findet heraus wie man die neue Migration im Griff bekommt.
 -   Smash/Unsmash
 -   Multidesign MAYBE/NOT
 -   Profile Picture
+
+
+### Konfiguration mit Symlink
+
+    sail artisan storage:link
+  
 

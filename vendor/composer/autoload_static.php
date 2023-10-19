@@ -544,6 +544,7 @@ class ComposerStaticInit5b4d487ef16f1c4465bd64298687c001
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'App\\Http\\Middleware\\AuthCheck' => __DIR__ . '/../..' . '/app/Http/Middleware/AuthCheck.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckCommentAuthor' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckCommentAuthor.php',
         'App\\Http\\Middleware\\CheckPostAuthor' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckPostAuthor.php',

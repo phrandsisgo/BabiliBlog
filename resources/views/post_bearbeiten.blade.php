@@ -1,5 +1,3 @@
-
-
 @extends('/components/layout')
 
 
@@ -25,7 +23,7 @@
             <br><br>
             <textarea name="content" class="form-control formStyle @error('content') is-invalid @enderror content-input" rows="4">{{ $post->content }}</textarea>
             <br><br>
-            <button type="submit"><h4>Speichern</h4></button>
+            <button type="submit" class="submit-btn">Speichern</button>
         </form>
         </div>
     </div>

@@ -15,7 +15,7 @@
             <h1> {{$post ->title}}</h1>
             <br>
             <p>{{$post -> content}}</p>
-            <p>the id is {{$post -> id}}</p>
+            <p>the id is: {{$post -> id}}</p>
             <br>
             <p>Erstellt am: {{ $post->created_at }}</p>
             <br>

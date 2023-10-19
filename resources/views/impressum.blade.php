@@ -18,7 +18,7 @@
             <br>
             <h3>Verantwortlich fuer den Inhalt:</h3> <br>
             
-            <h3>TechWizzards Alex G., Alex I., Baris, Binyam, Cyrill, Francisco und Luis</h3><br>
+            <h3>TechWizzards Alex G, Alex I, Baris, Binyam, Cyrill, Francisco und Luis</h3><br>
             
             Opportunity Zuerich, Schweiz
             <br><br>

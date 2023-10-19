@@ -23,6 +23,7 @@
 
                 <textarea id="comment" name="content" rows="4" cols="50">{{ $comment->content }}</textarea><br>
                 <br>
+                <input type="hidden" name="post_id" value="{{$comment->post_id}}">
                 <button type="submit" class="submit-btn">Post</button>
                 <br><br>
             </form>

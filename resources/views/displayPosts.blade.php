@@ -13,6 +13,7 @@
     <div class="content-2">
         @if (auth()->check())
             <h2>Willkommen, {{auth()->user()->name}}</h6>
+            <img src="{{ asset('storage/' . auth()->user()->profile_picture) }}" alt="Profilbild konnte nicht geladen werden" height="100px" width="100px">
         @else
             <h2>Willkommen, Gast</h6>
         @endif

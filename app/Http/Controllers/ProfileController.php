@@ -34,15 +34,17 @@ class ProfileController extends Controller
         // Handle the profile picture upload
         if ($request->hasFile('profile_picture')) {
         
-        // Check what happens when uploading two images with the same name. ***Create a UUID to rename the IMG with Laravel helper. 
-        $profilePicturePath = $request->file('profile_picture')->store('profile_pictures', 'public');
-        $user = auth()->user(); // Get the currently authenticated user
-        $user->profile_picture = $profilePicturePath;
-        $user->save();
+            // Check what happens when uploading two images with the same name. ***Create a UUID to rename the IMG with Laravel helper. 
+            $profilePicturePath = $request->file('profile_picture')->store('profile_pictures', 'public');
+            $user = auth()->user(); // Get the currently authenticated user
+            $user->profile_picture = $profilePicturePath;
+            $user->save();
 
-    } else {
-        return redirect()->back()->withErrors(['profile_image' => 'Das hochgeladene Bild ist ungültig.']); //Falls falsches Format kommt Meldung
-    }
+            return redirect()->route('displayUsers')->with('success', 'Profilbild wurde aktualisiert.'); // Seite wird neu geladen. Bild aktualisiert mit Meldung
+
+        } else {
+            return redirect()->back()->withErrors(['profile_image' => 'Das hochgeladene Bild ist ungültig.']); //Falls falsches Format kommt Meldung
+        }
 }
 
     

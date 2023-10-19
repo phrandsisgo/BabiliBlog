@@ -17,6 +17,7 @@
                 <p class="date">{{ date('d.m.y', strtotime($post->created_at)) }}</p>
                 <h3>{{ $post->title }}</h3>
                 <p>{{ $post->content }}</p>
+                <img src="{{auth()->user()->profile_picture}}" alt=" ">
                 <p>the id is {{$post -> id}}</p>
                 <p>the user ID is: {{$post -> user_id}}</p>
                 <a href="/show/{{$post->id}}"><br><h4>View Show</h4></a>

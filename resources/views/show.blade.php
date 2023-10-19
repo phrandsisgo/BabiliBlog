@@ -81,40 +81,37 @@
 
     @auth()
 
-        <div class="content-1">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header"><h3>Create a Comment</h3></div>
+    <div class="content-1">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header"><h3>Create a Comment</h3></div>
 
-                        <br>
-                        <div class="card-body">
-                            <form method="POST" action="/new_comment/{{$post ->id}}">
-                                @csrf
-
-                            <div class="form-group">
-                                <label for="content"></label>
-                                <textarea id="content" name="content" class="form-control" required></textarea>
-                            @error('content')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                            </div>
+                    <br>
+                    <div class="card-body">
+                        <form method="POST" action="/new_comment/{{$post ->id}}">
+                            @csrf
 
 
-                            <button type="submit" class="btn btn-primary">Create a Comment</button>
-                        </form>
-
-                                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                                <input type="hidden" name="post_id" value="{{$post ->id}}">
-                                <br>
-                                <input type="submit" class="submit-btn" value="Post">
-                            </form>
+                        <div class="form-group">
+                            <label for="content"></label>
+                            <textarea id="content" name="content" class="form-control" required></textarea>
+                        @error('content')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                         </div>
 
+                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                            <input type="hidden" name="post_id" value="{{$post ->id}}">
+                            <br>
+                            <input type="submit" class="submit-btn" value="Post">
+                        </form>
                     </div>
+
                 </div>
             </div>
         </div>
+    </div>
     @endauth
     </div>
 

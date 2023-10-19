@@ -37,19 +37,18 @@
             @endauth
             <br>
             <h2>Comments</h2>
-            <br>
             <ul>
 
                 @foreach($post->comments as $comment)
                     {{-- <li><h4>{{ $users->name}}</h4></li> --}}   
-                    <br>                 
-                    <li><h3>{{ $comment->user_id }}</h3></li>
-                    <li>{{ $comment->content }}</li>
-                    <br><br>
                     @if(auth()->check())
+                        <br><br>
+                        <li><h4>{{ $comment->user->name }}</h4>
+                        <li>{{ $comment->content }}</li>
+
                         @if(auth()->user()->id == $comment->user_id)
+
                         <a href="/kommentar_bearbeiten/{{$comment -> id}}"> Bearbeiten</a>
-<!---                        <a href="/delete_comment/{{$comment -> id}}"> Löschen</a>-->
                         <form action="/deleteComment/{{$comment ->id}}" method="post">
                             @csrf
                             <br><br>
@@ -57,6 +56,11 @@
                             <br><br>
                         </form>
                         @endif
+
+                    @else
+                        <br><br>
+                        <li><h4>{{ $comment->user->name }}</h4>
+                        <li>{{ $comment->content }}</li>
                     @endif
                 @endforeach
             </ul>

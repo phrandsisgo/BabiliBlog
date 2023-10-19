@@ -23,14 +23,14 @@
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="name" value="Name(in Bearbeitung)" required autofocus>
+                                    <input id="name" type="text" class="form-control" name="name" value="{{ Auth::user()->name }}" required autofocus>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" name="email" value="E-mail(in bearbeitung)" required>
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ Auth::user()->email }}" required>
                                 </div>
                             </div>
 

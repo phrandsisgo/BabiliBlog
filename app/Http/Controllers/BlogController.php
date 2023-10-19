@@ -95,5 +95,25 @@ class BlogController extends Controller
         return redirect('/');
     }
 
+    //Methode zum Erstellen von Kommentaren von Cyrill
+           
+    public function new_comment(Request $request, $id)
+    {
+        //dd($id);
+        $request->validate([
+            'content' => 'required',
+            'post_id' => 'required',
+        ]);
+
+        Comment::create([
+            'user_id' => $request->user_id,
+            'content' => $request->content,
+            'post_id' => $id,
+        ]);
+
+        return redirect()->back()->with('success', 'Comment Edited.');
+    }
+
+
 }
 

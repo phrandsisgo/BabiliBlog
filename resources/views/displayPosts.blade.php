@@ -25,6 +25,8 @@
         <p>{{ $post->content }}</p>
         <p>the id is {{$post -> id}}</p>
         <p>the user ID is: {{$post -> user_id}}</p>
+        <p>Erstellt am: {{ $post->created_at }}</p>
+        <p>Posted by: {{ $post->user->name }}</p>       
         <a href="/show/{{$post->id}}"><br><button class="submit-btn">View</button></a>
     </div>
     @endforeach

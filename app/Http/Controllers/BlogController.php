@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Comment;
+use App\Models\User;
 
 
 class BlogController extends Controller
@@ -14,9 +15,10 @@ class BlogController extends Controller
         $posts = Post::orderBy('created_at', 'desc')->get();// Orderd the newest post on the top
         return view('displayPosts', ['posts' => $posts]);
     }
+
     public function feed2(){
-        
         $posts = Post::orderBy('created_at', 'desc')->get();// Orderd the newest post on the top
+        $posts = Post::orderBy('created_at', 'desc')->get();
         return view('welcome', ['posts' => $posts]);
     }
 
@@ -78,13 +80,15 @@ class BlogController extends Controller
         $validated = $request->validate([
             'content' => 'required|max:300|min:3',
         ]);
-        //dd("somehtdslk");
+       // dd($request);
         Comment::where('id', $id)->update([
             'content' => $request->content,
             'updated_at' => now()
         ]);
-        return redirect('/');
+        //redirect to the show/(post id)
+        return redirect('/show/'.$request->post_id);
     }
+
     public function delete_comment($id){
         Comment::where('id', $id)->delete();
         return back();
@@ -94,6 +98,43 @@ class BlogController extends Controller
         Post::where('id', $id)->delete();
         return redirect('/');
     }
+
+    public function create_post() {
+        //if authorized then return "create_post" view else return "login" view
+        return view('create_post');
+    }
+
+    public function store_post(Request $request)
+    {
+
+        $post = new Post();
+        $post->title = $request->input('title');
+        $post->text = $request->input('text');
+        $post->save();
+
+        // $post = Post::create_post([
+        //     'title' => $request->title,
+        //     'text'  => $request->text
+        // ]);
+        $request->title;
+        $request->content;
+        $validated = $request->validate([
+            'title' => 'required|max:30|min:3',
+            'content' => 'required|max:300|min:3',
+        
+        ]);
+        //dd('message');
+        Post::create([
+            'title' => $request->title,
+            'content' => $request->content,
+            'user_id' => auth()->user()->id
+        ]);
+
+
+        return redirect('/');
+    }
+
+  
 
     //Methode zum Erstellen von Kommentaren von Cyrill
            

@@ -6,21 +6,6 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-// Route::get('/', 'BlogController')->name('home');
-// Route::get('/posts', 'PostsController')->name('posts');
-
-
 
 Route::get('/einloggen', function () {return view('einloggen');})->name('einloggen');
 /*
@@ -30,27 +15,40 @@ Route::get('/', function () {
 Route::get('/index', function () {
     return view('index');
 })->name('index');
+
 Route::get('/register', function () {
     return view('register');
 })->name ('register');
+
 Route::get('/edit_acc', function () {
     return view('edit_acc');
 })->name('edit_acc');
+
 Route::get('/new_blog', function () {
     return view('new_blog')->name('new_blog');
 });
+
 Route::get('/edit_blog', function () {
     return view('edit_blog')->name('edit_blog');
 })->name('edit_acc');
+
 Route::get('/new_blog', function () {
     return view('new_blog');
 })->name ('new_blog');
+
 Route::get('/edit_blog', function () {
     return view('edit_blog');
 })->name('edit_blog');
+
 Route::get('/post', function () {
     return view('post');
 })->name('post');
+
+
+Route::get('/create_post', [BlogController::class, 'create_post'])->name('create_post');
+Route::post('/create_post', [BlogController::class, 'store_post'])->name('create_post.store');
+
+
 
 Route ::get('/show/{id}', [BlogController::class, 'show']);//route für EntwicklungsZwecke von Francisco
 
@@ -69,8 +67,8 @@ Route::get('/impressum', function () {
 
 
 
-Route::get ('/', [BlogController::class, 'feed'])->name ('newest'); // route für entwicklung von Francisco
-Route::get ('/welcome', [BlogController::class, 'feed'])->name ('welcome'); // route für entwicklung von Francisco
+Route::get ('/', [BlogController::class, 'feed'])->name ('newest'); 
+Route::get ('/welcome', [BlogController::class, 'feed'])->name ('welcome'); 
 
 Route::get('/create_comment', function () {
     return view('create_comment');
@@ -114,15 +112,14 @@ Route::post('/post_update/{id}', [BlogController::class, 'post_update'])
 
 Route::post('/update-comment/{id}', [BlogController::class, 'update_comment'])
     ->middleware(['check_comment_author'])
-    ->name('kommentar_bearbeiten');//endgültige Route von Francisco
+    ->name('kommentar_bearbeiten');
 /*
 Route::get('/welcome', function () {
     return view('welcome');
 })->middleware(['auth', 'verified'])->name('welcome');
+
 */
-Route::get('/dashboard', function () {
-    return view('welcome');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard',[BlogController::class, 'feed'])->name ('newest');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

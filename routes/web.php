@@ -24,17 +24,11 @@ Route::get('/edit_acc', function () {
     return view('edit_acc');
 })->name('edit_acc');
 
-Route::get('/new_blog', function () {
-    return view('new_blog')->name('new_blog');
-});
 
 Route::get('/edit_blog', function () {
     return view('edit_blog')->name('edit_blog');
 })->name('edit_acc');
 
-Route::get('/new_blog', function () {
-    return view('new_blog');
-})->name ('new_blog');
 
 Route::get('/edit_blog', function () {
     return view('edit_blog');
@@ -46,7 +40,7 @@ Route::get('/post', function () {
 
 
 Route::get('/create_post', [BlogController::class, 'create_post'])->name('create_post');
-Route::post('/create_post', [BlogController::class, 'store_post'])->name('create_post.store');
+Route::post('/store_post', [BlogController::class, 'store_post'])->name('store_post');
 
 
 

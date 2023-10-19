@@ -14,7 +14,7 @@
         @if (auth()->check())
             <h2>Willkommen, {{auth()->user()->name}}</h6>
         @else
-            <h2>Willkommen, Gast</h6>
+            <h2>Willkommen, Gast, hier ist ein Grosser Fehler passiert.</h6>
         @endif
     </div>
 

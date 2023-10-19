@@ -20,6 +20,29 @@ class BlogController extends Controller
         return view('welcome', ['posts' => $posts]);
     }
 
+    public function feedUserId(){
+        // Check if the user is logged in
+        if (auth()->check()) {
+            // Get the authenticated user's ID
+            $userId = auth()->user()->id;
+    
+            // Get the posts associated with the user ID
+            $posts = Post::where('user_id', $userId)->get();
+    
+            return view('displayPosts', ['posts' => $posts]);
+        }
+    
+        // If user is not logged in, you may want to handle this case accordingly
+        // For example, you can redirect them to a login page
+        return redirect('/login');
+    }
+    
+
+    public function myFeeds($userId)
+    {
+        $posts = Post::where('user_id', $userId)->get();
+        return view('myfeeds', ['posts' => $posts]);
+    }
 
     public function show($id){
 
@@ -55,12 +78,23 @@ class BlogController extends Controller
         $validated = $request->validate([
             'content' => 'required|max:300|min:3',
         ]);
-        //dd("somehtdslk");
+       // dd($request);
         Comment::where('id', $id)->update([
             'content' => $request->content,
             'updated_at' => now()
         ]);
-        return redirect('/display_posts');
+        //redirect to the show/(post id)
+        return redirect('/show/'.$request->post_id);
+    }
+
+    public function delete_comment($id){
+        Comment::where('id', $id)->delete();
+        return back();
+    }
+    //beim delete_post muss darauf geachtet werden, dass nicht nur der Post sondern auch die Kommentare auch gelöscht werden.
+    public function delete_post($id){
+        Post::where('id', $id)->delete();
+        return redirect('/');
     }
 
     public function create_post() {

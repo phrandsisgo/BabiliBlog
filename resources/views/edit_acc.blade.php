@@ -61,6 +61,13 @@
         <label for="name">Name:</label>
         <input type="text" name="name" id="name" value="{{ old('name', $user->name) }}"><br>
 
+                            <div class="form-group row">
+                                <label for="profile_image" class="col-md-4 col-form-label text-md-right">Profile Image</label>
+                                <div class="col-md-6">
+                                    <input type="file" id="profile_image" name="profile_image" accept="image/*">
+                                </div>
+                            </div>
+
         <label for="email">Email:</label>
         <input type="email" name="email" id="email" value="{{ old('email', $user->email) }}"><br>
 

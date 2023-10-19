@@ -12,7 +12,7 @@
         <div class="content-1">
 
                 
-            <H2>{{$post ->title}}</h2>
+            <H1>{{$post ->title}}</h1>
             <br>
             <p>{{$post -> content}}</p>
             {{-- DEV ONLY
@@ -36,11 +36,14 @@
             
             @endauth
             <br>
-            <h3>Comments</h3>
+            <h2>Comments</h2>
             <br>
             <ul>
 
                 @foreach($post->comments as $comment)
+                    {{-- <li><h4>{{ $users->name}}</h4></li> --}}   
+                    <br>                 
+                    <li><h3>{{ $comment->user_id }}</h3></li>
                     <li>{{ $comment->content }}</li>
                     <br><br>
                     @if(auth()->check())
@@ -49,7 +52,9 @@
 <!---                        <a href="/delete_comment/{{$comment -> id}}"> Löschen</a>-->
                         <form action="/deleteComment/{{$comment ->id}}" method="post">
                             @csrf
-                            <input type="submit" value="Löschen">
+                            <br><br>
+                            <input type="submit" value="Löschen" class="submit-btn">
+                            <br><br>
                         </form>
                         @endif
                     @endif
@@ -70,28 +75,19 @@
                             <form method="POST" action="/new_comment/{{$post ->id}}">
                                 @csrf
 
-<!-- neu von Cyrill
+
                             <div class="form-group">
-                                <label for="content">Comment</label>
+                                <label for="content"></label>
                                 <textarea id="content" name="content" class="form-control" required></textarea>
                             @error('content')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                             </div>
 
-
-                            <button type="submit" class="btn btn-primary">Create a Comment</button>
-                        </form>
--->
                                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                 <input type="hidden" name="post_id" value="{{$post ->id}}">
-
-                                <div class="form-group">
-                                    <label for="content"></label>
-                                    <textarea id="content" name="content" class="form-control" required></textarea>
-                                </div>
                                 <br>
-                                <button type="submit" class="btn btn-primary"><h4>Post Comment</h4></button>
+                                <input type="submit" class="submit-btn" value="Post">
                             </form>
                         </div>
 

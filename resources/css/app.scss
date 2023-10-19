@@ -400,6 +400,18 @@ textarea
     width: 100%;
 }
 
+.submit-btn
+{
+    border-radius: 5px;
+    background:#0a6bb597;
+    background: rgba(124, 128, 194, 0.714);
+    font: inherit;
+    color: inherit;
+    padding: 3px;
+    //margin-right: 15px;
+    width: 15%;
+}
+
 // ray added this
 body {
     display: flex;

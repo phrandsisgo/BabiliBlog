@@ -13,9 +13,8 @@
 
     <div class="content-1">
 
-        
         <h1>New Blog</h1>
-        <br><br>
+        <br>
 
         <form action="/store_post" method="POST">
             @csrf
@@ -25,7 +24,7 @@
             <input type="text" id="title" name="title">
             <br><br><br>
 
-            <label for="text"><h2>Post</h2></label>
+            <label for="text"><h2>Inhalt</h2></label>
             <textarea name="content" id="post" cols="30" rows="10"></textarea>
             <br><br><br>
 

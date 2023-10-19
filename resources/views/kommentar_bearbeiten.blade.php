@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html>
 <head>
     <title>Edit Comment</title>
@@ -12,4 +12,41 @@
         <button type="submit">Update Comment</button>
     </form>
 </body>
-</html>
+</html> --}}
+@extends('/components/layout')
+
+
+@section('head')
+@endsection
+
+@section('header')
+@endsection
+
+@section('content')
+ 
+    <div class="content">
+
+        <div class="content-1">
+
+            <h1>Edit Comment</h1>
+            <form action="/update-comment/{{$comment->id}}" method="POST">
+                @csrf
+                <label for="comment">Comment:</label><br>
+                <textarea id="comment" name="content" rows="4" cols="50">{{ $comment->content }}</textarea><br>
+                <button type="submit">Update Comment</button>
+            </form>
+
+        </div>
+
+        <div class="content-2">
+            <p>
+                Hier kommen die anderen
+            </p>
+        </div>
+
+    </div>
+
+@endsection
+
+@section('footer')
+@endsection

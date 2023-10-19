@@ -151,6 +151,19 @@ Then update the Comments table to the DB
 
     sail artisan db:seed --class=CommentSeeder
 
+
+### Datenbank update(cascade)
+# das posts gelöscht werden können müssen ein par sachen passieren:
+Als erstes geht man ins phpMyAdmin(mysql)
+dann geht man unter die sparte "comments"
+Und von dort aus geht man unter "structure" (ist oben zu finden)
+Danach geht man oben auf "relational view"
+und stellt unter comments_post bei "ON DELETE" auf CASCADE
+danach speichern und es sollte funktionieren
+
+oder man findet heraus wie man die neue Migration im Griff bekommt.
+
+
 ### Standard Login
 
 -   Login:  vorname n@example.ch

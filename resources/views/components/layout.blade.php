@@ -26,7 +26,7 @@
             <a href="{{ route('myfeeds', ['userId' => auth()->user()->id]) }}">My Feeds</a>
 
             <a href="{{ route('new_blog') }}">New Blog</a>
-            <a href="{{ route('article') }}">Account</a>  
+            <a href="/display_users/{{auth()->user()->id }}" >Account</a>  
             <a href="{{ route('impressum') }}">Impressum</a>  
             <form method="POST" action="{{ route('logout') }}">
                 @csrf

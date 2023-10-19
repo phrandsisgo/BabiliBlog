@@ -16,7 +16,7 @@
 
     <!-- Display user profile picture if available -->
         @if ($user->profile_picture)
-            <img src="{{ asset('storage/' . $user->profile_picture) }}" alt="Profile Picture">
+            <img src="{{ asset('storage/' . $user->profile_picture) }}" alt="Profile Picture" width="150px" height="150px">
         @endif
 
         <p>the User ID is {{$user -> id}}</p>

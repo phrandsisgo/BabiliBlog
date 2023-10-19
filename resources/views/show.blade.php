@@ -11,12 +11,20 @@
     <div class="content">
         <div class="content-1">
 
-                
-            <H2> {{$post ->title}}</h2>
-            <br>
-            <p>{{$post -> content}}</p>
-            <p>the id is {{$post -> id}}</p>
-            <br>
+              <div class="flex-container">
+                        
+                <div>
+                        <H2> {{$post ->title}}</h2>
+                        <br>
+                        <p>{{$post -> content}}</p>
+                        <p>the id is {{$post -> id}}</p>
+                        <br>
+                        <p>dieser Post wurde verfasst von {{$post -> user->name}}</p>
+                </div>
+                <div class="widthX"></div>
+                <img src="{{ asset('storage/' . $post ->user->profile_picture) }}" alt="Profilbild konnte nicht geladen werden" height="100px" width="100px">
+        
+              </div>
             
             @auth
                 

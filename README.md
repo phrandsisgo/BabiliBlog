@@ -192,3 +192,9 @@ danach alles speichern und es sollte funktionieren
 -   Multidesign MAYBE/NOT
 -   Profile Picture
 
+
+### Konfiguration mit Symlink
+
+    sail artisan storage:link
+  
+

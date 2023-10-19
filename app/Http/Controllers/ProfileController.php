@@ -40,6 +40,8 @@ class ProfileController extends Controller
         $user->profile_picture = $profilePicturePath;
         $user->save();
 
+    } else {
+        return redirect()->back()->withErrors(['profile_image' => 'Das hochgeladene Bild ist ungültig.']); //Falls falsches Format kommt Meldung
     }
 }
 

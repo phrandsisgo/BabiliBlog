@@ -104,7 +104,6 @@ class BlogController extends Controller
 
     public function store_post(Request $request)
     {
-<<<<<<< HEAD
 
         $post = new Post();
         $post->title = $request->input('title');
@@ -115,7 +114,6 @@ class BlogController extends Controller
         //     'title' => $request->title,
         //     'text'  => $request->text
         // ]);
-=======
         $request->title;
         $request->content;
         $validated = $request->validate([
@@ -129,14 +127,11 @@ class BlogController extends Controller
             'content' => $request->content,
             'user_id' => auth()->user()->id
         ]);
->>>>>>> 573a6bf28c18af6adeaa49354b93b13bbe256ed3
 
 
         return redirect('/');
     }
 
-<<<<<<< HEAD
-=======
   
 
     //Methode zum Erstellen von Kommentaren von Cyrill
@@ -159,6 +154,5 @@ class BlogController extends Controller
     }
 
 
->>>>>>> 573a6bf28c18af6adeaa49354b93b13bbe256ed3
 }
 

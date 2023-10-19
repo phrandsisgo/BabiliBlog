@@ -12,14 +12,16 @@
         <div class="content-1">
 
                 
-            <H1>{{$post ->title}}</h1>
+            <h1> {{$post ->title}}</h1>
             <br>
             <p>{{$post -> content}}</p>
-            {{-- DEV ONLY
-                <p>the id is {{$post -> id}}</p> 
-            --}}
+            <p>the id is {{$post -> id}}</p>
             <br>
-            
+            <p>Erstellt am: {{ $post->created_at }}</p>
+            <br>
+            <p>Posted by: {{ $post->user->name }}</p>
+            <br>
+  
             @auth
                 
             @if (auth()->check())
@@ -35,37 +37,22 @@
             @endif  
             
             @endauth
-            <br>
             <h2>Comments</h2>
+            <br>
             <ul>
 
-                @foreach($post->comments->sortByDesc('created_at') as $comment)
-                    {{-- <li><h4>{{ $users->name}}</h4></li> --}}   
-                    @if(auth()->check())
-                        <br><br>
-                        <li><h4>{{ $comment->user->name }} {{ $comment->updated_at }}</h4>
-                        <li>{{ $comment->content }}</li>
-
-                        @if(auth()->user()->id == $comment->user_id)
-                            <br>
-                            <div class="buttons-container">
-                                <a href="/kommentar_bearbeiten/{{$comment -> id}}" >
-                                    <button class="submit-btn">Bearbeiten</button>
-                                </a>
-                                <form action="/deleteComment/{{$comment ->id}}" method="post">
-                                    @csrf
-                                    <input type="submit" value="Löschen" class="submit-btn">
-                                </form>
-                            </div>
-                            <br><br>
+                @foreach($post->comments as $comment)
+                    <li>{{ $comment->content }}</li>
+                    @if(auth()->check() && auth()->user()->id == $comment->user_id)
+                        <a href="/kommentar_bearbeiten/{{$comment -> id}}"> Bearbeiten</a>
+<!---                        <a href="/delete_comment/{{$comment -> id}}"> Löschen</a>-->
+                        <form action="/deleteComment/{{$comment ->id}}" method="post">
+                            @csrf
+                            <input type="submit" value="Löschen">
+                        </form>
                         @endif
-
-                    @else
-                        <br><br>
-                        <li><h4>{{ $comment->user->name }} {{ $comment->updated_at }}</h4>
-                        <li>{{ $comment->content }}</li>
-                    @endif
                 @endforeach
+
             </ul>
         </div>
 
@@ -82,22 +69,17 @@
                             <form method="POST" action="/new_comment/{{$post ->id}}">
                                 @csrf
 
-
-                            <div class="form-group">
-                                <label for="content"></label>
-                                <textarea id="content" name="content" class="form-control" required></textarea>
-                            @error('content')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                            </div>
-
                                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                 <input type="hidden" name="post_id" value="{{$post ->id}}">
+
+                                <div class="form-group">
+                                    <label for="content"></label>
+                                    <textarea id="content" name="content" class="form-control" required></textarea>
+                                </div>
                                 <br>
-                                <input type="submit" class="submit-btn" value="Post">
+                                <button type="submit" class="btn btn-primary"><h4>Post Comment</h4></button>
                             </form>
                         </div>
-
                     </div>
                 </div>
             </div>

@@ -169,7 +169,7 @@ oder man findet heraus wie man die neue Migration im Griff bekommt.
 ### PostUpdate
 # sodass neue Posts erstellt werden können.
 Auch hier get man ins phpMyAdmin(mysql)
-dann navigiert man zur Sparte "posts"
+dann navigiert man zur Tabelle "posts", Sparte "Structure"
 Und dort geht man auf der Zeile von "featured_img" auf den Knopf rechts "Change"
 Unter der Sparte "Default" sollte man auf "NULL" stellen.
 danach alles speichern und es sollte funktionieren

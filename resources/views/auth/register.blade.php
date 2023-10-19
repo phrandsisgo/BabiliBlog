@@ -64,9 +64,15 @@
                             {{ __('Already registered?') }}
                         </a>
             
-                        <button class="submit-btn">
-                        {{ __('Register') }}
-                    </button>
+
+                        <x-primary-button class="ml-4 submit-btn">
+                            {{ __('Register') }}
+                        </x-primary-button>
+
+                        <br><br>
+
+                <p>Du hast schon ein Account? <a href="/register">Melde dich an!</a></p>
+
                     </div>
                 </form>
         </div>

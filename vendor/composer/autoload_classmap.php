@@ -24,6 +24,7 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\ProfileController' => $baseDir . '/app/Http/Controllers/ProfileController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
+    'App\\Http\\Middleware\\AuthCheck' => $baseDir . '/app/Http/Middleware/AuthCheck.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckCommentAuthor' => $baseDir . '/app/Http/Middleware/CheckCommentAuthor.php',
     'App\\Http\\Middleware\\CheckPostAuthor' => $baseDir . '/app/Http/Middleware/CheckPostAuthor.php',

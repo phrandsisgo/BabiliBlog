@@ -405,6 +405,23 @@ textarea
     align-self: flex-end;
 }
 
+.buttons-container {
+    display: flex;
+    align-items: center;
+}
+
+.buttons-container form,
+.buttons-container a 
+{
+    margin-right: 10px; /* Adjust this value to control the spacing between buttons */
+}
+
+.buttons-container input[type="submit"],
+.buttons-container button {
+    width: 150px; /* Adjust this value to your preference */
+}
+
+
 .submit-btn
 {
     border-radius: 5px;
@@ -412,9 +429,18 @@ textarea
     background: rgba(124, 128, 194, 0.714);
     font: inherit;
     color: inherit;
+    text-shadow: $text-shadow;
     padding: 3px;
     //margin-right: 15px;
     width: 15%;
+    max-width: 200px;
+    cursor: pointer;
+}
+
+.submit-btn:hover
+{
+    color: rgb(157, 120, 120);
+    //text-shadow: $title-shadow;
 }
 
 // ray added this

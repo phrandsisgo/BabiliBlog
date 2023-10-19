@@ -90,7 +90,7 @@ The Edit Account Page lets the User edit following account settings:
 -   if User is not logged in it redirects to the register page
 
 
-###   New Blog Page (/new_blog) new_blog.blade.php
+###   New Blog Page (/create_post) create_post.blade.php
 
 The New Blog Page lets the User create a new Post containing the following:
 

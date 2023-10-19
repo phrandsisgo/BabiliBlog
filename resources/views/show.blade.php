@@ -39,11 +39,11 @@
             <h2>Comments</h2>
             <ul>
 
-                @foreach($post->comments as $comment)
+                @foreach($post->comments->sortByDesc('created_at') as $comment)
                     {{-- <li><h4>{{ $users->name}}</h4></li> --}}   
                     @if(auth()->check())
                         <br><br>
-                        <li><h4>{{ $comment->user->name }}</h4>
+                        <li><h4>{{ $comment->user->name }} {{ $comment->updated_at }}</h4>
                         <li>{{ $comment->content }}</li>
 
                         @if(auth()->user()->id == $comment->user_id)
@@ -59,7 +59,7 @@
 
                     @else
                         <br><br>
-                        <li><h4>{{ $comment->user->name }}</h4>
+                        <li><h4>{{ $comment->user->name }} {{ $comment->updated_at }}</h4>
                         <li>{{ $comment->content }}</li>
                     @endif
                 @endforeach

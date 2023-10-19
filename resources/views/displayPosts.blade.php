@@ -18,7 +18,7 @@
         @endif
     </div>
 
-    @foreach ($posts as $post) 
+    @foreach ($posts->sortByDesc('created_at') as $post) 
     <div class="content-1"> 
         <p class="date">{{ date('d.m.y', strtotime($post->created_at)) }}</p>
         <h3>{{ $post->title }}</h3>

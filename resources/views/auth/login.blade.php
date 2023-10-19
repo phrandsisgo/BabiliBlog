@@ -102,16 +102,18 @@
                         <span class="remember-me-checkbox-text">{{ __('Remember me') }}</span>
                     </label>
                     <br><br>
-                    <button class="submit">
+                    <button class="submit-btn">
                         {{ __('Log in') }}
                     </button>
                 </div>      
             
-                <br><br><br>
+                <br>
+                <p>Noch kein Account dann <a href="/register">registriere dich</a></p>
+                <br>
                 <div class="flex items-center justify-end mt-4">
                     @if (Route::has('password.request'))
                         <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                            {{ __('Forgot your password?') }}
+                            {{ __('Passwort vergessen?') }}
                         </a>
                     @endif
 

@@ -11,15 +11,20 @@
     <div class="content">
         <div class="content-1">
 
-                
-            <H1>{{$post ->title}}</h1>
-            <br>
-            <p>{{$post -> content}}</p>
-            <h4>{{ date('d.m.y', strtotime($post->created_at)) }}</h4>
-            {{-- DEV ONLY
-                <p>the id is {{$post -> id}}</p> 
-            --}}
-            <br>
+              <div class="flex-container">
+                        
+                <div>
+                        <H2> {{$post ->title}}</h2>
+                        <br>
+                        <p>{{$post -> content}}</p>
+                        <h4>{{ date('d.m.y', strtotime($post->created_at)) }}</h4>
+                        <br>
+                        <p>dieser Post wurde verfasst von {{$post -> user->name}}</p>
+                </div>
+                <div class="widthX"></div>
+                <img src="{{ asset('storage/' . $post ->user->profile_picture) }}" alt="Profilbild konnte nicht geladen werden" height="100px" width="100px">
+        
+              </div>
             
             @auth
                 
@@ -87,7 +92,6 @@
                             <form method="POST" action="/new_comment/{{$post ->id}}">
                                 @csrf
 
-
                             <div class="form-group">
                                 <label for="content"></label>
                                 <textarea id="content" name="content" class="form-control" required></textarea>
@@ -95,6 +99,10 @@
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                             </div>
+
+
+                            <button type="submit" class="btn btn-primary">Create a Comment</button>
+                        </form>
 
                                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                 <input type="hidden" name="post_id" value="{{$post ->id}}">

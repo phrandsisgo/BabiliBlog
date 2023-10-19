@@ -26,7 +26,7 @@ class ProfileController extends Controller
 
         // validate request
         $request->validate([
-            'profile_picture' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Example validation rules
+            'profile_picture' => 'image|mimes:jpeg,png,jpg,gif|max:2048|dimensions:max_width=300,max_height=300', // Example validation rules
             
         // Other validation rules for profile information
         ]);
@@ -34,13 +34,17 @@ class ProfileController extends Controller
         // Handle the profile picture upload
         if ($request->hasFile('profile_picture')) {
         
-        // Check what happens when uploading two images with the same name. ***Create a UUID to rename the IMG with Laravel helper. 
-        $profilePicturePath = $request->file('profile_picture')->store('profile_pictures', 'public');
-        $user = auth()->user(); // Get the currently authenticated user
-        $user->profile_picture = $profilePicturePath;
-        $user->save();
+            // Check what happens when uploading two images with the same name. ***Create a UUID to rename the IMG with Laravel helper. 
+            $profilePicturePath = $request->file('profile_picture')->store('profile_pictures', 'public');
+            $user = auth()->user(); // Get the currently authenticated user
+            $user->profile_picture = $profilePicturePath;
+            $user->save();
 
-    }
+            return redirect()->route('displayUsers')->with('success', 'Profilbild wurde aktualisiert.'); // Seite wird neu geladen. Bild aktualisiert mit Meldung
+
+        } else {
+            return redirect()->back()->withErrors(['profile_image' => 'Das hochgeladene Bild ist ungültig.']); //Falls falsches Format kommt Meldung
+        }
 }
 
     

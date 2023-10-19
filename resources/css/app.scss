@@ -1,38 +1,11 @@
+// WRITTEN BY SCARRUS
+
 @import "register.scss";
 
 @import "edit_acc.scss";
 
-// WRITTEN BY SCARRUS
+@import "fonts.scss";
 
-@font-face 
-{ 
-    font-family: blanka; 
-    src: url('/fonts/blanka/Blanka.otf');  
-} 
-
-@font-face 
-{ 
-    font-family: outage; 
-    src: url('/fonts/Outage/Outage.ttf');  
-} 
-
-@font-face 
-{ 
-    font-family: outage-cut; 
-    src: url('/fonts/Outage/Outage_Cut.ttf');  
-} 
-
-@font-face 
-{ 
-    font-family: borg; 
-    src: url('/fonts/Borg.ttf');  
-} 
-
-@font-face 
-{ 
-    font-family: raptor; 
-    src: url('/fonts/raptor_sans_font.ttf');  
-} 
 
 $background: rgba(124, 128, 194,);
 //$shadow:  6px 6px 12px #fc34ff;
@@ -71,6 +44,7 @@ body, html {
     background-position: center;
     background-attachment: fixed;
     word-break: break-word;
+    //text-transform: uppercase;
 }
 
 /* body {
@@ -271,6 +245,12 @@ ul
     {
         text-shadow: $title-shadow;
         font-family: outage-cut !important;
+    }
+    
+    p
+    {
+        //font-family: procyon-font !important;
+        //font-size: 18px;
     }
 }
 

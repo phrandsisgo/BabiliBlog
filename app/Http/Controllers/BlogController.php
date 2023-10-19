@@ -76,13 +76,15 @@ class BlogController extends Controller
         $validated = $request->validate([
             'content' => 'required|max:300|min:3',
         ]);
-        //dd("somehtdslk");
+       // dd($request);
         Comment::where('id', $id)->update([
             'content' => $request->content,
             'updated_at' => now()
         ]);
-        return redirect('/');
+        //redirect to the show/(post id)
+        return redirect('/show/'.$request->post_id);
     }
+
     public function delete_comment($id){
         Comment::where('id', $id)->delete();
         return back();

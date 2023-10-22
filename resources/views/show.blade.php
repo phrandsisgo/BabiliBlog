@@ -11,20 +11,31 @@
     <div class="content">
         <div class="content-1">
 
-              <div class="flex-container">
-                        
-                <div>
-                        <H2> {{$post ->title}}</h2>
-                        <br>
-                        <p>{{$post -> content}}</p>
-                        <h4>{{ date('d.m.y', strtotime($post->created_at)) }}</h4>
-                        <br>
-                        <p>dieser Post wurde verfasst von {{$post -> user->name}}</p>
+            @if (auth()->check())
+            <div class="flex-container">
+                <div>    
+                        <img src="{{ asset('storage/' . $post ->user->profile_picture) }}" alt="Profilbild konnte nicht geladen werden" height="100px" width="100px">
                 </div>
-                <div class="widthX"></div>
-                <img src="{{ asset('storage/' . $post ->user->profile_picture) }}" alt="Profilbild konnte nicht geladen werden" height="100px" width="100px">
-        
-              </div>
+                
+                <div>
+                    <h3>Willkommen {{auth()->user()->name}}</h3>
+                </div>     
+            </div>
+            @endif
+
+            <div>      
+                <br><br>
+                <H1>{{$post ->title}}</h1>
+                <br>
+                <p>{{$post -> content}}</p>
+                <h4>{{ date('d.m.y', strtotime($post->created_at)) }}</h4>
+                {{-- DEV ONLY
+                    <p>the id is {{$post -> id}}</p> 
+                --}}
+                <br>
+            </div>
+
+            
             
             @auth
                 
@@ -81,37 +92,37 @@
 
     @auth()
 
-    <div class="content-1">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header"><h3>Create a Comment</h3></div>
+        <div class="content-1">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header"><h3>Create a Comment</h3></div>
 
-                    <br>
-                    <div class="card-body">
-                        <form method="POST" action="/new_comment/{{$post ->id}}">
-                            @csrf
+                        <br>
+                        <div class="card-body">
+                            <form method="POST" action="/new_comment/{{$post ->id}}">
+                                @csrf
 
 
-                        <div class="form-group">
-                            <label for="content"></label>
-                            <textarea id="content" name="content" class="form-control" required></textarea>
-                        @error('content')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
+                            <div class="form-group">
+                                <label for="content"></label>
+                                <textarea id="content" name="content" class="form-control" required></textarea>
+                            @error('content')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                            </div>
+
+                                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                <input type="hidden" name="post_id" value="{{$post ->id}}">
+                                <br>
+                                <input type="submit" class="submit-btn" value="Post">
+                            </form>
                         </div>
 
-                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                            <input type="hidden" name="post_id" value="{{$post ->id}}">
-                            <br>
-                            <input type="submit" class="submit-btn" value="Post">
-                        </form>
                     </div>
-
                 </div>
             </div>
         </div>
-    </div>
     @endauth
     </div>
 
@@ -119,5 +130,4 @@
 
 @section('footer')
 @endsection
-
 

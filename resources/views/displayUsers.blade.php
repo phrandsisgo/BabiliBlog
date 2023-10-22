@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display Profile</title>
-</head>
-<body>
+@extends('/components/layout')
+
+
+@section('head')
+@endsection
+
+@section('header')
+@endsection
+
+@section('content')
+
+<div class="content">
+    <div class="content-1">
 
     <div> 
         <h1>User Profile</h1>
@@ -23,13 +28,28 @@
     </div>
 
 
-    <form action="{{route('upload_img')}}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('upload_img') }}" method="post" enctype="multipart/form-data">
+        @csrf
+        
+        <button type="button" class="submit-btn" onclick="document.getElementById('profile_picture').click();">Choose File</button>
+        <input type="file" name="profile_picture" class="picture-input" id="profile_picture" style="display: none;">
+        
+        <br><br>
+    
+        <button type="submit" class="submit-btn">Save Image</button>
+    </form>
+
+{{--    OLD CODE!!!
+        <form action="{{route('upload_img')}}" method="post" enctype="multipart/form-data">
         @csrf
         <input type="file" name="profile_picture">
         <button type="submit">Save Image</button>
-    </form>
+    </form> --}}
     
+    
+    </div>
+</div>
+@endsection
 
-
-</body>
-</html>
+@section('footer')
+@endsection

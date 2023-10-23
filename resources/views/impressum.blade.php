@@ -33,6 +33,17 @@
             <p>Wir sind die letzten Mohikaner des Opportunity Kurses Web Devs. Wir begannen anfangs Mai 2023 mit dem 6 monatigen Kurs. Einige hatten 
             Vorerfahrungen mit dem coden, andere waren Neulige im Bereich der Web Entwicklung. Fuer diesen Gruppenprojekt haben wir rund 3 Wochen Zeit um 
             unsere Seite zu kreiren.</p>
+
+            <br>
+            Unser Entwicklerteam besteht aus:
+
+            <p>- <a href="https://github.com/ABoleiro11">Alex G. (Kanban master, Frontend entwickler)<br></a>
+            <a href="https://github.com/Scarrus666">- Alex I. (Frontend teamleiter)<br></a>
+            <a href="https://github.com/bruce-codes">- Baris (Fullstack entwickler)<br></a>
+            <a href="https://github.com/Binyam458">- Binyam (Design leiter & frontend entwickler)<br></a>
+            <a href="https://github.com/C70Schwager">- Cyrill (Frontend entwickler)<br></a>
+            <a href="https://github.com/phrandsisgo">- Francisco (Backend teamleiter, Githubmaster, Testing)<br></a>
+            <a href="https://github.com/luisgostink">- Luis (Backend entwickler, Datenbank Verantwortlicher)</a></p>
             
             <br>
             <br>

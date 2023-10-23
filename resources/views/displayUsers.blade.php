@@ -26,7 +26,6 @@
         <p>the User ID is {{$user -> id}}</p>
     </div>
 
-
     <form action="{{ route('upload_img') }}" method="post" enctype="multipart/form-data">
         @csrf
         
@@ -44,7 +43,6 @@
         <input type="file" name="profile_picture">
         <button type="submit">Save Image</button>
     </form> --}}
-    
     
     </div>
 </div>

@@ -18,7 +18,6 @@
         <p>Email: {{ $user->email }}</p>
         <p>User created at: {{ date('d.m.y', strtotime($user->created_at)) }}</p>
 
-
     <!-- Display user profile picture if available -->
         @if ($user->profile_picture)
             <img src="{{ asset('storage/' . $user->profile_picture) }}" alt="Profile Picture" width="150px" height="150px">

@@ -233,18 +233,18 @@ ul
     padding-bottom: 40px;
     padding-left: 30px;
     padding-right: 55px;
-    font-size: 14px;
+    font-size: 18px;
     border-radius: 10px;
     margin-top: 35px;
     color: $neon-text;
     box-shadow: $shadow;
     text-align: left;
-    font-family: outage-cut !important;
+    font-family: audiowide !important;
     
     h1, h2, h3, h4, h5, h6 
     {
         text-shadow: $title-shadow;
-        font-family: outage-cut !important;
+        font-family: audiowide !important;
     }
     
 }
@@ -310,7 +310,7 @@ content-1 form
     padding: 18px;
     padding-left: 30px;
     padding-right: 30px;
-    font-family: outage-cut !important;
+    font-family: audiowide !important;
     //font-family: raptor !important;
     font-size: 14px;
     border-radius: 10px;
@@ -321,7 +321,7 @@ content-1 form
     
     h1, h2, h3, h4, h5, h6 
     {
-        font-family: raptor !important;
+        font-family: audiowide !important;
         text-shadow: $title-shadow;
     }
 }
@@ -459,6 +459,9 @@ textarea
     max-width: 200px;
     cursor: pointer;
     margin-right: 5px;
+/*  ALTERNATIVE FONT FOT BUTTONS   
+    font-size: 15px !important;
+    font-family: outage-cut !important; */
 }
 
 .submit-btn:hover

@@ -247,11 +247,6 @@ ul
         font-family: outage-cut !important;
     }
     
-    p
-    {
-        //font-family: procyon-font !important;
-        //font-size: 18px;
-    }
 }
 
 .content-1 a 
@@ -349,6 +344,53 @@ input
     width: 500px;
 }
 
+.picture-input
+{
+    border-radius: unset;
+    background: unset;
+    font: unset;
+    color: unset;
+    padding: unset;
+    margin-right: unset;
+    width: unset;    
+}
+
+.file-input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.picture-input {
+    margin-bottom: 5px; /* Add some space between the input and the label */
+}
+
+.file-label {
+    font-style: italic;
+    color: #999; /* Adjust the color as needed */
+}
+
+
+
+.custom-file-upload {
+    background-color: rgba(124, 128, 194, 0.714);
+    color: #fff;
+    padding: 10px 20px;
+    border: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custom-file-upload:hover {
+    background-color: #0056b3;
+}
+
+.picture-input {
+    display: none;
+}
+
+
+
+
 .remember-me-label {
     display: flex;
     flex-direction: row;
@@ -431,6 +473,7 @@ body {
     flex-direction: row;
     width: 100vw;
 }
+
 .main{
     overflow-y: scroll;
     height: 100vh;
@@ -454,3 +497,16 @@ body {
 {
     color: red;
 }
+
+//geschrieben von Francisco Wohlgemuth!!!
+.flex-container 
+{
+    display: flex;
+    //added by Alex - um die DIVs jeweils in die Ecken zu treiben
+    justify-content: space-between;
+}
+.widthX
+{//um das Bild weiter rechts zu Zeigen
+    width: 80%;
+}
+  

@@ -12,9 +12,12 @@
 <div class="content">
     <div class="content-2">
         @if (auth()->check())
-            <h2>Willkommen, {{auth()->user()->name}}</h6>
+        <div class="flex-container">
+            <h2>Willkommen, {{auth()->user()->name}}</h2>
+            <img src="{{auth()->user()->profile_picture}}" alt=" ">
+            </div>
         @else
-            <h2>Willkommen, Gast, hier ist ein Grosser Fehler passiert.</h6>
+            <h2>Willkommen, Gast, hier ist ein Grosser Fehler passiert.</h2>
         @endif
     </div>
 
@@ -25,7 +28,8 @@
         <p>{{ $post->content }}</p>
 {{--    DEV ONLY
         <p>the id is {{$post -> id}}</p>
-        <p>the user ID is: {{$post -> user_id}}</p> 
+        <img src="{{auth()->user()->profile_picture}}" alt=" ">
+        <a href="/show/{{$post->id}}"><br><h4>View Show</h4></a>
 --}}
         <a href="/show/{{$post->id}}">
             <button class="submit-btn">View</button>

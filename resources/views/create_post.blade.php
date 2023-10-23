@@ -23,9 +23,14 @@
             <label for="title"><h2>Titel</h2></label>
             <input type="text" id="title" name="title">
             <br><br><br>
-
+            @if ($errors->has('title'))
+                <p style="color:red;">der Titel muss mind 3 Zeichen haben und maximal 30 Zeichen</p>
+            @endif
             <label for="text"><h2>Inhalt</h2></label>
             <textarea name="content" id="post" cols="30" rows="10"></textarea>
+            @if ($errors->has('content'))
+                <p style="color:red;">der Inhalt muss mind 3 Zeichen haben und maximal 300 Zeichen</p>
+            @endif
             <br><br><br>
 
             <button type="submit" class="submit-btn">Post</button> 

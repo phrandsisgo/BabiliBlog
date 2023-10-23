@@ -11,15 +11,31 @@
     <div class="content">
         <div class="content-1">
 
+            @if (auth()->check())
+            <div class="flex-container">
+                <div>    
+                        <img src="{{ asset('storage/' . $post ->user->profile_picture) }}" alt="Profilbild konnte nicht geladen werden" height="100px" width="100px">
+                </div>
                 
-            <H1>{{$post ->title}}</h1>
-            <br>
-            <p>{{$post -> content}}</p>
-            <h4>{{ date('d.m.y', strtotime($post->created_at)) }}</h4>
-            {{-- DEV ONLY
-                <p>the id is {{$post -> id}}</p> 
-            --}}
-            <br>
+                <div>
+                    <h3>Willkommen {{auth()->user()->name}}</h3>
+                </div>     
+            </div>
+            @endif
+
+            <div>      
+                <br><br>
+                <H1>{{$post ->title}}</h1>
+                <br>
+                <p>{{$post -> content}}</p>
+                <h4>{{ date('d.m.y', strtotime($post->created_at)) }}</h4>
+                {{-- DEV ONLY
+                    <p>the id is {{$post -> id}}</p> 
+                --}}
+                <br>
+            </div>
+
+            
             
             @auth
                 
@@ -114,5 +130,4 @@
 
 @section('footer')
 @endsection
-
 

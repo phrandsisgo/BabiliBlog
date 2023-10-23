@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Devant';
+    src: url('Devant-Medium.eot');
+    src: local('Devant Medium'), local('Devant-Medium'),
+        url('Devant-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Devant-Medium.woff2') format('woff2'),
+        url('Devant-Medium.woff') format('woff'),
+        url('Devant-Medium.ttf') format('truetype'),
+        url('Devant-Medium.svg#Devant-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+

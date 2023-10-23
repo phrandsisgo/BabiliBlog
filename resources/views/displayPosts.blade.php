@@ -14,11 +14,10 @@
         @if (auth()->check())
             <div class="flex-container">
                 <h2>Willkommen, {{auth()->user()->name}}</h6>
-                <div class="widthX"></div>
                 <img src="{{ asset('storage/' . auth()->user()->profile_picture) }}" alt="Profilbild konnte nicht geladen werden" height="100px" width="100px">
-        
             </div>
             @else
+            
             <h2>Willkommen, Gast</h6>
         @endif
     </div>

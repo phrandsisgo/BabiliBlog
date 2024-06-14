@@ -10,12 +10,14 @@ use App\Models\User;
 
 class BlogController extends Controller
 {
+
     public function feed(){
-        $posts = Post::orderBy('created_at', 'desc')->get();
+        $posts = Post::orderBy('created_at', 'desc')->get();// Orderd the newest post on the top
         return view('displayPosts', ['posts' => $posts]);
     }
 
     public function feed2(){
+        $posts = Post::orderBy('created_at', 'desc')->get();// Orderd the newest post on the top
         $posts = Post::orderBy('created_at', 'desc')->get();
         return view('welcome', ['posts' => $posts]);
     }
